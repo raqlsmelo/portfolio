@@ -5,7 +5,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Raquel Melo</title>
+    <title>Raquel MeloA</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
