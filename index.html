@@ -414,6 +414,67 @@
             </div>
         </div> <!-- end heading-block -->
 
+        <div class="row featured featured--hero" id="operacao-futebol" data-aos="fade-up">
+
+            <div class="column large-5 tab-full featured__text">
+                <p class="featured__kicker"><span class="featured__badge" data-i18n="fut.badge">Novo</span> <span data-i18n="fut.kicker">Em desenvolvimento · 2026 · v0.2</span></p>
+                <h3 class="featured__title">Operação Futebol</h3>
+                <p class="featured__lead" data-i18n="fut.lead">
+                    Interface de operação para futebol ao vivo, construída sobre a base do Operação Vôlei.
+                    Placar, relógio, súmula, escalação e créditos são controlados por uma mesa no navegador,
+                    e a arte é uma página web transparente que entra em qualquer programa de vídeo.
+                </p>
+                <div class="case-platforms">
+                    <span class="case-platforms__label" data-i18n="volei.platforms">Roda em</span>
+                    <ul>
+                        <li>OBS</li><li>vMix</li><li>SPX</li><li data-i18n="volei.platformsAny">+ qualquer fonte de página web</li>
+                    </ul>
+                </div>
+                <ul class="featured__list">
+                    <li data-i18n="fut.f1">Placar contado a partir da súmula: cada gol é um lance com jogador, minuto, pênalti ou gol contra, então placar e súmula nunca discordam</li>
+                    <li data-i18n="fut.f2">Relógio por período que já começa na marca certa e segue no acréscimo — um lance aos 47 do 1º tempo sai como 45+2</li>
+                    <li data-i18n="fut.f3">Uma coluna de lances por equipe: gol, amarelo, vermelho, substituição e pênalti, com o jogador vindo da escalação</li>
+                    <li data-i18n="fut.f4">Módulos de VAR, disputa de pênaltis e tarja de evento, além de créditos, estatísticas, classificação e jogos da rodada</li>
+                    <li data-i18n="fut.f5">O lance sai do ar sozinho após um tempo configurável, X desfaz o último lance e jogos salvos deixam a partida preparada antes</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong>1</strong><span data-i18n="fut.s1">fonte de navegador por cima do vídeo</span></li>
+                    <li><strong>45+2</strong><span data-i18n="fut.s2">acréscimo contado sozinho</span></li>
+                    <li><strong>X</strong><span data-i18n="fut.s3">desfaz o último lance</span></li>
+                </ul>
+                <ul class="tool-tags tool-tags--dark">
+                    <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>SSE</li><li>Browser source</li>
+                </ul>
+            </div>
+
+            <div class="column large-7 tab-full featured__demo">
+                <div class="fb-stage" aria-hidden="true">
+                    <span class="lt-stage__onair">● ON AIR</span>
+                    <span class="vb-stage__source">browser source · 1920×1080 · alpha</span>
+                    <div class="fb">
+                        <div class="fb__bar">
+                            <span class="fb__team" data-i18n="fut.demoHome">CASA</span>
+                            <span class="fb__score"><span class="js-fb-home">0</span><span class="fb__x">×</span><span class="js-fb-away">0</span></span>
+                            <span class="fb__team fb__team--away"><span class="fb__red"></span><span data-i18n="fut.demoAway">VISITANTE</span></span>
+                            <span class="fb__clock js-fb-clock">22:40</span>
+                        </div>
+                        <div class="fb__module js-fb-module">
+                            <span class="fb__module-tag" data-i18n="fut.demoGoal">GOL</span>
+                            <span class="js-fb-module-text">Nº 9 · 23'</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vb-keys" aria-hidden="true">
+                    <span class="vb-key js-fb-key-q"><kbd>Q</kbd><span data-i18n="fut.keyHome">gol casa</span></span>
+                    <span class="vb-key js-fb-key-e"><kbd>E</kbd><span data-i18n="fut.keyAway">gol visitante</span></span>
+                    <span class="vb-key js-fb-key-t"><kbd>T</kbd><span data-i18n="fut.keyClock">relógio</span></span>
+                    <span class="vb-key js-fb-key-x"><kbd>X</kbd><span data-i18n="fut.keyUndo">desfaz</span></span>
+                </div>
+                <p class="featured__caption" data-i18n="fut.caption">Simulação em HTML/CSS com times fictícios: o relógio corre, o gol entra no placar e na súmula, o vermelho vira a plaquinha no placar e o X desfaz o último lance.</p>
+            </div>
+
+        </div> <!-- end operacao-futebol -->
+
         <div class="row featured featured--apuracao" id="apuracao-2026" data-aos="fade-up">
 
             <div class="column large-5 tab-full featured__text">
@@ -475,68 +536,7 @@
 
         </div> <!-- end apuracao-2026 -->
 
-        <div class="row featured featured--reverse" id="operacao-futebol" data-aos="fade-up">
-
-            <div class="column large-5 tab-full featured__text">
-                <p class="featured__kicker" data-i18n="fut.kicker">Em desenvolvimento · 2026 · v0.2</p>
-                <h3 class="featured__title">Operação Futebol</h3>
-                <p class="featured__lead" data-i18n="fut.lead">
-                    Interface de operação para futebol ao vivo, construída sobre a base do Operação Vôlei.
-                    Placar, relógio, súmula, escalação e créditos são controlados por uma mesa no navegador,
-                    e a arte é uma página web transparente que entra em qualquer programa de vídeo.
-                </p>
-                <div class="case-platforms">
-                    <span class="case-platforms__label" data-i18n="volei.platforms">Roda em</span>
-                    <ul>
-                        <li>OBS</li><li>vMix</li><li>SPX</li><li data-i18n="volei.platformsAny">+ qualquer fonte de página web</li>
-                    </ul>
-                </div>
-                <ul class="featured__list">
-                    <li data-i18n="fut.f1">Placar contado a partir da súmula: cada gol é um lance com jogador, minuto, pênalti ou gol contra, então placar e súmula nunca discordam</li>
-                    <li data-i18n="fut.f2">Relógio por período que já começa na marca certa e segue no acréscimo — um lance aos 47 do 1º tempo sai como 45+2</li>
-                    <li data-i18n="fut.f3">Uma coluna de lances por equipe: gol, amarelo, vermelho, substituição e pênalti, com o jogador vindo da escalação</li>
-                    <li data-i18n="fut.f4">Módulos de VAR, disputa de pênaltis e tarja de evento, além de créditos, estatísticas, classificação e jogos da rodada</li>
-                    <li data-i18n="fut.f5">O lance sai do ar sozinho após um tempo configurável, X desfaz o último lance e jogos salvos deixam a partida preparada antes</li>
-                </ul>
-                <ul class="case-stats">
-                    <li><strong>1</strong><span data-i18n="fut.s1">fonte de navegador por cima do vídeo</span></li>
-                    <li><strong>45+2</strong><span data-i18n="fut.s2">acréscimo contado sozinho</span></li>
-                    <li><strong>X</strong><span data-i18n="fut.s3">desfaz o último lance</span></li>
-                </ul>
-                <ul class="tool-tags tool-tags--dark">
-                    <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>SSE</li><li>Browser source</li>
-                </ul>
-            </div>
-
-            <div class="column large-7 tab-full featured__demo">
-                <div class="fb-stage" aria-hidden="true">
-                    <span class="lt-stage__onair">● ON AIR</span>
-                    <span class="vb-stage__source">browser source · 1920×1080 · alpha</span>
-                    <div class="fb">
-                        <div class="fb__bar">
-                            <span class="fb__team" data-i18n="fut.demoHome">CASA</span>
-                            <span class="fb__score"><span class="js-fb-home">0</span><span class="fb__x">×</span><span class="js-fb-away">0</span></span>
-                            <span class="fb__team fb__team--away"><span class="fb__red"></span><span data-i18n="fut.demoAway">VISITANTE</span></span>
-                            <span class="fb__clock js-fb-clock">22:40</span>
-                        </div>
-                        <div class="fb__module js-fb-module">
-                            <span class="fb__module-tag" data-i18n="fut.demoGoal">GOL</span>
-                            <span class="js-fb-module-text">Nº 9 · 23'</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="vb-keys" aria-hidden="true">
-                    <span class="vb-key js-fb-key-q"><kbd>Q</kbd><span data-i18n="fut.keyHome">gol casa</span></span>
-                    <span class="vb-key js-fb-key-e"><kbd>E</kbd><span data-i18n="fut.keyAway">gol visitante</span></span>
-                    <span class="vb-key js-fb-key-t"><kbd>T</kbd><span data-i18n="fut.keyClock">relógio</span></span>
-                    <span class="vb-key js-fb-key-x"><kbd>X</kbd><span data-i18n="fut.keyUndo">desfaz</span></span>
-                </div>
-                <p class="featured__caption" data-i18n="fut.caption">Simulação em HTML/CSS com times fictícios: o relógio corre, o gol entra no placar e na súmula, o vermelho vira a plaquinha no placar e o X desfaz o último lance.</p>
-            </div>
-
-        </div> <!-- end operacao-futebol -->
-
-        <div class="row featured" id="operacao-volei" data-aos="fade-up">
+        <div class="row featured featured--reverse" id="operacao-volei" data-aos="fade-up">
 
             <div class="column large-5 tab-full featured__text">
                 <p class="featured__kicker" data-i18n="volei.kicker">Projeto autoral · 2026 · v4.1</p>
@@ -599,7 +599,7 @@
 
         </div> <!-- end operacao-volei -->
 
-        <div class="row featured featured--reverse" id="tarja-studio" data-aos="fade-up">
+        <div class="row featured" id="tarja-studio" data-aos="fade-up">
 
             <div class="column large-5 tab-full featured__text">
                 <p class="featured__kicker" data-i18n="feat.kicker">Software autoral · 2026</p>

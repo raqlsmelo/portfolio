@@ -109,6 +109,7 @@
         'apu.s3': 'operator',
         'apu.caption': 'Results shown in the images are fictitious rehearsal data — not official results.',
 
+        'fut.badge': 'New',
         'fut.kicker': 'In development · 2026 · v0.2',
         'fut.lead': 'A live football operator interface built on the Operação Vôlei foundation. Score, clock, match report, line-ups and credits are run from a desk in the browser, and the graphics are a transparent web page that goes into any video software.',
         'fut.f1': 'Score counted from the match report: every goal is an event with player, minute, penalty or own goal, so the score and the report never disagree',

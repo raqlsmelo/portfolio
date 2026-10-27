@@ -1038,3 +1038,68 @@ html[lang="en"] .ss-go-top::after {
   from { transform: scale(0); }
   to   { transform: scale(1); }
 }
+
+/* ===================================================================
+ * # hero case study (largest, first in the list)
+ * ------------------------------------------------------------------- */
+.featured__badge {
+  display: inline-block;
+  margin-right: .8rem;
+  padding: .3rem .9rem;
+  border-radius: 2rem;
+  background-color: var(--case-accent);
+  color: #050505;
+  letter-spacing: .15rem;
+}
+
+@media screen and (min-width: 801px) {
+  .featured--hero .featured__text,
+  .featured--hero .featured__demo {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .featured--hero .featured__demo {
+    order: 1;
+    margin-bottom: 4.8rem;
+  }
+
+  .featured--hero .featured__text {
+    order: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5.6rem;
+    align-items: start;
+  }
+
+  .featured--hero .featured__kicker,
+  .featured--hero .featured__title,
+  .featured--hero .featured__lead {
+    grid-column: 1 / -1;
+  }
+
+  .featured--hero .featured__title {
+    font-size: 6.4rem;
+  }
+
+  .featured--hero .featured__lead {
+    max-width: 860px;
+    font-size: 2rem;
+  }
+
+  .featured--hero .case-platforms,
+  .featured--hero .case-stats,
+  .featured--hero .tool-tags {
+    grid-column: 2;
+  }
+
+  .featured--hero .featured__list {
+    grid-column: 1;
+    grid-row: 4 / span 3;
+  }
+
+  .featured--hero .fb {
+    font-size: clamp(1.2rem, 2vw, 2.4rem);
+  }
+}
