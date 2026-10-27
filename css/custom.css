@@ -916,3 +916,125 @@ html[lang="en"] .ss-go-top::after {
 .vb-key.is-pressed {
   color: #ffffff;
 }
+
+/* ===================================================================
+ * # football scoreboard demo (fictional teams)
+ * ------------------------------------------------------------------- */
+#operacao-futebol {
+  --case-accent: #2fbf71;
+}
+
+#operacao-futebol .case-platforms {
+  background-color: rgba(47, 191, 113, 0.08);
+}
+
+.fb-stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.10), transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 30%, transparent 70%, rgba(0, 0, 0, 0.5)),
+    repeating-linear-gradient(90deg, #2f7a3a 0 12.5%, #2a6f34 12.5% 25%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fb {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.6vw, 1.6rem);
+  white-space: nowrap;
+}
+
+.fb__bar {
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 .4rem 1.6rem rgba(0, 0, 0, 0.35);
+}
+
+.fb__team,
+.fb__score,
+.fb__clock {
+  display: flex;
+  align-items: center;
+  padding: .4em .9em;
+}
+
+.fb__team {
+  position: relative;
+  min-width: 7em;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #0b3d1f;
+  letter-spacing: .04em;
+}
+
+.fb__score {
+  gap: .5em;
+  background-color: #0b3d1f;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.fb__x {
+  opacity: .6;
+  font-weight: 400;
+}
+
+.fb__clock {
+  background-color: #d4af37;
+  color: #1a1404;
+  font-family: Consolas, "Andale Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* red card marker */
+.fb__red {
+  width: .55em;
+  height: .8em;
+  margin-right: .5em;
+  border-radius: 2px;
+  background-color: #e0262b;
+  display: none;
+}
+
+.fb.has-red .fb__red {
+  display: inline-block;
+  animation: fb-pop .4s cubic-bezier(.3, 1.6, .5, 1);
+}
+
+/* goal module under the scoreboard */
+.fb__module {
+  display: flex;
+  align-items: stretch;
+  margin-top: .3rem;
+  background-color: #ffffff;
+  color: #0b3d1f;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .4s cubic-bezier(.7, 0, .2, 1);
+}
+
+.fb__module > span {
+  padding: .3em .9em;
+}
+
+.fb__module-tag {
+  background-color: #2fbf71;
+  color: #ffffff;
+  letter-spacing: .1em;
+}
+
+.fb.has-module .fb__module {
+  clip-path: inset(0 0 0 0);
+}
+
+@keyframes fb-pop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}

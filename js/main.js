@@ -333,6 +333,73 @@
     };
 
 
+   /* Football scoreboard demo (fictional teams)
+    * ----------------------------------------------------- */
+    var ssFootballDemo = function() {
+        var $fb = $('.fb');
+        if (!$fb.length) return;
+
+        var $home = $('.js-fb-home'), $away = $('.js-fb-away'),
+            $clock = $('.js-fb-clock'), $module = $('.js-fb-module'),
+            $moduleText = $('.js-fb-module-text'),
+            reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var START = 22 * 60 + 40, secs, home, away, running, tick;
+
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+        function minute() { return Math.floor(secs / 60) + 1; }
+        function shirt(n) { return ($('html').attr('lang') === 'en' ? 'No. ' : 'Nº ') + n; }
+
+        function press(key) {
+            $('.vb-key').removeClass('is-pressed');
+            if (key) $('.js-fb-key-' + key).addClass('is-pressed');
+        }
+
+        function render() {
+            $home.text(home);
+            $away.text(away);
+            $clock.text(pad(Math.floor(secs / 60)) + ':' + pad(secs % 60));
+        }
+
+        function goal(side, number) {
+            if (side === 'home') home++; else away++;
+            $moduleText.text(shirt(number) + ' · ' + minute() + "'");
+            $fb.addClass('has-module');
+            render();
+        }
+
+        function reset() {
+            secs = START; home = 0; away = 0; running = true; tick = 0;
+            $fb.removeClass('has-module has-red');
+            press(null);
+            render();
+        }
+
+        if (reduceMotion) {
+            reset();
+            secs = 23 * 60 + 5; home = 1;
+            $moduleText.text(shirt(9) + " · 24'");
+            $fb.addClass('has-module');
+            render();
+            return;
+        }
+
+        reset();
+        setInterval(function() {
+            tick++;
+            if (running) { secs += 3; render(); }
+
+            if (tick === 10) { press('q'); goal('home', 9); }
+            if (tick === 26) { press(null); $fb.removeClass('has-module'); }
+            if (tick === 32) { $fb.addClass('has-red'); }
+            if (tick === 42) { press('e'); goal('away', 11); }
+            if (tick === 52) { press('x'); away--; $fb.removeClass('has-module'); render(); }
+            if (tick === 62) { press('t'); running = false; }
+            if (tick === 74) { reset(); }
+        }, 200);
+    };
+
+
    /* slick slider
     * ------------------------------------------------------ */
     var ssSlickSlider = function() {
@@ -419,6 +486,7 @@
         ssProjectGalleries();
         ssAutoplayVideos();
         ssScoreDemo();
+        ssFootballDemo();
         ssSlickSlider();
         ssSmoothScroll();
         ssAlertBoxes();
