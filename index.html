@@ -1,873 +1,671 @@
 <!DOCTYPE html>
-<html class="no-js" lang="pt-BR">
+<html lang="pt-BR">
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
-    <title>Raquel Melo — Design, Motion & Desenvolvimento</title>
-    <meta name="description" content="Portfólio de Raquel Melo: mais de 10 anos de videografismo ao vivo na TV Globo, motion design, UX/UI e desenvolvimento web.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Raquel Melo — Motion, Broadcast Design & Código</title>
+    <meta name="description" content="Raquel Melo: mais de 10 anos de grafismo ao vivo na TV Globo. Motion design, sistemas de grafismo para transmissão e desenvolvimento web.">
     <meta name="author" content="Raquel Melo">
+    <meta name="theme-color" content="#07080a">
 
-    <!-- social preview
-    ================================================== -->
-    <meta property="og:title" content="Raquel Melo — Design, Motion & Desenvolvimento">
-    <meta property="og:description" content="Videografismo ao vivo, motion design, UX/UI e desenvolvimento web. | Live broadcast graphics, motion design, UX/UI and web development.">
-    <meta property="og:image" content="images/projects/apuracao/01_hero_4-de-outubro.jpg">
+    <meta property="og:title" content="Raquel Melo — Motion, Broadcast Design & Código">
+    <meta property="og:description" content="Grafismo ao vivo, motion design e sistemas para transmissão. | Live broadcast graphics, motion design and the systems behind them.">
+    <meta property="og:image" content="images/showreel-poster.jpg">
     <meta property="og:type" content="website">
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/custom.css">
-
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="icon" type="image/png" href="images/icons/logoRaquel.png">
-    <link rel="apple-touch-icon" href="images/icons/logoRaquel.png">
-
+    <link rel="icon" type="image/png" href="images/logo-raquel.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
-<body id="top">
+<body>
 
-    <div id="preloader">
-        <div id="loader"></div>
+    <!-- intro: 3-second name reveal (first visit of the session only) -->
+    <div class="intro" aria-hidden="true">
+        <div class="intro__name">
+            <span class="intro__line"><span>RAQUEL</span></span>
+            <span class="intro__line"><span>MELO</span></span>
+        </div>
+        <span class="intro__bar"></span>
     </div>
 
-    <!-- site header
+    <!-- header
     ================================================== -->
-    <header class="s-header">
+    <header class="header">
+        <a class="header__logo" href="#top" aria-label="Raquel Melo">
+            <img src="images/logo-raquel.png" alt="Raquel Melo">
+        </a>
 
-        <div class="header-logo">
-            <a class="smoothscroll" href="#top" title="Raquel Melo">
-                <img src="images/icons/logoRaquel.png" alt="Raquel Melo">
-            </a>
-        </div>
-
-        <nav class="header-nav-wrap">
-            <ul class="header-main-nav">
-                <li class="current"><a class="smoothscroll" href="#intro" data-i18n="nav.intro">Olá!</a></li>
-                <li><a class="smoothscroll" href="#about" data-i18n="nav.about">Sobre mim</a></li>
-                <li><a class="smoothscroll" href="#services" data-i18n="nav.skills">Habilidades</a></li>
-                <li><a class="smoothscroll" href="#projects" data-i18n="nav.projects">Projetos</a></li>
-                <li><a class="smoothscroll" href="#works" data-i18n="nav.works">Trabalhos</a></li>
-                <li><a class="smoothscroll" href="#contact" data-i18n="nav.contact">Contato</a></li>
-            </ul>
-
-            <ul class="header-social">
-                <li><a href="https://github.com/raqlsmelo" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                <li><a href="mailto:raqlsmelo@gmail.com" title="E-mail"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
-                <li class="lang-switch" role="group" aria-label="Idioma / Language">
-                    <button type="button" class="lang-switch__btn" data-lang="pt" aria-pressed="true">PT</button>
-                    <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
-                </li>
-            </ul>
+        <nav class="nav" aria-label="Principal">
+            <a href="#work" data-i18n="nav.work">Projetos</a>
+            <a href="#process" data-i18n="nav.process">Processo</a>
+            <a href="#about" data-i18n="nav.about">Sobre</a>
+            <a href="#contact" class="nav__cta" data-i18n="nav.contact">Contato</a>
         </nav>
 
-        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+        <div class="lang" role="group" aria-label="Idioma / Language">
+            <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">PT</button>
+            <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+    </header>
 
-    </header> <!-- end s-header -->
 
+    <main id="top">
 
-    <!-- intro
-    ================================================== -->
-    <section id="intro" class="s-intro target-section">
+        <!-- hero
+        ================================================== -->
+        <section class="hero">
+            <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="images/showreel-poster.jpg" aria-hidden="true">
+                <source src="videos/showreel.mp4" type="video/mp4">
+            </video>
+            <div class="hero__shade"></div>
 
-        <div class="row intro-content">
-
-            <div class="column large-9 mob-full intro-text">
-                <h3 data-i18n="intro.hello">Olá! Eu sou a Raquel Melo.</h3>
-                <h1 data-i18n="intro.title">
-                    Designer, <br>
-                    Videografista <br>
-                    e Desenvolvedora <br>
-                    <span class="intro-text__accent">entusiasta.</span>
+            <div class="hero__content">
+                <p class="eyebrow" data-i18n="hero.eyebrow">Motion · Broadcast Design · Código</p>
+                <h1 class="hero__title">
+                    <span class="reveal-line"><span data-i18n="hero.l1">Grafismo que vai ao ar</span></span>
+                    <span class="reveal-line"><span data-i18n="hero.l2">e não pode errar.</span></span>
                 </h1>
-                <p class="intro-text__lead" data-i18n="intro.lead">
-                    Transformo informação em imagem — de gráficos ao vivo na TV Globo
-                    a interfaces e sites que unem design e código.
+                <p class="hero__lead" data-i18n="hero.lead">
+                    Há mais de 10 anos crio e opero o grafismo ao vivo da TV Globo. Hoje também construo os
+                    sistemas por trás dele — do After Effects à arte no ar, com quem opera em mente.
                 </p>
-                <div class="intro-text__cta">
-                    <a href="#projects" class="btn btn--primary smoothscroll" data-i18n="intro.ctaWorks">Ver projetos</a>
-                    <a href="#contact" class="btn btn--stroke smoothscroll" data-i18n="intro.ctaContact">Fale comigo</a>
+                <div class="hero__cta">
+                    <a href="#work" class="btn btn--primary" data-i18n="hero.ctaWork">Ver projetos</a>
+                    <button type="button" class="btn btn--ghost js-reel">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        <span data-i18n="hero.ctaReel">Assistir showreel</span>
+                    </button>
                 </div>
             </div>
 
-            <div class="intro-scroll">
-                <a href="#about" class="intro-scroll-link smoothscroll" data-i18n="intro.scroll">
-                    Role para ver mais
-                </a>
+            <a href="#trust" class="hero__scroll" aria-label="Rolar"><span></span></a>
+        </section>
+
+
+        <!-- trust bar
+        ================================================== -->
+        <section class="trust" id="trust">
+            <p class="trust__label" data-i18n="trust.label">Meu trabalho já foi ao ar em</p>
+            <div class="trust__marquee">
+                <ul class="trust__list">
+                    <li>TV Globo</li><li data-i18n="trust.wc">Copa do Mundo FIFA</li><li data-i18n="trust.wwc">Copa do Mundo Feminina</li>
+                    <li data-i18n="trust.elections">Eleições</li><li>Rock in Rio</li><li>Big Brother Brasil</li>
+                    <li>Estúdio Escola de TV</li><li>Dandara Manoela</li><li>Gabriela Melo Larsen</li>
+                </ul>
+                <ul class="trust__list" aria-hidden="true">
+                    <li>TV Globo</li><li data-i18n="trust.wc">Copa do Mundo FIFA</li><li data-i18n="trust.wwc">Copa do Mundo Feminina</li>
+                    <li data-i18n="trust.elections">Eleições</li><li>Rock in Rio</li><li>Big Brother Brasil</li>
+                    <li>Estúdio Escola de TV</li><li>Dandara Manoela</li><li>Gabriela Melo Larsen</li>
+                </ul>
             </div>
-
-            <div class="intro-grid"></div>
-            <div class="intro-pic"></div>
-
-        </div> <!-- end row -->
-
-    </section> <!-- end intro -->
+        </section>
 
 
-    <!-- highlights
-    ================================================== -->
-    <section class="s-highlights ss-dark">
-        <div class="row highlights block-large-1-4 block-tab-1-2 block-mob-full">
-
-            <div class="column highlight" data-aos="fade-up">
-                <span class="highlight__number">10+</span>
-                <p class="highlight__label" data-i18n="hl.years">anos de videografismo ao vivo na TV Globo</p>
-            </div>
-
-            <div class="column highlight" data-aos="fade-up">
-                <span class="highlight__number" data-i18n="hl.eventsNumber">Copas</span>
-                <p class="highlight__label" data-i18n="hl.events">do Mundo masculina e feminina, Eleições e Rock in Rio</p>
-            </div>
-
-            <div class="column highlight" data-aos="fade-up">
-                <span class="highlight__number">3</span>
-                <p class="highlight__label" data-i18n="hl.degrees">formações: Desenho (UFRJ), Audiovisual e pós em Full Stack</p>
-            </div>
-
-            <div class="column highlight" data-aos="fade-up">
-                <span class="highlight__number">∞</span>
-                <p class="highlight__label" data-i18n="hl.learning">curiosidade — agora cursando Engenharia de Software</p>
-            </div>
-
-        </div>
-    </section> <!-- end s-highlights -->
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about target-section">
-
-        <div class="about-me">
-
-            <div class="row heading-block" data-aos="fade-up">
-                <div class="column large-full">
-                    <h2 class="section-heading" data-i18n="about.heading">Sobre mim</h2>
+        <!-- proof in numbers
+        ================================================== -->
+        <section class="numbers">
+            <div class="numbers__grid">
+                <div class="number reveal">
+                    <strong>10+</strong>
+                    <span data-i18n="num.years">anos de grafismo ao vivo em TV aberta</span>
+                </div>
+                <div class="number reveal">
+                    <strong>27</strong>
+                    <span data-i18n="num.states">estados no ar numa só noite de eleição, com 1 operador</span>
+                </div>
+                <div class="number reveal">
+                    <strong>4</strong>
+                    <span data-i18n="num.systems">sistemas de grafismo ao vivo desenvolvidos</span>
+                </div>
+                <div class="number reveal">
+                    <strong>0</strong>
+                    <span data-i18n="num.install">instalações: minhas ferramentas abrem com dois cliques</span>
                 </div>
             </div>
+        </section>
 
-            <div class="row about-me__content" data-aos="fade-up">
-                <div class="column large-full about-me__text">
-                    <p class="lead" data-i18n="about.lead">
-                    Sou profissional do audiovisual há mais de 10 anos e vivo no encontro entre
-                    design, movimento e tecnologia. Sou formada em Produção Audiovisual, pós-graduada
-                    em Desenvolvimento Web Full Stack e atualmente curso Engenharia de Software.
-                    </p>
 
-                    <p data-i18n="about.p1">
-                    Na TV Globo, crio e opero gráficos em tempo real para transmissões ao vivo —
-                    Eleições, Copas do Mundo masculina e feminina, Rock in Rio, telejornais,
-                    programas de variedades e o Big Brother Brasil (BBB).
-                    </p>
-
-                    <p data-i18n="about.p2">
-                    No dia a dia uso o pacote Adobe (After Effects, Premiere, Photoshop, Illustrator),
-                    DaVinci Resolve, Chyron Lyric e Viz, além de Figma, WordPress e Elementor.
-                    Programo em JavaScript, Python, Java e VBScript — linguagens que uso para
-                    automatizar e criar interfaces para os sistemas de produção com que trabalho.
-                    </p>
-
-                    <p data-i18n="about.p3">
-                    Gosto de projetos em que preciso pensar como designer e resolver como
-                    desenvolvedora. Se você tem um desafio assim, vamos conversar.
-                    </p>
-                </div>
+        <!-- work
+        ================================================== -->
+        <section class="work" id="work">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="work.eyebrow">Projetos selecionados</p>
+                <h2 class="section-title" data-i18n="work.title">Do briefing ao ar.</h2>
             </div>
 
-        </div> <!-- end about-me -->
-
-        <div class="about-experience">
-
-            <div class="row heading-block" data-aos="fade-up">
-                <div class="column large-full">
-                    <h2 class="section-heading" data-i18n="exp.heading">Trabalho e Educação</h2>
-                </div>
+            <div class="filters reveal" role="group" aria-label="Filtrar projetos">
+                <button type="button" class="filter is-active" data-filter="*" data-i18n="filter.all">Todos</button>
+                <button type="button" class="filter" data-filter="live" data-i18n="filter.live">Sistemas ao vivo</button>
+                <button type="button" class="filter" data-filter="motion" data-i18n="filter.motion">Motion & tipografia</button>
+                <button type="button" class="filter" data-filter="brand" data-i18n="filter.brand">Marca & web</button>
             </div>
 
-            <div class="row about-experience__timeline">
+            <div class="grid">
 
-                <div class="column large-half tab-full" data-aos="fade-up">
-                    <div class="timeline">
-
-                        <div class="timeline__icon-wrap">
-                            <span class="timeline__icon timeline__icon--work"></span>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe" data-i18n="exp.job1.time">Abril 2022 - Atual</p>
-                                <h3 class="item-title">TV Globo</h3>
-                                <h5 data-i18n="exp.job1.role">Editora de Videografismo</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p data-i18n="exp.job1.desc">Criação de animações e efeitos visuais com After Effects,
-                                Premiere, Photoshop e Illustrator. Produção de gráficos em tempo real para
-                                transmissões ao vivo com Chyron Lyric, Viz Artist e Viz Trio.</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe" data-i18n="exp.job2.time">Maio 2012 - Março 2022</p>
-                                <h3 class="item-title">TV Globo</h3>
-                                <h5 data-i18n="exp.job2.role">Operadora de Videografismo</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p data-i18n="exp.job2.desc">Criação e operação de gráficos, animações e
-                                elementos visuais integrados ao conteúdo: infográficos, logotipos, títulos
-                                e transições — garantindo um conteúdo informativo, atraente e
-                                profissionalmente apresentado.</p>
-                            </div>
-                        </div>
-
+                <!-- Operação Futebol -->
+                <article class="card card--wide reveal" data-category="live" style="--accent:#2fbf71">
+                    <div class="card__media">
+                        <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/futebol/video-capa.jpg">
+                            <source src="videos/projects/futebol-2026.mp4" type="video/mp4">
+                        </video>
+                        <span class="card__badge" data-i18n="card.new">Novo · em desenvolvimento</span>
                     </div>
-                </div>
-
-                <div class="column large-half tab-full" data-aos="fade-up">
-                    <div class="timeline">
-
-                        <div class="timeline__icon-wrap">
-                            <span class="timeline__icon timeline__icon--education"></span>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe" data-i18n="edu.se.time">Em andamento</p>
-                                <h3 class="item-title" data-i18n="edu.se.title">Engenharia de Software</h3>
-                                <h5 data-i18n="edu.se.degree">Graduação</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p data-i18n="edu.se.desc">Aprofundando fundamentos de engenharia, arquitetura
-                                e qualidade de software para construir produtos digitais mais robustos.</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe" data-i18n="edu.pos.time">Setembro 2022 - Março 2023</p>
-                                <h3 class="item-title" data-i18n="edu.pos.school">Universidade Anhanguera</h3>
-                                <h5 data-i18n="edu.pos.degree">Pós-Graduação em Desenvolvimento Web Full Stack</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p data-i18n="edu.pos.desc">Arquitetura web, frameworks front-end e back-end,
-                                cultura DevOps, integração com big data e cloud computing, e gestão de
-                                equipes de desenvolvimento com boas práticas de mercado.</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe" data-i18n="edu.av.time">Agosto 2016 - Junho 2020</p>
-                                <h3 class="item-title" data-i18n="edu.av.school">Universidade Estácio</h3>
-                                <h5 data-i18n="edu.av.degree">Graduação em Produção Audiovisual</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p data-i18n="edu.av.desc">Produção de programas audiovisuais de ponta a ponta:
-                                roteiro, escolha de locações e produção executiva.</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe" data-i18n="edu.ufrj.time">Agosto 2004 - Agosto 2009</p>
-                                <h3 class="item-title" data-i18n="edu.ufrj.school">Universidade Federal do Rio de Janeiro</h3>
-                                <h5 data-i18n="edu.ufrj.degree">Licenciatura em Educação Artística | Desenho</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p data-i18n="edu.ufrj.desc">Geometria plana e projetiva e sua aplicação às
-                                diferentes técnicas de representação gráfica.</p>
-                            </div>
-                        </div>
-
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="fut.kicker">Projeto autoral · 2026</p>
+                        <h3 class="card__title">Operação Futebol</h3>
+                        <p class="card__value" data-i18n="fut.value">Um jogo inteiro no ar a partir de uma pasta e dois cliques — placar e súmula que nunca discordam.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="fut.role">Design, animação e desenvolvimento</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>HTML/CSS · JavaScript · Node.js</dd></div>
+                            <div><dt data-i18n="meta.problem">Problema</dt><dd data-i18n="fut.problem">Operar placar, relógio, súmula e créditos ao vivo sem licença cara nem programa preso a um fornecedor</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-futebol"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
                     </div>
-                </div>
+                </article>
+
+                <!-- Apuração 2026 -->
+                <article class="card reveal" data-category="live" style="--accent:#22b0ac">
+                    <div class="card__media">
+                        <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/apuracao/video-capa.jpg">
+                            <source src="videos/projects/apuracao-2026.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="apu.kicker">Eleições 2026 · TV</p>
+                        <h3 class="card__title">Apuração 2026</h3>
+                        <p class="card__value" data-i18n="apu.value">27 estados, 1 operador e nenhum número digitado à mão: o dado oficial vai do banco direto para a tarja.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="apu.role">Sistema, regras de negócio e treinamento da operação</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>Viz Trio · Viz Pilot · VBScript · PostgreSQL</dd></div>
+                            <div><dt data-i18n="meta.problem">Problema</dt><dd data-i18n="apu.problem">Resultados mudando a cada minuto em 27 estados: digitar cada tarja é lento e abre espaço para erro no ar</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-apuracao"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Operação Vôlei -->
+                <article class="card reveal" data-category="live" style="--accent:#4b6bff">
+                    <div class="card__media card__media--demo">
+                        <div class="vb-stage" aria-hidden="true">
+                            <span class="onair">● ON AIR</span>
+                            <div class="vb-bug"><span data-i18n="volei.demoBug">SUPER RALI</span></div>
+                            <div class="vb">
+                                <div class="vb__module" data-i18n="volei.demoModule">PONTO DO SET</div>
+                                <div class="vb__bar">
+                                    <span class="vb__team vb__team--home" data-i18n="volei.demoHome">CASA</span>
+                                    <span class="vb__sets js-vb-sets-home">1</span>
+                                    <span class="vb__pts js-vb-home">22</span>
+                                    <span class="vb__pts js-vb-away">21</span>
+                                    <span class="vb__sets js-vb-sets-away">1</span>
+                                    <span class="vb__team vb__team--away" data-i18n="volei.demoAway">VISITANTE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="card__badge card__badge--live" data-i18n="card.liveDemo">Demo ao vivo em HTML</span>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="volei.kicker">Projeto autoral · v4</p>
+                        <h3 class="card__title">Operação Vôlei</h3>
+                        <p class="card__value" data-i18n="volei.value">Grafismo de nível de emissora que cabe numa pasta, sobe em 30 segundos e roda em qualquer switcher.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="volei.role">Design, animação e desenvolvimento</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>HTML/CSS · JavaScript · Node.js · Playwright</dd></div>
+                            <div><dt data-i18n="meta.problem">Problema</dt><dd data-i18n="volei.problem">Soluções de mercado cobram licença, prendem a arte num editor fechado e, quando quebram, quebram no ar</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-volei"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Tarja Studio -->
+                <article class="card reveal" data-category="live motion" style="--accent:#cf8f17">
+                    <div class="card__media card__media--demo">
+                        <div class="lt-stage" aria-hidden="true">
+                            <span class="onair">● ON AIR</span>
+                            <div class="lt">
+                                <span class="lt__bar"></span>
+                                <div class="lt__box">
+                                    <span class="lt__name">RAQUEL MELO</span>
+                                    <span class="lt__role" data-i18n="tarja.demoRole">Motion &amp; Broadcast Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="card__badge card__badge--live" data-i18n="card.liveDemo">Demo ao vivo em HTML</span>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="tarja.kicker">Software autoral · v2.0</p>
+                        <h3 class="card__title">Tarja Studio</h3>
+                        <p class="card__value" data-i18n="tarja.value">O designer anima no After Effects e a mesma peça vai ao ar ao vivo, sem ser refeita em outro sistema.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="tarja.role">Produto, design e desenvolvimento</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>After Effects · ExtendScript · Node.js · ffmpeg</dd></div>
+                            <div><dt data-i18n="meta.problem">Problema</dt><dd data-i18n="tarja.problem">Levar uma animação do After para o ar costuma exigir refazer tudo no sistema de playout</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-tarja"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Minha Prece -->
+                <article class="card reveal" data-category="motion" style="--accent:#e08a1e">
+                    <div class="card__media">
+                        <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/minha-prece-poster.jpg">
+                            <source src="videos/projects/minha-prece-clip.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="prece.kicker">Lyric video · Dandara Manoela</p>
+                        <h3 class="card__title">Minha Prece</h3>
+                        <p class="card__value" data-i18n="prece.value">A letra vira imagem: tipografia cinética que acompanha a voz palavra a palavra.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="prece.role">Motion design e edição</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>After Effects · Premiere</dd></div>
+                            <div><dt data-i18n="meta.problem">Problema</dt><dd data-i18n="prece.problem">Dar ao lançamento da música um vídeo em que a letra conta a história junto com a imagem</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-prece"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Set designer -->
+                <article class="card reveal" data-category="brand" style="--accent:#b9a7ff">
+                    <div class="card__media">
+                        <img src="images/projects/clientes/site-set-designer.jpg" alt="Site e logo da set designer Gabriela Melo Larsen" loading="lazy">
+                    </div>
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="gabi.kicker">Marca & site · Gabriela Melo Larsen</p>
+                        <h3 class="card__title" data-i18n="gabi.title">Set designer</h3>
+                        <p class="card__value" data-i18n="gabi.value">Uma marca e um portfólio online para apresentar projetos de cenografia a produtoras.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="gabi.role">Logo, design e construção do site</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>Figma · Illustrator · WordPress · Elementor</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-gabi"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Estúdio Escola de TV -->
+                <article class="card reveal" data-category="brand" style="--accent:#f2b705">
+                    <div class="card__media card__media--contain">
+                        <img src="images/projects/clientes/estudio-escola-logo.jpg" alt="Logo do Estúdio Escola de TV" loading="lazy">
+                    </div>
+                    <div class="card__body">
+                        <p class="card__kicker" data-i18n="escola.kicker">Identidade visual · Estúdio Escola de TV</p>
+                        <h3 class="card__title">Estúdio Escola de TV</h3>
+                        <p class="card__value" data-i18n="escola.value">Uma marca que funciona do certificado ao post: versões claras, escuras e em selo.</p>
+                        <dl class="card__meta">
+                            <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="escola.role">Logo e projeto gráfico impresso e digital</dd></div>
+                            <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>Illustrator · Photoshop</dd></div>
+                        </dl>
+                        <button type="button" class="card__open" data-case="case-escola"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
             </div>
-
-        </div> <!-- end about-experience -->
-
-    </section> <!-- end s-about -->
+        </section>
 
 
-    <!-- services
-    ================================================== -->
-    <section id="services" class="s-services ss-dark target-section">
-
-        <div class="shadow-overlay"></div>
-
-        <div class="row heading-block heading-block--center" data-aos="fade-up">
-            <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom" data-i18n="skills.heading">Habilidades</h2>
-
-                <p class="section-desc" data-i18n="skills.desc">
-                    Sempre há algo novo a aprender.
-                </p>
+        <!-- process
+        ================================================== -->
+        <section class="process" id="process">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="process.eyebrow">Como eu trabalho</p>
+                <h2 class="section-title" data-i18n="process.title">Quatro passos, nenhum improviso no ar.</h2>
             </div>
-        </div> <!-- end heading-block -->
+            <ol class="steps">
+                <li class="step reveal">
+                    <span class="step__n">01</span>
+                    <h3 data-i18n="step1.t">Entender a operação</h3>
+                    <p data-i18n="step1.d">Antes do desenho, o fluxo: quem opera, em quanto tempo, em qual máquina e o que não pode dar errado.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__n">02</span>
+                    <h3 data-i18n="step2.t">Desenhar e animar</h3>
+                    <p data-i18n="step2.d">Design e motion no Figma e no After Effects, com tipografia medida para caber em qualquer nome, acento e cedilha.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__n">03</span>
+                    <h3 data-i18n="step3.t">Construir</h3>
+                    <p data-i18n="step3.d">Arte em HTML/CSS, Viz ou After; lógica em JavaScript, Node ou VBScript; dados ligados direto à fonte.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__n">04</span>
+                    <h3 data-i18n="step4.t">Testar e entregar</h3>
+                    <p data-i18n="step4.d">Testes automatizados, ensaio com dados fictícios, manual e treinamento. A entrega abre sem instalar nada.</p>
+                </li>
+            </ol>
+        </section>
 
-        <div class="row services-list block-large-1-3 block-medium-1-2 block-tab-full">
 
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title" data-i18n="skills.motion.title">Videografismo | Motion Design</h4>
-                    <p data-i18n="skills.motion.desc">
-                    Gráficos em tempo real com Chyron Lyric e Viz para eventos de grande porte,
-                    telejornais e programas ao vivo.
-                    </p>
-                    <ul class="tool-tags">
-                        <li>Chyron Lyric</li><li>Viz Artist</li><li>Viz Trio</li><li>ExtendScript</li>
+        <!-- about
+        ================================================== -->
+        <section class="about" id="about">
+            <div class="about__grid">
+                <figure class="about__photo reveal">
+                    <img src="images/raquel.png" alt="Raquel Melo" loading="lazy">
+                </figure>
+                <div class="about__text reveal">
+                    <p class="eyebrow" data-i18n="about.eyebrow">Sobre</p>
+                    <h2 class="section-title" data-i18n="about.title">Designer que programa. Desenvolvedora que anima.</h2>
+                    <p data-i18n="about.p1">Sou Raquel Melo, do Rio de Janeiro. Comecei no desenho (UFRJ), fui para o audiovisual e há mais de 10 anos faço grafismo ao vivo na TV Globo — Copas do Mundo, Eleições, Rock in Rio, BBB, telejornais.</p>
+                    <p data-i18n="about.p2">Com a pós em Desenvolvimento Full Stack e a graduação em Engenharia de Software em andamento, passei a construir as ferramentas que eu mesma queria ter na operação. Atendo projetos freelance remotos no Brasil e fora dele.</p>
+
+                    <ul class="timeline">
+                        <li>
+                            <span class="timeline__when" data-i18n="tl.1.when">Mai 2026 — atual</span>
+                            <span class="timeline__what" data-i18n="tl.1.what">Produtora de Design e Efeitos Visuais I</span>
+                            <span class="timeline__where">TV Globo</span>
+                        </li>
+                        <li>
+                            <span class="timeline__when" data-i18n="tl.2.when">Abr 2022 — Abr 2026</span>
+                            <span class="timeline__what" data-i18n="tl.2.what">Editora de Videografismo</span>
+                            <span class="timeline__where">TV Globo</span>
+                        </li>
+                        <li>
+                            <span class="timeline__when" data-i18n="tl.3.when">Mai 2012 — Mar 2022</span>
+                            <span class="timeline__what" data-i18n="tl.3.what">Operadora de Videografismo</span>
+                            <span class="timeline__where">TV Globo</span>
+                        </li>
                     </ul>
-                </div>
-            </div>
 
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title" data-i18n="skills.adobe.title">Edição e Pós-produção</h4>
-                    <p data-i18n="skills.adobe.desc">
-                    Animação, composição, edição e tratamento de imagem com domínio avançado
-                    do pacote Adobe.
-                    </p>
-                    <ul class="tool-tags">
+                    <ul class="education">
+                        <li data-i18n="edu.1">Engenharia de Software — em andamento</li>
+                        <li data-i18n="edu.2">Pós em Desenvolvimento Web Full Stack — Anhanguera, 2023</li>
+                        <li data-i18n="edu.3">Produção Audiovisual — Estácio, 2020</li>
+                        <li data-i18n="edu.4">Educação Artística · Desenho — UFRJ, 2009</li>
+                    </ul>
+
+                    <ul class="tags">
                         <li>After Effects</li><li>Premiere</li><li>Photoshop</li><li>Illustrator</li><li>DaVinci</li>
+                        <li>Chyron Lyric</li><li>Viz Artist · Trio · Pilot</li><li>Figma</li>
+                        <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>Python</li><li>VBScript</li><li>OBS · vMix · SPX</li>
                     </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title" data-i18n="skills.dev.title">Desenvolvimento Web Full Stack</h4>
-                    <p data-i18n="skills.dev.desc">
-                    Front-end com HTML, CSS, JavaScript e React, e desenvolvimento de aplicações
-                    e automações para fluxos de produção.
-                    </p>
-                    <ul class="tool-tags">
-                        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Python</li><li>Java</li><li>VBScript</li>
-                    </ul>
+
+        <!-- contact / CTA
+        ================================================== -->
+        <section class="cta" id="contact">
+            <div class="cta__inner reveal">
+                <p class="eyebrow" data-i18n="cta.eyebrow">Freelance · remoto · PT / EN</p>
+                <h2 class="cta__title" data-i18n="cta.title">Vamos colocar seu projeto no ar?</h2>
+                <p class="cta__lead" data-i18n="cta.lead">Grafismo para live e transmissão, pacotes de motion, overlays para OBS e vMix ou uma ferramenta sob medida para a sua operação. Conte o que precisa e quando vai ao ar.</p>
+                <div class="cta__actions">
+                    <a class="btn btn--primary btn--lg" href="mailto:raqlsmelo@gmail.com?subject=Projeto%20freelance" data-i18n="cta.email">Mandar um e-mail</a>
+                    <a class="btn btn--ghost btn--lg" href="https://wa.me/5521976602418" target="_blank" rel="noopener">WhatsApp</a>
                 </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title" data-i18n="skills.ux.title">UX/UI e Prototipagem</h4>
-                    <p data-i18n="skills.ux.desc">
-                    Interfaces pensadas para quem opera sob pressão: protótipos no Figma e sites
-                    em WordPress e Elementor.
-                    </p>
-                    <ul class="tool-tags">
-                        <li>Figma</li><li>Adobe XD</li><li>WordPress</li><li>Elementor</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title" data-i18n="skills.time.title">Gestão de Tempo e Otimização</h4>
-                    <p data-i18n="skills.time.desc">
-                    Organização e otimização de processos de trabalho — essencial em ambientes
-                    de transmissão ao vivo, onde cada segundo conta.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title" data-i18n="skills.learn.title">Aprendizado Contínuo</h4>
-                    <p data-i18n="skills.learn.desc">
-                    Entusiasta de novas tecnologias e tendências em design, desenvolvimento
-                    e produção audiovisual.
-                    </p>
-                </div>
-            </div>
-
-        </div> <!-- end services-list -->
-
-    </section> <!-- end s-services -->
-
-
-    <!-- projects
-    ================================================== -->
-    <section id="projects" class="s-projects target-section">
-
-        <div class="row heading-block heading-block--center" data-aos="fade-up">
-            <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom" data-i18n="projects.heading">Projetos em destaque</h2>
-                <p class="section-desc" data-i18n="projects.desc">Sistemas de grafismo ao vivo que desenhei, animei e programei — do After Effects ao ar.</p>
-            </div>
-        </div> <!-- end heading-block -->
-
-        <div class="row featured featured--hero" id="operacao-futebol" data-aos="fade-up">
-
-            <div class="column large-5 tab-full featured__text">
-                <p class="featured__kicker"><span class="featured__badge" data-i18n="fut.badge">Novo</span> <span data-i18n="fut.kicker">Em desenvolvimento · 2026 · v0.2</span></p>
-                <h3 class="featured__title">Operação Futebol</h3>
-                <p class="featured__lead" data-i18n="fut.lead">
-                    Interface de operação para futebol ao vivo, construída sobre a base do Operação Vôlei.
-                    Placar, relógio, súmula, escalação e créditos são controlados por uma mesa no navegador,
-                    e a arte é uma página web transparente que entra em qualquer programa de vídeo.
-                </p>
-                <div class="case-platforms">
-                    <span class="case-platforms__label" data-i18n="volei.platforms">Roda em</span>
-                    <ul>
-                        <li>OBS</li><li>vMix</li><li>SPX</li><li data-i18n="volei.platformsAny">+ qualquer fonte de página web</li>
-                    </ul>
-                </div>
-                <ul class="featured__list">
-                    <li data-i18n="fut.f1">Placar contado a partir da súmula: cada gol é um lance com jogador, minuto, pênalti ou gol contra, então placar e súmula nunca discordam</li>
-                    <li data-i18n="fut.f2">Relógio por período que já começa na marca certa e segue no acréscimo — um lance aos 47 do 1º tempo sai como 45+2</li>
-                    <li data-i18n="fut.f3">Uma coluna de lances por equipe: gol, amarelo, vermelho, substituição e pênalti, com o jogador vindo da escalação</li>
-                    <li data-i18n="fut.f4">Módulos de VAR, disputa de pênaltis e tarja de evento, além de créditos, estatísticas, classificação e jogos da rodada</li>
-                    <li data-i18n="fut.f5">O lance sai do ar sozinho após um tempo configurável, X desfaz o último lance e jogos salvos deixam a partida preparada antes</li>
-                </ul>
-                <ul class="case-stats">
-                    <li><strong>1</strong><span data-i18n="fut.s1">fonte de navegador por cima do vídeo</span></li>
-                    <li><strong>45+2</strong><span data-i18n="fut.s2">acréscimo contado sozinho</span></li>
-                    <li><strong>X</strong><span data-i18n="fut.s3">desfaz o último lance</span></li>
-                </ul>
-                <ul class="tool-tags tool-tags--dark">
-                    <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>SSE</li><li>Browser source</li>
+                <ul class="cta__links">
+                    <li><a href="mailto:raqlsmelo@gmail.com">raqlsmelo@gmail.com</a></li>
+                    <li><a href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/raqlsmelo" target="_blank" rel="noopener">GitHub</a></li>
+                    <li data-i18n="cta.tz">Rio de Janeiro · UTC−3</li>
                 </ul>
             </div>
+        </section>
 
-            <div class="column large-7 tab-full featured__demo">
-                <div class="case-video">
-                    <video class="js-autoplay" muted loop playsinline controls preload="none" poster="images/projects/futebol/video-capa.jpg" aria-label="Artes do Operação Futebol animando ao vivo: placar, gol, VAR, crédito, cartão, substituição, escalação, classificação, pênaltis e resultado">
-                        <source src="videos/projects/futebol-2026.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="case-gallery case-gallery--wide">
-                    <a href="images/projects/futebol/interface.jpg" class="js-pswp" data-size="1600x900" title="Interface de operação: placar, relógio, lances por equipe, créditos e tabelas">
-                        <img src="images/projects/futebol/interface-thumb.jpg" alt="Interface de operação: placar, relógio, lances por equipe, créditos e tabelas" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/gol.jpg" class="js-pswp" data-size="1600x900" title="Peça de gol com o placar no ar">
-                        <img src="images/projects/futebol/gol-thumb.jpg" alt="Peça de gol com o placar no ar" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/escalacao.jpg" class="js-pswp" data-size="1600x900" title="Escalação em campo, com reservas e técnico">
-                        <img src="images/projects/futebol/escalacao-thumb.jpg" alt="Escalação em campo, com reservas e técnico" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/classificacao.jpg" class="js-pswp" data-size="1600x900" title="Tabela de classificação com zonas e setas">
-                        <img src="images/projects/futebol/classificacao-thumb.jpg" alt="Tabela de classificação com zonas e setas" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/abre-jogo.jpg" class="js-pswp" data-size="1600x900" title="Abre jogo">
-                        <img src="images/projects/futebol/abre-jogo-thumb.jpg" alt="Abre jogo" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/estatisticas.jpg" class="js-pswp" data-size="1600x900" title="Estatísticas da partida">
-                        <img src="images/projects/futebol/estatisticas-thumb.jpg" alt="Estatísticas da partida" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/jogos.jpg" class="js-pswp" data-size="1600x900" title="Jogos da rodada">
-                        <img src="images/projects/futebol/jogos-thumb.jpg" alt="Jogos da rodada" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/resultado.jpg" class="js-pswp" data-size="1600x900" title="Resultado no fim de jogo">
-                        <img src="images/projects/futebol/resultado-thumb.jpg" alt="Resultado no fim de jogo" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/penaltis.jpg" class="js-pswp" data-size="1600x900" title="Disputa de pênaltis colada ao placar">
-                        <img src="images/projects/futebol/penaltis-thumb.jpg" alt="Disputa de pênaltis colada ao placar" loading="lazy">
-                    </a>
-                    <a href="images/projects/futebol/credito.jpg" class="js-pswp" data-size="1600x900" title="Crédito de atleta">
-                        <img src="images/projects/futebol/credito-thumb.jpg" alt="Crédito de atleta" loading="lazy">
-                    </a>
-                </div>
-                <p class="featured__caption" data-i18n="fut.caption">As artes reais do sistema, gravadas da vitrine do próprio programa com um jogo e um campeonato fictícios. Clique nas imagens para ampliar.</p>
-            </div>
+    </main>
 
-        </div> <!-- end operacao-futebol -->
-
-        <div class="row featured featured--apuracao" id="apuracao-2026" data-aos="fade-up">
-
-            <div class="column large-5 tab-full featured__text">
-                <p class="featured__kicker" data-i18n="apu.kicker">Eleições 2026 · Broadcast</p>
-                <h3 class="featured__title">Apuração 2026</h3>
-                <p class="featured__lead" data-i18n="apu.lead">
-                    Sistema que liga o banco de dados da apuração direto às artes que vão ao ar. O operador
-                    escolhe cargo e localidade num painel, e tarjas, telas e mapas saem preenchidos com o
-                    dado oficial — sem digitação manual.
-                </p>
-                <ul class="featured__list">
-                    <li data-i18n="apu.f1">Painel de operação no Viz Trio com 10 linhas: vermelho no ar, verde no preview</li>
-                    <li data-i18n="apu.f2">4 modelos de arte: tarja, tela de eleitorado, mapa dos 27 estados e mapa de partidos</li>
-                    <li data-i18n="apu.f3">Templates de Viz Pilot com as mesmas regras, para o sistema de rundown</li>
-                    <li data-i18n="apu.f4">Regras do mundo real: Senador com 2 eleitos vira duas tarjas, segundo turno, desempate por voto absoluto e dado de ensaio que nunca vaza para o ar</li>
-                    <li data-i18n="apu.f5">Camada única em PostgreSQL com auditoria de consultas, além de manuais e guia rápido para a operação</li>
-                </ul>
-                <ul class="case-stats">
-                    <li><strong>27</strong><span data-i18n="apu.s1">estados</span></li>
-                    <li><strong data-i18n="apu.n2">~4.800</strong><span data-i18n="apu.s2">linhas de VBScript</span></li>
-                    <li><strong>1</strong><span data-i18n="apu.s3">operador</span></li>
-                </ul>
-                <ul class="tool-tags tool-tags--dark">
-                    <li>Viz Trio</li><li>Viz Pilot</li><li>VBScript</li><li>PostgreSQL</li>
-                </ul>
-            </div>
-
-            <div class="column large-7 tab-full featured__demo">
-                <div class="case-video">
-                    <video class="js-autoplay" muted loop playsinline controls preload="none" poster="images/projects/apuracao/video-capa.jpg" aria-label="Vídeo de apresentação do projeto Apuração 2026">
-                        <source src="videos/projects/apuracao-2026.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="case-gallery">
-                    <a href="images/projects/apuracao/05_senador-elege-2-duas-tarjas.jpg" class="js-pswp" data-size="1600x900" title="Senador elege 2: uma tarja por eleito">
-                        <img src="images/projects/apuracao/05_senador-elege-2-duas-tarjas-thumb.jpg" alt="Senador elege 2: uma tarja por eleito" loading="lazy">
-                    </a>
-                    <a href="images/projects/apuracao/07_mapa-dos-estados-27-ufs.jpg" class="js-pswp" data-size="1600x900" title="Mapa dos estados com 27 UFs e 5 status">
-                        <img src="images/projects/apuracao/07_mapa-dos-estados-27-ufs-thumb.jpg" alt="Mapa dos estados com 27 UFs e 5 status" loading="lazy">
-                    </a>
-                    <a href="images/projects/apuracao/04_tela-eleitorado-senador.jpg" class="js-pswp" data-size="1197x669" title="Tela de eleitorado de Senador com 4 candidatos">
-                        <img src="images/projects/apuracao/04_tela-eleitorado-senador-thumb.jpg" alt="Tela de eleitorado de Senador com 4 candidatos" loading="lazy">
-                    </a>
-                    <a href="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde.jpg" class="js-pswp" data-size="1600x900" title="Painel: vermelho no ar, verde no preview">
-                        <img src="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde-thumb.jpg" alt="Painel: vermelho no ar, verde no preview" loading="lazy">
-                    </a>
-                    <a href="images/projects/apuracao/02_painel-do-operador.jpg" class="js-pswp" data-size="1600x900" title="Painel do operador no Viz Trio">
-                        <img src="images/projects/apuracao/02_painel-do-operador-thumb.jpg" alt="Painel do operador no Viz Trio" loading="lazy">
-                    </a>
-                    <a href="images/projects/apuracao/08_guia-rapido-operacao.jpg" class="js-pswp" data-size="1413x2000" title="Guia rápido de uma página para a operação">
-                        <img src="images/projects/apuracao/08_guia-rapido-operacao-thumb.jpg" alt="Guia rápido de uma página para a operação" loading="lazy">
-                    </a>
-                    <a href="images/projects/apuracao/09_manual-visual-operacao.jpg" class="js-pswp" data-size="1200x1500" title="Manual visual com a tela anotada">
-                        <img src="images/projects/apuracao/09_manual-visual-operacao-thumb.jpg" alt="Manual visual com a tela anotada" loading="lazy">
-                    </a>
-                </div>
-                <p class="featured__caption" data-i18n="apu.caption">Os resultados nas imagens são dados de ensaio, fictícios — não são resultados oficiais.</p>
-            </div>
-
-        </div> <!-- end apuracao-2026 -->
-
-        <div class="row featured featured--reverse" id="operacao-volei" data-aos="fade-up">
-
-            <div class="column large-5 tab-full featured__text">
-                <p class="featured__kicker" data-i18n="volei.kicker">Projeto autoral · 2026 · v4.1</p>
-                <h3 class="featured__title">Operação Vôlei</h3>
-                <p class="featured__lead" data-i18n="volei.lead">
-                    Sistema completo de grafismo ao vivo para vôlei — artes, lógica de jogo e mesa de
-                    operação — escrito do zero em HTML, CSS e JavaScript e entregue como um único
-                    executável. As artes são páginas web com fundo transparente, então o sistema é
-                    agnóstico de plataforma: entra no ar por qualquer switcher ou playout que aceite
-                    uma página web como fonte.
-                </p>
-                <div class="case-platforms">
-                    <span class="case-platforms__label" data-i18n="volei.platforms">Roda em</span>
-                    <ul>
-                        <li>vMix</li><li>OBS</li><li>SPX</li><li>Viz</li><li data-i18n="volei.platformsAny">+ qualquer fonte de página web</li>
-                    </ul>
-                </div>
-                <ul class="featured__list">
-                    <li data-i18n="volei.f1">Placar com sets, parciais, troca de lados e desfazer, e 11 módulos que entram colados a ele</li>
-                    <li data-i18n="volei.f2">6 tarjas de crédito, tabelas de tela cheia e 3 selos animados com som</li>
-                    <li data-i18n="volei.f3">Mesa de operação no navegador, com atalhos para as duas mãos — e, no vMix, controle direto pela API</li>
-                    <li data-i18n="volei.f4">Tipografia medida no navegador e testes de regressão por pixel com Playwright</li>
-                    <li data-i18n="volei.f5">Servidor Node sem dependências, sincronizado por Server-Sent Events e empacotado num .exe que roda sem instalação</li>
-                </ul>
-                <ul class="case-stats">
-                    <li><strong data-i18n="volei.n1">~3.700</strong><span data-i18n="volei.s1">linhas de código</span></li>
-                    <li><strong>0</strong><span data-i18n="volei.s2">dependências em produção</span></li>
-                    <li><strong>11</strong><span data-i18n="volei.s3">módulos sobre o placar</span></li>
-                </ul>
-                <ul class="tool-tags tool-tags--dark">
-                    <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>SSE</li><li>Browser source</li><li>Playwright</li>
-                </ul>
-            </div>
-
-            <div class="column large-7 tab-full featured__demo">
-                <div class="vb-stage" aria-hidden="true">
-                    <span class="lt-stage__onair">● ON AIR</span>
-                    <span class="vb-stage__source">browser source · 1920×1080 · alpha</span>
-                    <div class="vb-bug"><span data-i18n="volei.demoBug">SUPER RALI</span></div>
-                    <div class="vb">
-                        <div class="vb__module" data-i18n="volei.demoModule">PONTO DO SET</div>
-                        <div class="vb__bar">
-                            <span class="vb__team vb__team--home" data-i18n="volei.demoHome">CASA</span>
-                            <span class="vb__sets js-vb-sets-home">1</span>
-                            <span class="vb__pts js-vb-home">22</span>
-                            <span class="vb__pts vb__pts--away js-vb-away">21</span>
-                            <span class="vb__sets js-vb-sets-away">1</span>
-                            <span class="vb__team vb__team--away" data-i18n="volei.demoAway">VISITANTE</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="vb-keys" aria-hidden="true">
-                    <span class="vb-key js-vb-key-q"><kbd>Q</kbd><span data-i18n="volei.keyHome">ponto casa</span></span>
-                    <span class="vb-key js-vb-key-e"><kbd>E</kbd><span data-i18n="volei.keyAway">ponto visitante</span></span>
-                    <span class="vb-key js-vb-key-o"><kbd>O</kbd><span data-i18n="volei.keySet">fecha set</span></span>
-                    <span class="vb-key"><kbd>Esc</kbd><span data-i18n="volei.keyOut">tira a peça</span></span>
-                </div>
-                <p class="featured__caption" data-i18n="volei.caption">Simulação em HTML/CSS com times fictícios: o placar recebe pontos pelos atalhos da mesa, mostra o módulo de ponto do set e o selo animado.</p>
-            </div>
-
-        </div> <!-- end operacao-volei -->
-
-        <div class="row featured" id="tarja-studio" data-aos="fade-up">
-
-            <div class="column large-5 tab-full featured__text">
-                <p class="featured__kicker" data-i18n="feat.kicker">Software autoral · 2026</p>
-                <h3 class="featured__title">Tarja Studio</h3>
-                <p class="featured__lead" data-i18n="feat.lead">
-                    Software que criei para levar grafismos do After Effects direto para o ar.
-                    O designer anima no After; o Tarja transforma a peça em HTML e a opera ao vivo.
-                </p>
-                <ul class="featured__list">
-                    <li data-i18n="feat.f1">Script para After Effects que lê rigs de Essential Graphics e exporta animações, textos e alinhamentos</li>
-                    <li data-i18n="feat.f2">Editor no navegador com linha do tempo, propriedades e avisos de área segura e textos que não cabem</li>
-                    <li data-i18n="feat.f3">Painel de operação ao vivo e saída para vMix e OBS</li>
-                    <li data-i18n="feat.f4">Exporta para HTML, SPX Graphics, CasparCG e NewBlue Captivate</li>
-                    <li data-i18n="feat.f5">App desktop com conversão de vídeo via ffmpeg, licenças com assinatura digital e testes automatizados</li>
-                </ul>
-                <ul class="case-stats">
-                    <li><strong>4</strong><span data-i18n="feat.s1">formatos de exportação</span></li>
-                    <li><strong>v2.0</strong><span data-i18n="feat.s2">código fechado e licenciado</span></li>
-                    <li><strong>.exe</strong><span data-i18n="feat.s3">roda sem instalação</span></li>
-                </ul>
-                <ul class="tool-tags tool-tags--dark">
-                    <li>Node.js</li><li>JavaScript</li><li>HTML/CSS</li><li>ExtendScript</li><li>After Effects</li><li>ffmpeg</li>
-                </ul>
-            </div>
-
-            <div class="column large-7 tab-full featured__demo">
-                <div class="lt-stage" aria-hidden="true">
-                    <span class="lt-stage__onair">● ON AIR</span>
-                    <span class="lt-stage__safe"></span>
-                    <div class="lt">
-                        <span class="lt__bar"></span>
-                        <div class="lt__box">
-                            <span class="lt__name">RAQUEL MELO</span>
-                            <span class="lt__role" data-i18n="feat.demoRole">Designer &amp; Desenvolvedora</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lt-timeline" aria-hidden="true">
-                    <div class="lt-timeline__track"><span class="lt-timeline__label">BAR</span><span class="lt-timeline__clip lt-timeline__clip--a"></span></div>
-                    <div class="lt-timeline__track"><span class="lt-timeline__label">BOX</span><span class="lt-timeline__clip lt-timeline__clip--b"></span></div>
-                    <div class="lt-timeline__track"><span class="lt-timeline__label">TXT</span><span class="lt-timeline__clip lt-timeline__clip--c"></span></div>
-                    <span class="lt-timeline__playhead"></span>
-                </div>
-                <p class="featured__caption" data-i18n="feat.caption">Uma tarja animada só com HTML e CSS — o tipo de peça que o Tarja Studio gera.</p>
-            </div>
-
-        </div> <!-- end featured -->
-
-    </section> <!-- end s-projects -->
-
-
-    <!-- works
-    ================================================== -->
-    <section id="works" class="s-works target-section">
-
-        <div class="row heading-block heading-block--center" data-aos="fade-up">
-            <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom" data-i18n="works.heading">Trabalhos</h2>
-                <p class="section-desc" data-i18n="works.desc">Outros trabalhos de motion, design e web.</p>
-            </div>
-        </div> <!-- end heading-block -->
-
-        <div class="row works-filter" data-aos="fade-up">
-            <div class="column large-full">
-                <ul class="works-filter__list">
-                    <li><button type="button" class="works-filter__btn is-active" data-filter="*" data-i18n="works.filter.all">Todos</button></li>
-                    <li><button type="button" class="works-filter__btn" data-filter="motion" data-i18n="works.filter.motion">Motion & Vídeo</button></li>
-                    <li><button type="button" class="works-filter__btn" data-filter="brand" data-i18n="works.filter.brand">Identidade visual</button></li>
-                    <li><button type="button" class="works-filter__btn" data-filter="web" data-i18n="works.filter.web">Web</button></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="masonry-wrap">
-
-            <div class="masonry">
-                <div class="grid-sizer"></div>
-
-                <!-- Para adicionar um projeto novo, copie um bloco "masonry__brick",
-                     ajuste data-category (motion, ui, brand, web — separados por espaço),
-                     as imagens, data-size (largura x altura da imagem grande) e os textos.
-                     Depois adicione as traduções em inglês em js/i18n.js. -->
-
-                <div class="masonry__brick" data-category="motion" data-aos="fade-up">
-                    <div class="item-folio item-folio--video">
-                        <div class="item-folio__video">
-                            <video controls preload="none" playsinline poster="images/portfolio/minha-prece-poster.jpg">
-                                <source src="videos/EDIT_MINHA PRECE.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Lyric Video
-                            </h4>
-                            <p class="item-folio__cat">
-                                Minha Prece — Dandara Manoela — After Effects | Premiere
-                            </p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-category="brand web" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/insideSiteGabi.png" class="thumb-link" data-size="1339x767">
-                                <img src="images/portfolio/siteGabi.png" alt="Site e logo para set designer">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title" data-i18n="works.gabi.title">
-                                Set Designer — Logo & Site
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Design — Figma | Illustrator | WordPress | Elementor
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p data-i18n="works.gabi.caption">Criação de logo e site com portfólio.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-category="brand" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/estudioEscolaLogo2.png" class="thumb-link" data-size="537x532">
-                                <img src="images/portfolio/estudioEscolaLogo.png" alt="Board de logo do Estúdio Escola de TV">
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title" data-i18n="works.estudio.title">
-                                Board de Logo
-                            </h4>
-                            <p class="item-folio__cat" data-i18n="works.estudio.cat">
-                                Estúdio Escola de TV — Illustrator | Photoshop
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p data-i18n="works.estudio.caption">Logomarca e projeto gráfico impresso e digital.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-            </div> <!-- end masonry -->
-
-        </div> <!-- end masonry-wrap -->
-
-    </section> <!-- end s-work -->
-
-    <!-- contact
-    ================================================== -->
-    <section id="contact" class="s-contact ss-dark target-section">
-
-        <div class="row heading-block" data-aos="fade-up">
-            <div class="column large-full">
-                <h2 class="section-heading" data-i18n="contact.heading">Vamos criar algo juntos?</h2>
-            </div>
-        </div>
-
-        <div class="row contact-main" data-aos="fade-up">
-            <div class="column large-full">
-                <p class="contact-email">
-                    <a href="mailto:raqlsmelo@gmail.com">raqlsmelo@gmail.com</a>
-                </p>
-
-                <p class="section-desc" data-i18n="contact.desc">
-                Aberta a novos projetos, parcerias e oportunidades — no Brasil ou fora dele.
-                <a href="mailto:raqlsmelo@gmail.com">Envie um e-mail</a>.
-                </p>
-            </div>
-        </div>
-
-        <div class="row contact-infos" data-aos="fade-up" data-aos-anchor=".contact-main">
-
-            <div class="column large-5 medium-full contact-phone">
-                <h4 data-i18n="contact.phone">Telefone / WhatsApp</h4>
-                <a href="tel:+5521976602418">+55 21 97660-2418</a>
-            </div>
-
-            <div class="column large-5 medium-full contact-social">
-                <h4 data-i18n="contact.online">Online</h4>
-                <ul class="contact-social__list">
-                    <li><a href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
-                    <li><a href="https://github.com/raqlsmelo" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-                </ul>
-            </div>
-
-        </div> <!-- end contact-infos -->
-
-    </section> <!-- end s-contact -->
-
-
-    <!-- footer
-    ================================================== -->
-    <footer>
-        <div class="row">
-            <div class="column large-full ss-copyright">
-                <span>© Raquel Melo — <span class="js-year">2026</span></span>
-            </div>
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top"></a>
-            </div>
-        </div>
+    <footer class="footer">
+        <span>© <span class="js-year">2026</span> Raquel Melo</span>
+        <a href="#top" data-i18n="footer.top">Voltar ao topo ↑</a>
     </footer>
 
 
-    <!-- photoswipe background
+    <!-- case studies (open from the cards)
     ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
+    <dialog class="case" id="case-futebol" style="--accent:#2fbf71" aria-labelledby="case-futebol-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__media">
+            <video controls playsinline preload="none" poster="images/projects/futebol/video-capa.jpg">
+                <source src="videos/projects/futebol-2026.mp4" type="video/mp4">
+            </video>
         </div>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="fut.kicker">Projeto autoral · 2026</p>
+            <h3 class="case__title" id="case-futebol-title">Operação Futebol</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="fut.c.problem">Transmissões de futebol menores precisam de placar, relógio, súmula, escalação e créditos com cara de emissora — mas não podem depender de licença cara, de um programa específico nem de alguém digitando placar e súmula separados.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="fut.c.s1">O placar é contado a partir da súmula: cada gol é um lance com jogador e minuto, então os dois nunca discordam</li>
+                        <li data-i18n="fut.c.s2">Relógio por período que segue no acréscimo — um lance aos 47 do 1º tempo sai como 45+2</li>
+                        <li data-i18n="fut.c.s3">Uma coluna de lances por equipe, VAR, pênaltis, créditos, estatísticas e tabelas, com atalhos de teclado</li>
+                        <li data-i18n="fut.c.s4">A arte é uma página web transparente: entra em OBS, vMix, SPX ou qualquer fonte de navegador</li>
+                    </ul>
+                    <h4 data-i18n="case.impact">Resultado</h4>
+                    <p data-i18n="fut.c.impact">Um pacote completo de grafismo de futebol que cabe numa pasta, abre com dois cliques e não prende o cliente a nenhum fornecedor. Em desenvolvimento, na versão 0.2.</p>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="fut.role">Design, animação e desenvolvimento</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>HTML/CSS · JavaScript · Node.js · Server-Sent Events · Playwright</dd></div>
+                    <div><dt data-i18n="meta.runs">Roda em</dt><dd>OBS · vMix · SPX · <span data-i18n="meta.anyBrowser">qualquer fonte de navegador</span></dd></div>
+                </dl>
+            </div>
+            <div class="case__gallery">
+                <a href="images/projects/futebol/interface.jpg"><img src="images/projects/futebol/interface-thumb.jpg" alt="Interface de operação" loading="lazy"></a>
+                <a href="images/projects/futebol/gol.jpg"><img src="images/projects/futebol/gol-thumb.jpg" alt="Peça de gol" loading="lazy"></a>
+                <a href="images/projects/futebol/escalacao.jpg"><img src="images/projects/futebol/escalacao-thumb.jpg" alt="Escalação" loading="lazy"></a>
+                <a href="images/projects/futebol/classificacao.jpg"><img src="images/projects/futebol/classificacao-thumb.jpg" alt="Classificação" loading="lazy"></a>
+                <a href="images/projects/futebol/abre-jogo.jpg"><img src="images/projects/futebol/abre-jogo-thumb.jpg" alt="Abre jogo" loading="lazy"></a>
+                <a href="images/projects/futebol/estatisticas.jpg"><img src="images/projects/futebol/estatisticas-thumb.jpg" alt="Estatísticas" loading="lazy"></a>
+                <a href="images/projects/futebol/jogos.jpg"><img src="images/projects/futebol/jogos-thumb.jpg" alt="Jogos da rodada" loading="lazy"></a>
+                <a href="images/projects/futebol/resultado.jpg"><img src="images/projects/futebol/resultado-thumb.jpg" alt="Resultado" loading="lazy"></a>
+                <a href="images/projects/futebol/penaltis.jpg"><img src="images/projects/futebol/penaltis-thumb.jpg" alt="Pênaltis" loading="lazy"></a>
+                <a href="images/projects/futebol/credito.jpg"><img src="images/projects/futebol/credito-thumb.jpg" alt="Crédito de atleta" loading="lazy"></a>
+            </div>
+            <p class="case__note" data-i18n="fut.c.note">Gravado da vitrine do próprio programa, com times, jogadores e campeonato fictícios.</p>
+        </div>
+    </dialog>
 
-    </div><!-- end photoSwipe background -->
+    <dialog class="case" id="case-apuracao" style="--accent:#22b0ac" aria-labelledby="case-apuracao-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__media">
+            <video controls playsinline preload="none" poster="images/projects/apuracao/video-capa.jpg">
+                <source src="videos/projects/apuracao-2026.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="apu.kicker">Eleições 2026 · TV</p>
+            <h3 class="case__title" id="case-apuracao-title">Apuração 2026</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="apu.c.problem">Na noite da eleição os resultados mudam a cada minuto, em 27 estados e vários cargos. Digitar nome, partido, percentual e urnas apuradas em cada tarja é lento — e um número errado no ar é visto pelo país inteiro.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="apu.c.s1">Painel no Viz Trio: o operador escolhe cargo e localidade, e tarjas, telas e mapas saem preenchidos com o dado oficial</li>
+                        <li data-i18n="apu.c.s2">4 modelos de arte — tarja, tela de eleitorado, mapa dos 27 estados e mapa de partidos — e templates de Viz Pilot com as mesmas regras</li>
+                        <li data-i18n="apu.c.s3">Regras do mundo real: Senador com 2 eleitos vira duas tarjas, segundo turno, desempate por voto absoluto e dado de ensaio que nunca vaza para o ar</li>
+                        <li data-i18n="apu.c.s4">Uma camada única em PostgreSQL com auditoria de cada consulta, além de manual e guia rápido para a bancada</li>
+                    </ul>
+                    <h4 data-i18n="case.impact">Resultado</h4>
+                    <p data-i18n="apu.c.impact">Um operador cobre 27 estados sem digitar resultado nenhum. Linhas vermelhas no ar e verdes no preview deixam claro, num relance, o que o público está vendo.</p>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="apu.role">Sistema, regras de negócio e treinamento da operação</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>Viz Trio · Viz Pilot · VBScript · PostgreSQL</dd></div>
+                    <div><dt data-i18n="meta.scale">Escala</dt><dd data-i18n="apu.scale">27 UFs · 4 modelos · ~4.800 linhas de VBScript</dd></div>
+                </dl>
+            </div>
+            <div class="case__gallery">
+                <a href="images/projects/apuracao/05_senador-elege-2-duas-tarjas.jpg"><img src="images/projects/apuracao/05_senador-elege-2-duas-tarjas-thumb.jpg" alt="Senador elege 2" loading="lazy"></a>
+                <a href="images/projects/apuracao/07_mapa-dos-estados-27-ufs.jpg"><img src="images/projects/apuracao/07_mapa-dos-estados-27-ufs-thumb.jpg" alt="Mapa dos 27 estados" loading="lazy"></a>
+                <a href="images/projects/apuracao/04_tela-eleitorado-senador.jpg"><img src="images/projects/apuracao/04_tela-eleitorado-senador-thumb.jpg" alt="Tela de eleitorado" loading="lazy"></a>
+                <a href="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde.jpg"><img src="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde-thumb.jpg" alt="Painel: vermelho no ar, verde no preview" loading="lazy"></a>
+                <a href="images/projects/apuracao/02_painel-do-operador.jpg"><img src="images/projects/apuracao/02_painel-do-operador-thumb.jpg" alt="Painel do operador" loading="lazy"></a>
+                <a href="images/projects/apuracao/08_guia-rapido-operacao.jpg"><img src="images/projects/apuracao/08_guia-rapido-operacao-thumb.jpg" alt="Guia rápido da operação" loading="lazy"></a>
+                <a href="images/projects/apuracao/09_manual-visual-operacao.jpg"><img src="images/projects/apuracao/09_manual-visual-operacao-thumb.jpg" alt="Manual visual" loading="lazy"></a>
+            </div>
+            <p class="case__note" data-i18n="apu.c.note">Os resultados nas imagens são dados de ensaio, fictícios.</p>
+        </div>
+    </dialog>
 
+    <dialog class="case" id="case-volei" style="--accent:#4b6bff" aria-labelledby="case-volei-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="volei.kicker">Projeto autoral · v4</p>
+            <h3 class="case__title" id="case-volei-title">Operação Vôlei</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="volei.c.problem">Grafismo de vôlei ao vivo exige placar correto, entradas em segundos e zero fricção de instalação — a máquina de transmissão é emprestada e a rede é fechada. As soluções de mercado cobram licença, prendem a arte num editor proprietário e, quando quebram, quebram no ar.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="volei.c.s1">Placar com sets, parciais, troca de lados e desfazer, mais 11 módulos colados a ele, 6 tarjas de crédito e 3 selos animados com som</li>
+                        <li data-i18n="volei.c.s2">Mesa de operação no navegador, com atalhos pensados para as duas mãos</li>
+                        <li data-i18n="volei.c.s3">Servidor Node sem nenhuma dependência, sincronizado por Server-Sent Events: latência de um quadro, sem banco e sem nuvem</li>
+                        <li data-i18n="volei.c.s4">Tipografia medida no navegador e testes de regressão por pixel com Playwright — o til do "Ã" nunca mais cortou</li>
+                    </ul>
+                    <h4 data-i18n="case.impact">Resultado</h4>
+                    <p data-i18n="volei.c.impact">Um pacote de grafismo de nível de emissora que cabe numa pasta, sobe em 30 segundos com dois cliques e entra em qualquer switcher que aceite uma página web.</p>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="volei.role">Design, animação e desenvolvimento</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>HTML/CSS · JavaScript · Node.js · SSE · Playwright</dd></div>
+                    <div><dt data-i18n="meta.scale">Escala</dt><dd data-i18n="volei.scale">~3.700 linhas · 0 dependências · 11 módulos</dd></div>
+                    <div><dt data-i18n="meta.runs">Roda em</dt><dd>vMix · OBS · SPX · Viz</dd></div>
+                </dl>
+            </div>
+            <p class="case__note" data-i18n="volei.c.note">As artes originais usam equipes e atletas reais, por isso o card mostra uma simulação em HTML com times fictícios.</p>
+        </div>
+    </dialog>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <dialog class="case" id="case-tarja" style="--accent:#cf8f17" aria-labelledby="case-tarja-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="tarja.kicker">Software autoral · v2.0</p>
+            <h3 class="case__title" id="case-tarja-title">Tarja Studio</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="tarja.c.problem">O designer anima a tarja no After Effects, mas para ir ao ar ela costuma ser refeita no sistema de playout — dobrando o trabalho e perdendo detalhes da animação no caminho.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="tarja.c.s1">Script para After Effects que lê rigs de Essential Graphics e exporta animação, textos e alinhamentos</li>
+                        <li data-i18n="tarja.c.s2">Editor no navegador com linha do tempo, propriedades e avisos de área segura e de texto que não cabe</li>
+                        <li data-i18n="tarja.c.s3">Painel de operação ao vivo e saída para vMix e OBS; exportação para HTML, SPX Graphics, CasparCG e NewBlue Captivate</li>
+                        <li data-i18n="tarja.c.s4">App desktop com conversão de vídeo via ffmpeg, licenças com assinatura digital e código protegido</li>
+                    </ul>
+                    <h4 data-i18n="case.impact">Resultado</h4>
+                    <p data-i18n="tarja.c.impact">A mesma peça sai do After e vai ao ar em quatro formatos diferentes, sem retrabalho. Um produto licenciável, pronto para ser vendido.</p>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="tarja.role">Produto, design e desenvolvimento</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>After Effects · ExtendScript · Node.js · JavaScript · ffmpeg</dd></div>
+                    <div><dt data-i18n="meta.exports">Exporta para</dt><dd>HTML · SPX · CasparCG · NewBlue</dd></div>
+                </dl>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="case" id="case-prece" style="--accent:#e08a1e" aria-labelledby="case-prece-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__media">
+            <video controls playsinline preload="none" poster="images/projects/minha-prece-poster.jpg">
+                <source src="videos/projects/minha-prece.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="prece.kicker">Lyric video · Dandara Manoela</p>
+            <h3 class="case__title" id="case-prece-title">Minha Prece</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="prece.c.problem">Para o lançamento da música, a artista precisava de um vídeo em que a letra fosse parte da narrativa — não uma legenda por cima da imagem.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="prece.c.s1">Tipografia cinética sincronizada com a voz, com palavras-chave destacadas em cor</li>
+                        <li data-i18n="prece.c.s2">Texturas, partículas e sobreposições que mantêm o tom íntimo da música</li>
+                        <li data-i18n="prece.c.s3">Edição e finalização entregues prontas para as plataformas</li>
+                    </ul>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="prece.role">Motion design e edição</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>After Effects · Premiere</dd></div>
+                    <div><dt data-i18n="meta.client">Cliente</dt><dd>Dandara Manoela</dd></div>
+                </dl>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="case" id="case-gabi" style="--accent:#b9a7ff" aria-labelledby="case-gabi-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="gabi.kicker">Marca & site · Gabriela Melo Larsen</p>
+            <h3 class="case__title" id="case-gabi-title" data-i18n="gabi.title">Set designer</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="gabi.c.problem">Uma set designer precisava de uma marca própria e de um lugar para mostrar projetos de cenografia a produtoras e diretores.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="gabi.c.s1">Logotipo tipográfico, discreto, que deixa as imagens dos cenários em primeiro plano</li>
+                        <li data-i18n="gabi.c.s2">Site com portfólio por projeto, desenhado no Figma e construído em WordPress com Elementor para ela mesma atualizar</li>
+                    </ul>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="gabi.role">Logo, design e construção do site</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>Figma · Illustrator · WordPress · Elementor</dd></div>
+                    <div><dt data-i18n="meta.client">Cliente</dt><dd>Gabriela Melo Larsen</dd></div>
+                </dl>
+            </div>
+            <div class="case__gallery case__gallery--2">
+                <a href="images/projects/clientes/site-set-designer.jpg"><img src="images/projects/clientes/site-set-designer.jpg" alt="Página inicial do site" loading="lazy"></a>
+                <a href="images/projects/clientes/site-set-designer-interna.jpg"><img src="images/projects/clientes/site-set-designer-interna.jpg" alt="Página interna do site" loading="lazy"></a>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="case" id="case-escola" style="--accent:#f2b705" aria-labelledby="case-escola-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="case__body">
+            <p class="card__kicker" data-i18n="escola.kicker">Identidade visual · Estúdio Escola de TV</p>
+            <h3 class="case__title" id="case-escola-title">Estúdio Escola de TV</h3>
+            <div class="case__cols">
+                <div>
+                    <h4 data-i18n="case.problem">Problema</h4>
+                    <p data-i18n="escola.c.problem">Uma escola de TV precisava de uma marca que funcionasse em fundo claro e escuro, em redes sociais e em certificados de turma.</p>
+                    <h4 data-i18n="case.solution">Solução</h4>
+                    <ul>
+                        <li data-i18n="escola.c.s1">Logo com a claquete como símbolo, em versões completa, reduzida e em selo</li>
+                        <li data-i18n="escola.c.s2">Aplicações em post, banner e certificado da primeira turma</li>
+                    </ul>
+                </div>
+                <dl class="case__meta">
+                    <div><dt data-i18n="meta.role">Função</dt><dd data-i18n="escola.role">Logo e projeto gráfico impresso e digital</dd></div>
+                    <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>Illustrator · Photoshop</dd></div>
+                    <div><dt data-i18n="meta.client">Cliente</dt><dd>Estúdio Escola de TV</dd></div>
+                </dl>
+            </div>
+            <div class="case__gallery case__gallery--2">
+                <a href="images/projects/clientes/estudio-escola-board.jpg"><img src="images/projects/clientes/estudio-escola-board.jpg" alt="Board de aplicações da marca" loading="lazy"></a>
+                <a href="images/projects/clientes/estudio-escola-logo.jpg"><img src="images/projects/clientes/estudio-escola-logo.jpg" alt="Logo" loading="lazy"></a>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- showreel player -->
+    <dialog class="reel" id="reel" aria-label="Showreel">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <video controls playsinline preload="none" poster="images/showreel-poster.jpg">
+            <source src="videos/showreel.mp4" type="video/mp4">
+        </video>
+    </dialog>
+
+    <!-- image lightbox -->
+    <div class="lightbox" hidden>
+        <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
+        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Anterior">‹</button>
+        <img alt="">
+        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Próxima">›</button>
+        <p class="lightbox__caption"></p>
+    </div>
+
     <script src="js/i18n.js"></script>
-    <script src="js/main.js"></script>
-
+    <script src="js/site.js"></script>
 </body>
 </html>
