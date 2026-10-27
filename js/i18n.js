@@ -1,227 +1,179 @@
 /* ===================================================================
- * Bilingual support (PT / EN)
- *
- * Portuguese text lives in index.html and is read from the page on load.
- * English text lives in the dictionary below, keyed by data-i18n.
+ * English copy, keyed by data-i18n.
+ * Portuguese lives in index.html and is read from the page on load.
  * ------------------------------------------------------------------- */
 
-(function($) {
-
-    "use strict";
-
-    var STORAGE_KEY = 'portfolio-lang';
-
-    var meta = {
+window.I18N = {
+    meta: {
         pt: {
             htmlLang: 'pt-BR',
-            title: 'Raquel Melo — Design, Motion & Desenvolvimento',
-            description: 'Portfólio de Raquel Melo: mais de 10 anos de videografismo ao vivo na TV Globo, motion design, UX/UI e desenvolvimento web.'
+            title: 'Raquel Melo — Motion, Broadcast Design & Código',
+            description: 'Raquel Melo: mais de 10 anos de grafismo ao vivo na TV Globo. Motion design, sistemas de grafismo para transmissão e desenvolvimento web.'
         },
         en: {
             htmlLang: 'en',
-            title: 'Raquel Melo — Design, Motion & Development',
-            description: 'Portfolio of Raquel Melo: 10+ years of live broadcast graphics at TV Globo, motion design, UX/UI and web development.'
+            title: 'Raquel Melo — Motion, Broadcast Design & Code',
+            description: 'Raquel Melo: 10+ years of live on-air graphics at TV Globo. Motion design, live broadcast graphics systems and web development.'
         }
-    };
+    },
 
-    var en = {
-        'nav.intro': 'Hello!',
+    en: {
+        'nav.work': 'Work',
+        'nav.process': 'Process',
         'nav.about': 'About',
-        'nav.skills': 'Skills',
-        'nav.projects': 'Projects',
-        'nav.works': 'Work',
         'nav.contact': 'Contact',
 
-        'intro.hello': 'Hi! I\'m Raquel Melo.',
-        'intro.title': 'Designer, <br> Motion Graphics <br> Artist & Passionate <br> <span class="intro-text__accent">Developer.</span>',
-        'intro.lead': 'I turn information into images — from live on-air graphics at TV Globo to interfaces and websites that bring design and code together.',
-        'intro.ctaWorks': 'See projects',
-        'intro.ctaContact': 'Get in touch',
-        'intro.scroll': 'Scroll for more',
+        'hero.eyebrow': 'Motion · Broadcast Design · Code',
+        'hero.l1': 'On-air graphics',
+        'hero.l2': 'that can’t miss.',
+        'hero.lead': 'For 10+ years I’ve designed and run live on-air graphics at TV Globo, Brazil’s largest broadcaster. Now I also build the systems behind them — from After Effects to air, designed around the people who run them.',
+        'hero.ctaWork': 'See the work',
+        'hero.ctaReel': 'Watch the showreel',
 
-        'hl.years': 'years of live broadcast graphics at TV Globo',
-        'hl.eventsNumber': 'World Cups',
-        'hl.events': 'men\'s and women\'s, plus Elections and Rock in Rio',
-        'hl.degrees': 'degrees: Drawing (UFRJ), Audiovisual Production and a postgrad in Full Stack',
-        'hl.learning': 'curiosity — currently studying Software Engineering',
+        'trust.label': 'My work has aired on',
+        'trust.wc': 'FIFA World Cup',
+        'trust.wwc': 'FIFA Women’s World Cup',
+        'trust.elections': 'Brazilian Elections',
 
-        'about.heading': 'About me',
-        'about.lead': 'I\'ve been working in audiovisual production for over 10 years, right where design, motion and technology meet. I hold a degree in Audiovisual Production, a postgraduate degree in Full Stack Web Development, and I\'m currently studying Software Engineering.',
-        'about.p1': 'At TV Globo, Brazil\'s largest broadcaster, I design and operate real-time graphics for live broadcasts — Elections, the men\'s and women\'s FIFA World Cups, Rock in Rio, newscasts, variety shows and Big Brother Brasil (BBB).',
-        'about.p2': 'My day-to-day toolkit includes Adobe (After Effects, Premiere, Photoshop, Illustrator), DaVinci Resolve, Chyron Lyric and Viz, plus Figma, WordPress and Elementor. I code in JavaScript, Python, Java and VBScript — languages I use to automate and build interfaces for the production systems I work with.',
-        'about.p3': 'I love projects where I need to think like a designer and solve like a developer. If you have a challenge like that, let\'s talk.',
+        'num.years': 'years of live graphics on free-to-air TV',
+        'num.states': 'states on air in one election night, run by 1 operator',
+        'num.systems': 'live graphics systems built',
+        'num.install': 'installs: my tools open with a double-click',
 
-        'exp.heading': 'Work & Education',
-        'exp.job1.time': 'April 2022 - Present',
-        'exp.job1.role': 'Broadcast Graphics Editor',
-        'exp.job1.desc': 'Animation and visual effects with After Effects, Premiere, Photoshop and Illustrator. Real-time graphics for live broadcasts with Chyron Lyric, Viz Artist and Viz Trio.',
-        'exp.job2.time': 'May 2012 - March 2022',
-        'exp.job2.role': 'Broadcast Graphics Operator',
-        'exp.job2.desc': 'Created and operated graphics, animations and visual elements integrated into on-air content: infographics, logos, titles and transitions — keeping content informative, engaging and professionally presented.',
+        'work.eyebrow': 'Selected work',
+        'work.title': 'From brief to air.',
+        'filter.all': 'All',
+        'filter.live': 'Live systems',
+        'filter.motion': 'Motion & type',
+        'filter.brand': 'Brand & web',
 
-        'edu.se.time': 'In progress',
-        'edu.se.title': 'Software Engineering',
-        'edu.se.degree': 'Bachelor\'s degree',
-        'edu.se.desc': 'Deepening my foundations in software engineering, architecture and quality to build more robust digital products.',
-        'edu.pos.time': 'September 2022 - March 2023',
-        'edu.pos.school': 'Anhanguera University',
-        'edu.pos.degree': 'Postgraduate Degree in Full Stack Web Development',
-        'edu.pos.desc': 'Web architecture, front-end and back-end frameworks, DevOps culture, big data and cloud computing integration, and managing development teams with industry best practices.',
-        'edu.av.time': 'August 2016 - June 2020',
-        'edu.av.school': 'Estácio University',
-        'edu.av.degree': 'Bachelor\'s in Audiovisual Production',
-        'edu.av.desc': 'End-to-end production of audiovisual programs: scriptwriting, location scouting and executive production.',
-        'edu.ufrj.time': 'August 2004 - August 2009',
-        'edu.ufrj.school': 'Federal University of Rio de Janeiro (UFRJ)',
-        'edu.ufrj.degree': 'Teaching Degree in Art Education | Drawing',
-        'edu.ufrj.desc': 'Plane and projective geometry and their application to different graphic representation techniques.',
+        'card.open': 'View case',
+        'card.new': 'New · in development',
+        'card.liveDemo': 'Live HTML demo',
 
-        'skills.heading': 'Skills',
-        'skills.desc': 'There\'s always something new to learn.',
-        'skills.motion.title': 'Broadcast Graphics | Motion Design',
-        'skills.motion.desc': 'Real-time graphics with Chyron Lyric and Viz for major events, newscasts and live shows.',
-        'skills.adobe.title': 'Editing & Post-production',
-        'skills.adobe.desc': 'Animation, compositing, editing and image retouching with advanced command of the Adobe suite.',
-        'skills.dev.title': 'Full Stack Web Development',
-        'skills.dev.desc': 'Front-end with HTML, CSS, JavaScript and React, plus applications and automations for production workflows.',
-        'skills.ux.title': 'UX/UI & Prototyping',
-        'skills.ux.desc': 'Interfaces designed for people working under pressure: Figma prototypes and websites built with WordPress and Elementor.',
-        'skills.time.title': 'Time Management & Optimization',
-        'skills.time.desc': 'Organizing and streamlining workflows — essential in live broadcasting, where every second counts.',
-        'skills.learn.title': 'Continuous Learning',
-        'skills.learn.desc': 'Passionate about new technologies and trends in design, development and audiovisual production.',
+        'meta.role': 'Role',
+        'meta.tools': 'Tools',
+        'meta.problem': 'Problem solved',
+        'meta.runs': 'Runs on',
+        'meta.anyBrowser': 'any browser source',
+        'meta.scale': 'Scale',
+        'meta.exports': 'Exports to',
+        'meta.client': 'Client',
 
-        'works.heading': 'Work',
-        'works.desc': 'More motion, design and web work.',
-        'projects.heading': 'Featured projects',
-        'projects.desc': 'Live broadcast graphics systems I designed, animated and coded — from After Effects to air.',
+        'case.problem': 'Problem',
+        'case.solution': 'Solution',
+        'case.impact': 'Impact',
 
-        'apu.kicker': 'Elections 2026 · Broadcast',
-        'apu.lead': 'A system that wires the vote-count database straight into the graphics that go on air. The operator picks an office and a location on a panel, and lower thirds, full screens and maps come out filled with official data — no manual typing.',
-        'apu.f1': 'Viz Trio operator panel with 10 rows: red when on air, green when in preview',
-        'apu.f2': '4 graphic templates: lower third, voter-turnout screen, map of all 27 states and party map',
-        'apu.f3': 'Viz Pilot templates sharing the same rules, for the rundown system',
-        'apu.f4': 'Real-world rules: a Senate race with 2 winners becomes two lower thirds, runoffs, ties broken by absolute votes, and rehearsal data that never leaks to air',
-        'apu.f5': 'A single PostgreSQL layer with query auditing, plus manuals and a quick guide for the operators',
-        'apu.s1': 'states',
-        'apu.n2': '~4,800',
-        'apu.s2': 'lines of VBScript',
-        'apu.s3': 'operator',
-        'apu.caption': 'Results shown in the images are fictitious rehearsal data — not official results.',
+        'fut.kicker': 'Personal project · 2026',
+        'fut.value': 'A full match on air from one folder and a double-click — a score and match report that never disagree.',
+        'fut.role': 'Design, animation and development',
+        'fut.problem': 'Run score, clock, match report and credits live without a costly license or software that locks you to one vendor',
+        'fut.c.problem': 'Smaller football broadcasts need a broadcaster-grade score, clock, match report, line-ups and credits — without a costly license, one specific piece of software, or someone typing the score and the report separately.',
+        'fut.c.s1': 'The score is counted from the match report: every goal is an event with player and minute, so the two never disagree',
+        'fut.c.s2': 'A per-period clock that runs into stoppage time — an event at 47 minutes of the first half shows as 45+2',
+        'fut.c.s3': 'One event column per team, plus VAR, penalties, credits, stats and tables, all on keyboard shortcuts',
+        'fut.c.s4': 'The graphics are a transparent web page: they go into OBS, vMix, SPX or any browser source',
+        'fut.c.impact': 'A complete football graphics package that fits in one folder, opens with a double-click and ties the client to no vendor. In development, at version 0.2.',
+        'fut.c.note': 'Recorded from the app’s own showcase, with fictional teams, players and league.',
 
-        'fut.badge': 'New',
-        'fut.kicker': 'In development · 2026 · v0.2',
-        'fut.lead': 'A live football operator interface built on the Operação Vôlei foundation. Score, clock, match report, line-ups and credits are run from a desk in the browser, and the graphics are a transparent web page that goes into any video software.',
-        'fut.f1': 'Score counted from the match report: every goal is an event with player, minute, penalty or own goal, so the score and the report never disagree',
-        'fut.f2': 'A per-period clock that starts at the right mark and keeps running into stoppage time — an event at 47 minutes of the first half shows as 45+2',
-        'fut.f3': 'One event column per team: goal, yellow, red, substitution and penalty, with the player picked from the line-up',
-        'fut.f4': 'VAR, penalty shoot-out and event modules, plus credits, stats, standings and fixtures',
-        'fut.f5': 'Events leave the air on their own after a configurable time, X undoes the last event, and saved matches let the game be prepared ahead',
-        'fut.s1': 'browser source over the video',
-        'fut.s2': 'stoppage time counted automatically',
-        'fut.s3': 'undoes the last event',
-        'fut.caption': 'The system\'s real graphics, recorded from the app\'s own showcase with a fictional match and league. Click the images to enlarge.',
-        'volei.kicker': 'Personal project · 2026 · v4.1',
-        'volei.lead': 'A complete live graphics system for volleyball — artwork, match logic and operator desk — written from scratch in HTML, CSS and JavaScript and shipped as a single executable. The graphics are web pages with a transparent background, so the system is platform-agnostic: it goes on air through any switcher or playout that accepts a web page as a source.',
-        'volei.platforms': 'Runs on',
-        'volei.platformsAny': '+ any web page source',
-        'volei.f1': 'Scoreboard with sets, partial scores, side switching and undo, plus 11 modules that attach to it',
-        'volei.f2': '6 credit lower thirds, full-screen tables and 3 animated bugs with sound',
-        'volei.f3': 'Browser-based operator desk with two-handed keyboard shortcuts — plus direct control through the API on vMix',
-        'volei.f4': 'Typography measured in the browser and pixel-diff regression tests with Playwright',
-        'volei.f5': 'Zero-dependency Node server synced over Server-Sent Events, packaged as an .exe that runs with no install',
-        'volei.n1': '~3,700',
-        'volei.s1': 'lines of code',
-        'volei.s2': 'production dependencies',
-        'volei.s3': 'scoreboard modules',
-        'volei.caption': 'An HTML/CSS simulation with fictional teams: the scoreboard takes points from the desk shortcuts, shows the set-point module and the animated bug.',
+        'apu.kicker': 'Elections 2026 · TV',
+        'apu.value': '27 states, 1 operator and not a single number typed by hand: official data goes straight from the database to the graphic.',
+        'apu.role': 'System, business rules and operator training',
+        'apu.problem': 'Results changing every minute across 27 states: typing each graphic is slow and invites on-air errors',
+        'apu.scale': '27 states · 4 templates · ~4,800 lines of VBScript',
+        'apu.c.problem': 'On election night, results change every minute across 27 states and several offices. Typing name, party, percentage and ballots counted into each graphic is slow — and one wrong number on air is seen by the whole country.',
+        'apu.c.s1': 'A Viz Trio panel: the operator picks office and location, and lower thirds, full screens and maps come out filled with official data',
+        'apu.c.s2': '4 graphic templates — lower third, voter-turnout screen, map of all 27 states and party map — plus Viz Pilot templates sharing the same rules',
+        'apu.c.s3': 'Real-world rules: a Senate race with 2 winners becomes two lower thirds, runoffs, ties broken by absolute votes, and rehearsal data that never leaks to air',
+        'apu.c.s4': 'A single PostgreSQL layer that audits every query, plus a manual and a one-page quick guide for the desk',
+        'apu.c.impact': 'One operator covers 27 states without typing a single result. Red rows on air and green rows in preview show at a glance what the audience is seeing.',
+        'apu.c.note': 'Results shown in the images are fictitious rehearsal data.',
+
+        'volei.kicker': 'Personal project · v4',
+        'volei.value': 'Broadcaster-grade graphics that fit in one folder, start in 30 seconds and run on any switcher.',
+        'volei.role': 'Design, animation and development',
+        'volei.problem': 'Off-the-shelf tools charge licenses, lock the graphics in a closed editor and, when they break, they break on air',
+        'volei.scale': '~3,700 lines · 0 dependencies · 11 modules',
         'volei.demoBug': 'SUPER RALLY',
         'volei.demoModule': 'SET POINT',
         'volei.demoHome': 'HOME',
         'volei.demoAway': 'AWAY',
-        'volei.keyHome': 'home point',
-        'volei.keyAway': 'away point',
-        'volei.keySet': 'close set',
-        'volei.keyOut': 'take out',
+        'volei.c.problem': 'Live volleyball graphics need a correct score, entries within seconds and zero install friction — the broadcast machine is borrowed and the network is closed. Off-the-shelf tools charge licenses, lock the graphics in a proprietary editor and, when they break, they break on air.',
+        'volei.c.s1': 'A scoreboard with sets, partial scores, side switching and undo, plus 11 attached modules, 6 credit lower thirds and 3 animated bugs with sound',
+        'volei.c.s2': 'A browser-based operator desk with shortcuts designed for both hands',
+        'volei.c.s3': 'A zero-dependency Node server synced over Server-Sent Events: one-frame latency, no database, no cloud',
+        'volei.c.s4': 'Typography measured in the browser and pixel-diff regression tests with Playwright — the tilde on “Ã” never clips again',
+        'volei.c.impact': 'A broadcaster-grade graphics package that fits in one folder, starts in 30 seconds with a double-click and plugs into any switcher that accepts a web page.',
+        'volei.c.note': 'The original graphics show real teams and athletes, so the card shows an HTML simulation with fictional teams.',
 
-        'feat.kicker': 'Personal software · 2026',
-        'feat.s1': 'export formats',
-        'feat.s2': 'closed source, licensed',
-        'feat.s3': 'runs with no install',
-        'feat.lead': 'Software I built to take After Effects graphics straight to air. Designers animate in After Effects; Tarja turns the piece into HTML and runs it live.',
-        'feat.f1': 'After Effects script that reads Essential Graphics rigs and exports animation, text and alignment',
-        'feat.f2': 'Browser-based editor with a timeline, properties panel and warnings for safe area and overflowing text',
-        'feat.f3': 'Live operator panel and output for vMix and OBS',
-        'feat.f4': 'Exports to HTML, SPX Graphics, CasparCG and NewBlue Captivate',
-        'feat.f5': 'Desktop app with ffmpeg video conversion, digitally signed licenses and automated tests',
-        'feat.demoRole': 'Designer &amp; Developer',
-        'feat.caption': 'A lower third animated with nothing but HTML and CSS — the kind of piece Tarja Studio produces.',
-        'works.filter.all': 'All',
-        'works.filter.motion': 'Motion & Video',
-        'works.filter.brand': 'Branding',
-        'works.filter.web': 'Web',
-        'works.gabi.title': 'Set Designer — Logo & Website',
-        'works.gabi.caption': 'Logo design and portfolio website.',
-        'works.estudio.title': 'Logo Board',
-        'works.estudio.cat': 'Estúdio Escola de TV — Illustrator | Photoshop',
-        'works.estudio.caption': 'Logo and visual identity for print and digital.',
+        'tarja.kicker': 'Personal software · v2.0',
+        'tarja.value': 'Designers animate in After Effects and the very same piece goes on air live — no rebuild in another system.',
+        'tarja.role': 'Product, design and development',
+        'tarja.problem': 'Taking an After Effects animation to air usually means rebuilding it in the playout system',
+        'tarja.demoRole': 'Motion &amp; Broadcast Design',
+        'tarja.c.problem': 'Designers animate the lower third in After Effects, but to go on air it is usually rebuilt in the playout system — doubling the work and losing animation detail along the way.',
+        'tarja.c.s1': 'An After Effects script that reads Essential Graphics rigs and exports animation, text and alignment',
+        'tarja.c.s2': 'A browser-based editor with a timeline, properties and warnings for safe area and overflowing text',
+        'tarja.c.s3': 'A live operator panel and output for vMix and OBS; exports to HTML, SPX Graphics, CasparCG and NewBlue Captivate',
+        'tarja.c.s4': 'A desktop app with ffmpeg video conversion, digitally signed licenses and protected code',
+        'tarja.c.impact': 'The same piece leaves After Effects and goes on air in four different formats, with no rework. A licensable product, ready to sell.',
 
-        'contact.heading': 'Shall we create something together?',
-        'contact.desc': 'Open to new projects, partnerships and opportunities — in Brazil or abroad. <a href="mailto:raqlsmelo@gmail.com">Send me an email</a>.',
-        'contact.phone': 'Phone / WhatsApp',
-        'contact.online': 'Online'
-    };
+        'prece.kicker': 'Lyric video · Dandara Manoela',
+        'prece.value': 'The lyrics become the picture: kinetic type that follows the voice word by word.',
+        'prece.role': 'Motion design and editing',
+        'prece.problem': 'Give the song’s release a video where the lyrics tell the story alongside the images',
+        'prece.c.problem': 'For the song’s release, the artist needed a video where the lyrics were part of the narrative — not a caption laid over the picture.',
+        'prece.c.s1': 'Kinetic typography synced to the voice, with key words highlighted in color',
+        'prece.c.s2': 'Textures, particles and overlays that keep the song’s intimate tone',
+        'prece.c.s3': 'Edited and finished, delivered ready for the streaming platforms',
 
-    var $nodes = $('[data-i18n]');
+        'gabi.kicker': 'Brand & website · Gabriela Melo Larsen',
+        'gabi.title': 'Set designer',
+        'gabi.value': 'A brand and an online portfolio to pitch set design projects to production companies.',
+        'gabi.role': 'Logo, design and site build',
+        'gabi.c.problem': 'A set designer needed her own brand and a place to show set design projects to production companies and directors.',
+        'gabi.c.s1': 'A quiet typographic logo that keeps the set photos in the foreground',
+        'gabi.c.s2': 'A site with a page per project, designed in Figma and built in WordPress with Elementor so she can update it herself',
 
-    // keep the original Portuguese markup so we can switch back
-    $nodes.each(function() {
-        $(this).data('i18n-pt', $(this).html());
-    });
+        'escola.kicker': 'Visual identity · Estúdio Escola de TV',
+        'escola.value': 'A brand that works from certificate to social post: light, dark and badge versions.',
+        'escola.role': 'Logo and graphic design for print and digital',
+        'escola.c.problem': 'A TV school needed a brand that worked on light and dark backgrounds, on social media and on class certificates.',
+        'escola.c.s1': 'A logo built around the clapperboard, in full, compact and badge versions',
+        'escola.c.s2': 'Applications on posts, banners and the first class’s certificate',
 
-    function storedLang() {
-        try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+        'process.eyebrow': 'How I work',
+        'process.title': 'Four steps, no improvising on air.',
+        'step1.t': 'Understand the operation',
+        'step1.d': 'Before the design, the workflow: who runs it, how fast, on which machine, and what can never go wrong.',
+        'step2.t': 'Design and animate',
+        'step2.d': 'Design and motion in Figma and After Effects, with typography measured to fit any name, accent or cedilla.',
+        'step3.t': 'Build',
+        'step3.d': 'Graphics in HTML/CSS, Viz or After Effects; logic in JavaScript, Node or VBScript; data wired straight to the source.',
+        'step4.t': 'Test and deliver',
+        'step4.d': 'Automated tests, rehearsals with fictional data, a manual and training. The delivery opens with no install.',
+
+        'about.eyebrow': 'About',
+        'about.title': 'A designer who codes. A developer who animates.',
+        'about.p1': 'I’m Raquel Melo, from Rio de Janeiro. I started in drawing (UFRJ), moved into audiovisual, and for 10+ years I’ve made live on-air graphics at TV Globo — World Cups, elections, Rock in Rio, Big Brother Brasil, newscasts.',
+        'about.p2': 'With a postgraduate degree in Full Stack Development and a Software Engineering degree in progress, I started building the tools I wished I had on the desk. I take on remote freelance projects in Brazil and abroad.',
+        'tl.1.when': 'May 2026 — present',
+        'tl.1.what': 'Design & Visual Effects Producer I',
+        'tl.2.when': 'Apr 2022 — Apr 2026',
+        'tl.2.what': 'Broadcast Graphics Editor',
+        'tl.3.when': 'May 2012 — Mar 2022',
+        'tl.3.what': 'Broadcast Graphics Operator',
+        'edu.1': 'Software Engineering — in progress',
+        'edu.2': 'Postgraduate in Full Stack Web Development — Anhanguera, 2023',
+        'edu.3': 'B.A. Audiovisual Production — Estácio, 2020',
+        'edu.4': 'Art Education · Drawing — UFRJ, 2009',
+
+        'cta.eyebrow': 'Freelance · remote · EN / PT',
+        'cta.title': 'Let’s get your project on air.',
+        'cta.lead': 'Graphics for live streams and broadcasts, motion packages, OBS and vMix overlays, or a custom tool for your operation. Tell me what you need and when it goes live.',
+        'cta.email': 'Send an email',
+        'cta.tz': 'Rio de Janeiro · UTC−3',
+
+        'footer.top': 'Back to top ↑'
     }
-
-    function detectLang() {
-        var fromUrl = (window.location.search.match(/[?&]lang=(pt|en)\b/) || [])[1];
-        if (fromUrl) return fromUrl;
-
-        var saved = storedLang();
-        if (saved === 'pt' || saved === 'en') return saved;
-
-        var browser = (navigator.language || 'pt').toLowerCase();
-        return browser.indexOf('pt') === 0 ? 'pt' : 'en';
-    }
-
-    function setLang(lang) {
-        $nodes.each(function() {
-            var $el = $(this),
-                key = $el.data('i18n'),
-                html = lang === 'en' ? en[key] : $el.data('i18n-pt');
-
-            if (html !== undefined) $el.html(html);
-        });
-
-        document.documentElement.setAttribute('lang', meta[lang].htmlLang);
-        document.title = meta[lang].title;
-        $('meta[name="description"]').attr('content', meta[lang].description);
-
-        $('.lang-switch__btn').each(function() {
-            var active = $(this).data('lang') === lang;
-            $(this).toggleClass('is-active', active).attr('aria-pressed', active);
-        });
-
-        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-
-        // let other components (e.g. masonry) react to the new text sizes
-        $(document).trigger('i18n:change', [lang]);
-    }
-
-    $('.lang-switch__btn').on('click', function() {
-        setLang($(this).data('lang'));
-    });
-
-    setLang(detectLang());
-
-})(jQuery);
+};

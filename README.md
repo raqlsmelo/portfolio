@@ -1,38 +1,26 @@
 # Raquel Melo — Portfólio / Portfolio
 
-🇧🇷 Portfólio pessoal de **Raquel Melo** — designer, videografista e desenvolvedora.
-Mais de 10 anos de videografismo ao vivo na TV Globo, motion design, UX/UI e desenvolvimento web.
+🇧🇷 Portfólio de **Raquel Melo**: motion design, broadcast design e os sistemas de grafismo ao vivo por trás dele.
+🇺🇸 Portfolio of **Raquel Melo**: motion design, broadcast design and the live graphics systems behind them.
 
-🇺🇸 Personal portfolio of **Raquel Melo** — designer, motion graphics artist and developer.
-10+ years of live broadcast graphics at TV Globo, motion design, UX/UI and web development.
+Site estático, sem build e sem dependências. / Static site, no build step, no dependencies.
 
 ## Idiomas / Languages
 
-O site é bilíngue (PT/EN). O idioma é escolhido pelo botão **PT | EN** no topo, pelo idioma
-do navegador ou pelo link `?lang=en` / `?lang=pt`.
-
-The site is bilingual (PT/EN). Pick the language with the **PT | EN** switch in the header,
-or link directly with `?lang=en` / `?lang=pt`.
-
-## Como adicionar um projeto / Adding a project
-
-1. Coloque as imagens em `images/portfolio/`.
-2. Em `index.html`, copie um bloco `masonry__brick` da seção `#works` e ajuste:
-   - `data-category`: `motion`, `ui`, `brand` e/ou `web` (separados por espaço);
-   - `href` e `data-size` (largura x altura) da imagem grande, e `src` da miniatura;
-   - os textos em português, cada um com uma chave `data-i18n` nova.
-3. Adicione a tradução em inglês dessas chaves em `js/i18n.js`.
-
-## Projetos em destaque / Featured projects
-
-A seção `#projects` traz três estudos de caso — Apuração 2026, Operação Vôlei e Tarja Studio.
-Cada um é um bloco `.featured` com texto, números, ferramentas e uma galeria (`a.js-pswp`
-com `data-size`) que abre no lightbox. As mídias ficam em `images/projects/` e `videos/projects/`;
-vídeos com a classe `js-autoplay` tocam sem som só enquanto estão na tela.
+Botão **PT | EN** no topo, idioma do navegador ou link direto com `?lang=en` / `?lang=pt`.
+O português fica no `index.html`; o inglês fica em `js/i18n.js`, com as mesmas chaves `data-i18n`.
 
 ## Estrutura / Structure
 
-- `index.html` — página (texto em português)
-- `js/i18n.js` — traduções em inglês e troca de idioma
-- `js/main.js` — menu, masonry, filtros de trabalhos, lightbox
-- `css/custom.css` — estilos novos sobre o template (`css/main.css`)
+- `index.html` — página e textos em português: hero com showreel, barra de clientes, números, projetos, processo, sobre e contato. Os cases completos ficam nos `<dialog class="case">` no fim do arquivo.
+- `css/site.css` — visual escuro; cada projeto tem sua cor em `--accent`.
+- `js/site.js` — idioma, animações de rolagem, vídeos que tocam só na tela, filtros, cases, lightbox e a demo do placar de vôlei.
+- `js/i18n.js` — textos em inglês.
+- `videos/showreel.mp4` — showreel do topo; `videos/projects/` — vídeos dos projetos.
+- `images/projects/` — imagens e miniaturas dos cases.
+
+## Adicionar um projeto / Adding a project
+
+1. Mídias em `images/projects/<projeto>/` e `videos/projects/`.
+2. Em `index.html`, copie um `<article class="card">` (com `data-category`: `live`, `motion` e/ou `brand`, e a cor em `--accent`) e um `<dialog class="case">` com o mesmo `id` usado em `data-case`.
+3. Dê uma chave `data-i18n` nova a cada texto e adicione o inglês em `js/i18n.js`.
