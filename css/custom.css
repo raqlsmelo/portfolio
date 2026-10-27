@@ -540,3 +540,256 @@ html[lang="en"] .ss-go-top::after {
   border-color: rgba(207, 143, 23, 0.6);
 }
 
+
+/* ===================================================================
+ * # projects section (case studies)
+ * ------------------------------------------------------------------- */
+.s-projects {
+  padding-top: 16rem;
+  padding-bottom: 12rem;
+  background-color: #070707;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.s-projects .section-heading {
+  color: #ffffff;
+}
+
+.s-projects .section-desc {
+  color: #ffffff;
+}
+
+.s-projects .featured {
+  --case-accent: #cf8f17;
+  max-width: 1240px;
+  margin-top: 0;
+  margin-bottom: 8rem;
+  background-color: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid var(--case-accent);
+}
+
+.s-projects .heading-block + .featured {
+  margin-top: 8rem;
+}
+
+.s-projects .featured:last-child {
+  margin-bottom: 0;
+}
+
+#operacao-volei {
+  --case-accent: #4b6bff;
+}
+
+#apuracao-2026 {
+  --case-accent: #22b0ac;
+}
+
+.s-projects .featured__kicker,
+.s-projects .featured__list li::before {
+  color: var(--case-accent);
+}
+
+.s-projects .tool-tags li {
+  color: var(--case-accent);
+  border-color: var(--case-accent);
+}
+
+/* media on the left on large screens */
+@media screen and (min-width: 801px) {
+  .featured--reverse .featured__text {
+    order: 2;
+  }
+
+  .featured--reverse .featured__demo {
+    order: 1;
+  }
+}
+
+/* key numbers */
+.case-stats {
+  list-style: none;
+  margin: 0 0 2.4rem;
+  padding: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem 3.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-stats li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-stats strong {
+  font-family: Consolas, "Andale Mono", monospace;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.case-stats span {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .05rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* main media */
+.case-main,
+.case-video {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #000000;
+}
+
+.case-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity .3s ease-in-out;
+}
+
+.case-main:hover img {
+  opacity: .85;
+}
+
+.case-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #0a1519;
+}
+
+/* looping on-air clips */
+.case-onair {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 3.2rem 1rem 1rem;
+  background-color: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.case-onair__label {
+  position: absolute;
+  top: .8rem;
+  left: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  color: #ff3b30;
+}
+
+.case-onair video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* thumbnail strip */
+.case-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.case-gallery a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.case-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease-in-out, opacity .3s ease-in-out;
+  opacity: .85;
+}
+
+.case-gallery a:hover img,
+.case-gallery a:focus img {
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .case-onair {
+    grid-template-columns: 1fr;
+  }
+
+  .case-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-stats strong {
+    font-size: 2.2rem;
+  }
+}
+
+/* platforms a project runs on */
+.case-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.6rem;
+  margin: 0 0 2.8rem;
+  padding: 1.4rem 1.6rem;
+  background-color: rgba(75, 107, 255, 0.08);
+  border-left: 3px solid var(--case-accent);
+}
+
+.case-platforms__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  color: var(--case-accent);
+}
+
+.case-platforms ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.6rem;
+}
+
+.case-platforms li {
+  margin: 0;
+  padding: 0;
+  font-family: Consolas, "Andale Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.case-platforms li:last-child {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* wide broadcast strips (scoreboards, lower thirds) shouldn't be cropped */
+.case-gallery img {
+  object-fit: contain;
+}

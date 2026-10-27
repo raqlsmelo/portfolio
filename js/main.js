@@ -229,6 +229,63 @@
     };
 
 
+   /* Project galleries (lightbox per project)
+    * ----------------------------------------------------- */
+    var ssProjectGalleries = function() {
+        var $pswp = $('.pswp')[0];
+
+        $('.featured').each(function() {
+            var $links = $(this).find('.js-pswp'),
+                items = [];
+
+            $links.each(function() {
+                var size = $(this).data('size').split('x');
+                items.push({
+                    src   : $(this).attr('href'),
+                    w     : size[0],
+                    h     : size[1],
+                    title : $(this).attr('title')
+                });
+            });
+
+            $links.each(function(i) {
+                $(this).on('click', function(e) {
+                    e.preventDefault();
+                    var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, { index: i, showHideOpacity: true });
+                    lightBox.init();
+                });
+            });
+        });
+    };
+
+
+   /* Autoplay muted project videos only while they are on screen
+    * ----------------------------------------------------- */
+    var ssAutoplayVideos = function() {
+        var videos = document.querySelectorAll('video.js-autoplay'),
+            reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!videos.length || reduceMotion || !('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(videos, function(v) { v.controls = true; });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                var video = entry.target;
+                if (entry.isIntersecting) {
+                    var playing = video.play();
+                    if (playing && playing.catch) playing.catch(function() { video.controls = true; });
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.4 });
+
+        Array.prototype.forEach.call(videos, function(v) { observer.observe(v); });
+    };
+
+
    /* slick slider
     * ------------------------------------------------------ */
     var ssSlickSlider = function() {
@@ -312,6 +369,8 @@
         ssMasonryFolio();
         ssWorksFilter();
         ssPhotoswipe();
+        ssProjectGalleries();
+        ssAutoplayVideos();
         ssSlickSlider();
         ssSmoothScroll();
         ssAlertBoxes();

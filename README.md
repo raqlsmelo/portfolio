@@ -23,6 +23,13 @@ or link directly with `?lang=en` / `?lang=pt`.
    - os textos em português, cada um com uma chave `data-i18n` nova.
 3. Adicione a tradução em inglês dessas chaves em `js/i18n.js`.
 
+## Projetos em destaque / Featured projects
+
+A seção `#projects` traz três estudos de caso — Apuração 2026, Operação Vôlei e Tarja Studio.
+Cada um é um bloco `.featured` com texto, números, ferramentas e uma galeria (`a.js-pswp`
+com `data-size`) que abre no lightbox. As mídias ficam em `images/projects/` e `videos/projects/`;
+vídeos com a classe `js-autoplay` tocam sem som só enquanto estão na tela.
+
 ## Estrutura / Structure
 
 - `index.html` — página (texto em português)

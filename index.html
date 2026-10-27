@@ -60,6 +60,7 @@
                 <li class="current"><a class="smoothscroll" href="#intro" data-i18n="nav.intro">Olá!</a></li>
                 <li><a class="smoothscroll" href="#about" data-i18n="nav.about">Sobre mim</a></li>
                 <li><a class="smoothscroll" href="#services" data-i18n="nav.skills">Habilidades</a></li>
+                <li><a class="smoothscroll" href="#projects" data-i18n="nav.projects">Projetos</a></li>
                 <li><a class="smoothscroll" href="#works" data-i18n="nav.works">Trabalhos</a></li>
                 <li><a class="smoothscroll" href="#contact" data-i18n="nav.contact">Contato</a></li>
             </ul>
@@ -99,7 +100,7 @@
                     a interfaces e sites que unem design e código.
                 </p>
                 <div class="intro-text__cta">
-                    <a href="#works" class="btn btn--primary smoothscroll" data-i18n="intro.ctaWorks">Ver trabalhos</a>
+                    <a href="#projects" class="btn btn--primary smoothscroll" data-i18n="intro.ctaWorks">Ver projetos</a>
                     <a href="#contact" class="btn btn--stroke smoothscroll" data-i18n="intro.ctaContact">Fale comigo</a>
                 </div>
             </div>
@@ -402,23 +403,164 @@
     </section> <!-- end s-services -->
 
 
-    <!-- works
+    <!-- projects
     ================================================== -->
-    <section id="works" class="s-works target-section">
+    <section id="projects" class="s-projects target-section">
 
         <div class="row heading-block heading-block--center" data-aos="fade-up">
             <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom" data-i18n="works.heading">Trabalhos</h2>
-                <p class="section-desc" data-i18n="works.desc">Uma seleção de projetos recentes de motion, design e web.</p>
+                <h2 class="section-heading section-heading--centerbottom" data-i18n="projects.heading">Projetos em destaque</h2>
+                <p class="section-desc" data-i18n="projects.desc">Sistemas de grafismo ao vivo que desenhei, animei e programei — do After Effects ao ar.</p>
             </div>
         </div> <!-- end heading-block -->
 
-        <!-- featured project
-        ================================================== -->
-        <div class="row featured" data-aos="fade-up">
+        <div class="row featured featured--apuracao" id="apuracao-2026" data-aos="fade-up">
 
             <div class="column large-5 tab-full featured__text">
-                <p class="featured__kicker" data-i18n="feat.kicker">Projeto em destaque · 2026</p>
+                <p class="featured__kicker" data-i18n="apu.kicker">Eleições 2026 · Broadcast</p>
+                <h3 class="featured__title">Apuração 2026</h3>
+                <p class="featured__lead" data-i18n="apu.lead">
+                    Sistema que liga o banco de dados da apuração direto às artes que vão ao ar. O operador
+                    escolhe cargo e localidade num painel, e tarjas, telas e mapas saem preenchidos com o
+                    dado oficial — sem digitação manual.
+                </p>
+                <ul class="featured__list">
+                    <li data-i18n="apu.f1">Painel de operação no Viz Trio com 10 linhas: vermelho no ar, verde no preview</li>
+                    <li data-i18n="apu.f2">4 modelos de arte: tarja, tela de eleitorado, mapa dos 27 estados e mapa de partidos</li>
+                    <li data-i18n="apu.f3">Templates de Viz Pilot com as mesmas regras, para o sistema de rundown</li>
+                    <li data-i18n="apu.f4">Regras do mundo real: Senador com 2 eleitos vira duas tarjas, segundo turno, desempate por voto absoluto e dado de ensaio que nunca vaza para o ar</li>
+                    <li data-i18n="apu.f5">Camada única em PostgreSQL com auditoria de consultas, além de manuais e guia rápido para a operação</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong>27</strong><span data-i18n="apu.s1">estados</span></li>
+                    <li><strong data-i18n="apu.n2">~4.800</strong><span data-i18n="apu.s2">linhas de VBScript</span></li>
+                    <li><strong>1</strong><span data-i18n="apu.s3">operador</span></li>
+                </ul>
+                <ul class="tool-tags tool-tags--dark">
+                    <li>Viz Trio</li><li>Viz Pilot</li><li>VBScript</li><li>PostgreSQL</li>
+                </ul>
+            </div>
+
+            <div class="column large-7 tab-full featured__demo">
+                <div class="case-video">
+                    <video class="js-autoplay" muted loop playsinline controls preload="none" poster="images/projects/apuracao/video-capa.jpg" aria-label="Vídeo de apresentação do projeto Apuração 2026">
+                        <source src="videos/projects/apuracao-2026.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="case-gallery">
+                    <a href="images/projects/apuracao/05_senador-elege-2-duas-tarjas.jpg" class="js-pswp" data-size="1600x900" title="Senador elege 2: uma tarja por eleito">
+                        <img src="images/projects/apuracao/05_senador-elege-2-duas-tarjas-thumb.jpg" alt="Senador elege 2: uma tarja por eleito" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/07_mapa-dos-estados-27-ufs.jpg" class="js-pswp" data-size="1600x900" title="Mapa dos estados com 27 UFs e 5 status">
+                        <img src="images/projects/apuracao/07_mapa-dos-estados-27-ufs-thumb.jpg" alt="Mapa dos estados com 27 UFs e 5 status" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/04_tela-eleitorado-senador.jpg" class="js-pswp" data-size="1197x669" title="Tela de eleitorado de Senador com 4 candidatos">
+                        <img src="images/projects/apuracao/04_tela-eleitorado-senador-thumb.jpg" alt="Tela de eleitorado de Senador com 4 candidatos" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde.jpg" class="js-pswp" data-size="1600x900" title="Painel: vermelho no ar, verde no preview">
+                        <img src="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde-thumb.jpg" alt="Painel: vermelho no ar, verde no preview" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/03_tarja-governador-2o-turno.jpg" class="js-pswp" data-size="710x90" title="Tarja de Governador, 2º turno">
+                        <img src="images/projects/apuracao/03_tarja-governador-2o-turno-thumb.jpg" alt="Tarja de Governador, 2º turno" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/02_painel-do-operador.jpg" class="js-pswp" data-size="1600x900" title="Painel do operador no Viz Trio">
+                        <img src="images/projects/apuracao/02_painel-do-operador-thumb.jpg" alt="Painel do operador no Viz Trio" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/08_guia-rapido-operacao.jpg" class="js-pswp" data-size="1413x2000" title="Guia rápido de uma página para a operação">
+                        <img src="images/projects/apuracao/08_guia-rapido-operacao-thumb.jpg" alt="Guia rápido de uma página para a operação" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/09_manual-visual-operacao.jpg" class="js-pswp" data-size="1200x1500" title="Manual visual com a tela anotada">
+                        <img src="images/projects/apuracao/09_manual-visual-operacao-thumb.jpg" alt="Manual visual com a tela anotada" loading="lazy">
+                    </a>
+                </div>
+                <p class="featured__caption" data-i18n="apu.caption">Os resultados nas imagens são dados de ensaio, fictícios — não são resultados oficiais.</p>
+            </div>
+
+        </div> <!-- end apuracao-2026 -->
+
+        <div class="row featured featured--reverse" id="operacao-volei" data-aos="fade-up">
+
+            <div class="column large-5 tab-full featured__text">
+                <p class="featured__kicker" data-i18n="volei.kicker">Projeto autoral · 2026 · v4.1</p>
+                <h3 class="featured__title">Operação Vôlei</h3>
+                <p class="featured__lead" data-i18n="volei.lead">
+                    Sistema completo de grafismo ao vivo para vôlei — artes, lógica de jogo e mesa de
+                    operação — escrito do zero em HTML, CSS e JavaScript e entregue como um único
+                    executável. As artes são páginas web com fundo transparente, então o sistema é
+                    agnóstico de plataforma: entra no ar por qualquer switcher ou playout que aceite
+                    uma página web como fonte.
+                </p>
+                <div class="case-platforms">
+                    <span class="case-platforms__label" data-i18n="volei.platforms">Roda em</span>
+                    <ul>
+                        <li>vMix</li><li>OBS</li><li>SPX</li><li>Viz</li><li data-i18n="volei.platformsAny">+ qualquer fonte de página web</li>
+                    </ul>
+                </div>
+                <ul class="featured__list">
+                    <li data-i18n="volei.f1">Placar com sets, parciais, troca de lados e desfazer, e 11 módulos que entram colados a ele</li>
+                    <li data-i18n="volei.f2">6 tarjas de crédito, tabelas de tela cheia e 3 selos animados com som</li>
+                    <li data-i18n="volei.f3">Mesa de operação no navegador, com atalhos para as duas mãos — e, no vMix, controle direto pela API</li>
+                    <li data-i18n="volei.f4">Tipografia medida no navegador e testes de regressão por pixel com Playwright</li>
+                    <li data-i18n="volei.f5">Servidor Node sem dependências, sincronizado por Server-Sent Events e empacotado num .exe que roda sem instalação</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong data-i18n="volei.n1">~3.700</strong><span data-i18n="volei.s1">linhas de código</span></li>
+                    <li><strong>0</strong><span data-i18n="volei.s2">dependências em produção</span></li>
+                    <li><strong>11</strong><span data-i18n="volei.s3">módulos sobre o placar</span></li>
+                </ul>
+                <ul class="tool-tags tool-tags--dark">
+                    <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>SSE</li><li>Browser source</li><li>Playwright</li>
+                </ul>
+            </div>
+
+            <div class="column large-7 tab-full featured__demo">
+                <a href="images/projects/volei/14_interface_operacao.jpg" class="case-main js-pswp" data-size="1600x900" title="Mesa de operação durante um jogo">
+                    <img src="images/projects/volei/14_interface_operacao.jpg" alt="Mesa de operação do Operação Vôlei durante um jogo" loading="lazy">
+                </a>
+                <div class="case-onair">
+                    <span class="case-onair__label">● ON AIR</span>
+                    <video class="js-autoplay" muted loop playsinline preload="none" aria-label="Selo Super Rali animando sobre o placar">
+                        <source src="videos/projects/volei-selo.mp4" type="video/mp4">
+                    </video>
+                    <video class="js-autoplay" muted loop playsinline preload="none" aria-label="Crédito de atleta entrando e saindo">
+                        <source src="videos/projects/volei-credito.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="case-gallery">
+                    <a href="images/projects/volei/01_placar.jpg" class="js-pswp" data-size="1182x185" title="Placar com escudos, sets e parciais">
+                        <img src="images/projects/volei/01_placar-thumb.jpg" alt="Placar com escudos, sets e parciais" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/05_selo_super_rali.jpg" class="js-pswp" data-size="1448x333" title="Selo animado Super Rali sobre o placar">
+                        <img src="images/projects/volei/05_selo_super_rali-thumb.jpg" alt="Selo animado Super Rali sobre o placar" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/10_escalacao.jpg" class="js-pswp" data-size="1031x1080" title="Escalação completa">
+                        <img src="images/projects/volei/10_escalacao-thumb.jpg" alt="Escalação completa" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/11_classificacao.jpg" class="js-pswp" data-size="1020x583" title="Tabela de classificação">
+                        <img src="images/projects/volei/11_classificacao-thumb.jpg" alt="Tabela de classificação" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/07_arbitragem.jpg" class="js-pswp" data-size="1347x217" title="Tarja de arbitragem">
+                        <img src="images/projects/volei/07_arbitragem-thumb.jpg" alt="Tarja de arbitragem" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/13_canal_alfa.jpg" class="js-pswp" data-size="360x255" title="Crédito de atleta sobre xadrez: prova do canal alfa">
+                        <img src="images/projects/volei/13_canal_alfa-thumb.jpg" alt="Crédito de atleta sobre xadrez: prova do canal alfa" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/15_interface_equipes.jpg" class="js-pswp" data-size="1600x900" title="Aba Equipes da mesa de operação">
+                        <img src="images/projects/volei/15_interface_equipes-thumb.jpg" alt="Aba Equipes da mesa de operação" loading="lazy">
+                    </a>
+                    <a href="images/projects/volei/18_cartao_do_placar.jpg" class="js-pswp" data-size="974x330" title="Cartão do placar na mesa de operação">
+                        <img src="images/projects/volei/18_cartao_do_placar-thumb.jpg" alt="Cartão do placar na mesa de operação" loading="lazy">
+                    </a>
+                </div>
+                <p class="featured__caption" data-i18n="volei.caption">Mesa de operação, animações reais do sistema no ar e as artes em detalhe — clique para ampliar.</p>
+            </div>
+
+        </div> <!-- end operacao-volei -->
+
+        <div class="row featured" id="tarja-studio" data-aos="fade-up">
+
+            <div class="column large-5 tab-full featured__text">
+                <p class="featured__kicker" data-i18n="feat.kicker">Software autoral · 2026</p>
                 <h3 class="featured__title">Tarja Studio</h3>
                 <p class="featured__lead" data-i18n="feat.lead">
                     Software que criei para levar grafismos do After Effects direto para o ar.
@@ -430,6 +572,11 @@
                     <li data-i18n="feat.f3">Painel de operação ao vivo e saída para vMix e OBS</li>
                     <li data-i18n="feat.f4">Exporta para HTML, SPX Graphics, CasparCG e NewBlue Captivate</li>
                     <li data-i18n="feat.f5">App desktop com conversão de vídeo via ffmpeg, licenças com assinatura digital e testes automatizados</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong>4</strong><span data-i18n="feat.s1">formatos de exportação</span></li>
+                    <li><strong>v2.0</strong><span data-i18n="feat.s2">código fechado e licenciado</span></li>
+                    <li><strong>.exe</strong><span data-i18n="feat.s3">roda sem instalação</span></li>
                 </ul>
                 <ul class="tool-tags tool-tags--dark">
                     <li>Node.js</li><li>JavaScript</li><li>HTML/CSS</li><li>ExtendScript</li><li>After Effects</li><li>ffmpeg</li>
@@ -458,6 +605,20 @@
             </div>
 
         </div> <!-- end featured -->
+
+    </section> <!-- end s-projects -->
+
+
+    <!-- works
+    ================================================== -->
+    <section id="works" class="s-works target-section">
+
+        <div class="row heading-block heading-block--center" data-aos="fade-up">
+            <div class="column large-full">
+                <h2 class="section-heading section-heading--centerbottom" data-i18n="works.heading">Trabalhos</h2>
+                <p class="section-desc" data-i18n="works.desc">Outros trabalhos de motion, design e web.</p>
+            </div>
+        </div> <!-- end heading-block -->
 
         <div class="row works-filter" data-aos="fade-up">
             <div class="column large-full">
