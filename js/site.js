@@ -142,24 +142,6 @@
     }
 
 
-    /* Filters
-     * ---------------------------------------------------- */
-    (function filters() {
-        var buttons = $$('.filter'), cards = $$('.card');
-
-        buttons.forEach(function (b) {
-            b.addEventListener('click', function () {
-                var f = b.dataset.filter;
-                buttons.forEach(function (x) { x.classList.toggle('is-active', x === b); });
-                cards.forEach(function (c) {
-                    var cats = (c.dataset.category || '').split(' ');
-                    c.classList.toggle('is-hidden', f !== '*' && cats.indexOf(f) === -1);
-                });
-            });
-        });
-    })();
-
-
     /* Dialogs: case studies and the showreel
      * ---------------------------------------------------- */
     function openDialog(d) {
