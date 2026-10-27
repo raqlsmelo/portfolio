@@ -135,9 +135,42 @@
 
         containerBricks.imagesLoaded(function () {
             containerBricks.masonry({
-                itemSelector: '.masonry__brick',
+                itemSelector: '.masonry__brick:not(.is-hidden)',
                 resize: true
             });
+        });
+
+        // re-layout when the language changes the height of the cards
+        $(document).on('i18n:change', function() {
+            if (containerBricks.data('masonry')) containerBricks.masonry('layout');
+        });
+
+    };
+
+
+   /* Works filter
+    * ---------------------------------------------------- */
+    var ssWorksFilter = function() {
+
+        var containerBricks = $('.masonry'),
+            buttons = $('.works-filter__btn');
+
+        buttons.on('click', function() {
+            var filter = $(this).data('filter');
+
+            buttons.removeClass('is-active');
+            $(this).addClass('is-active');
+
+            $('.masonry__brick').each(function() {
+                var categories = ($(this).data('category') || '').split(' '),
+                    visible = filter === '*' || categories.indexOf(filter) !== -1;
+
+                $(this).toggleClass('is-hidden', !visible);
+            });
+
+            if (containerBricks.data('masonry')) {
+                containerBricks.masonry('reloadItems').masonry('layout');
+            }
         });
 
     };
@@ -148,7 +181,7 @@
     var ssPhotoswipe = function() {
         var items = [],
             $pswp = $('.pswp')[0],
-            $folioItems = $('.item-folio');
+            $folioItems = $('.item-folio').has('.thumb-link');
 
         // get items
         $folioItems.each( function(i) {
@@ -277,11 +310,14 @@
         ssMobileMenu();
         ssWaypoints();
         ssMasonryFolio();
+        ssWorksFilter();
         ssPhotoswipe();
         ssSlickSlider();
         ssSmoothScroll();
         ssAlertBoxes();
         ssAOS();
+
+        $('.js-year').text(new Date().getFullYear());
 
     })();
 

@@ -1,0 +1,287 @@
+/* ===================================================================
+ * Custom styles — layered on top of main.css
+ *
+ * ------------------------------------------------------------------- */
+
+/* ===================================================================
+ * # header
+ * ------------------------------------------------------------------- */
+.header-logo img {
+  max-height: 56px;
+  width: auto;
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+}
+
+.lang-switch {
+  display: inline-flex;
+  margin-left: .8rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.lang-switch__btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  line-height: 1;
+  height: auto;
+  margin: 0;
+  padding: .6rem 1rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.lang-switch__btn:hover,
+.lang-switch__btn:focus {
+  background: transparent;
+  color: #ffffff;
+}
+
+.lang-switch__btn.is-active {
+  background-color: #cf8f17;
+  color: #000000;
+}
+
+/* ===================================================================
+ * # intro
+ * ------------------------------------------------------------------- */
+.intro-text__accent {
+  color: #cf8f17;
+}
+
+.intro-text__lead {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 600px;
+  margin-top: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+
+.intro-text__cta .btn {
+  margin-right: 1.6rem;
+}
+
+.intro-text__cta .btn--primary {
+  background-color: #cf8f17;
+  border-color: #cf8f17;
+  color: #000000;
+}
+
+.intro-text__cta .btn--primary:hover,
+.intro-text__cta .btn--primary:focus {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+.intro-text__cta .btn--stroke {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.intro-text__cta .btn--stroke:hover,
+.intro-text__cta .btn--stroke:focus {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 800px) {
+  .intro-text__lead {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro-text__cta .btn {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* ===================================================================
+ * # highlights
+ * ------------------------------------------------------------------- */
+.s-highlights {
+  background-color: #111111;
+  padding-top: 8rem;
+  padding-bottom: 5.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.highlight {
+  margin-bottom: 3.2rem;
+}
+
+.highlight__number {
+  display: block;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 5.6rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #cf8f17;
+  margin-bottom: 1.2rem;
+}
+
+.highlight__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+}
+
+/* ===================================================================
+ * # services — tool tags
+ * ------------------------------------------------------------------- */
+.tool-tags {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+.tool-tags li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: .05rem;
+  line-height: 1;
+  padding: .7rem 1.2rem;
+  margin: 0;
+  border: 1px solid rgba(207, 143, 23, 0.5);
+  border-radius: 2rem;
+  color: #cf8f17;
+}
+
+/* ===================================================================
+ * # works
+ * ------------------------------------------------------------------- */
+.works-filter {
+  margin-top: 4.8rem;
+}
+
+.works-filter__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.works-filter__list li {
+  margin: 0;
+}
+
+.works-filter__btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  height: auto;
+  line-height: 1;
+  margin: 0;
+  padding: 1.2rem 2rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 3rem;
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.works-filter__btn:hover,
+.works-filter__btn:focus {
+  border-color: #000000;
+  background: transparent;
+  color: #000000;
+}
+
+.works-filter__btn.is-active {
+  background-color: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.works-filter + .masonry-wrap {
+  margin-top: 5.6rem;
+}
+
+.masonry__brick.is-hidden {
+  display: none;
+}
+
+/* two columns on larger screens */
+@media screen and (min-width: 801px) {
+  .masonry-wrap {
+    max-width: 1200px;
+  }
+
+  .masonry .grid-sizer,
+  .masonry__brick {
+    width: 50%;
+  }
+
+  .masonry__brick {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .item-folio {
+    padding: 32px;
+  }
+}
+
+.item-folio:hover {
+  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.12);
+}
+
+.item-folio__thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.item-folio__video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+}
+
+.item-folio__video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================================================
+ * # contact
+ * ------------------------------------------------------------------- */
+.contact-social__list i {
+  margin-right: .8rem;
+}
+
+/* ===================================================================
+ * # footer
+ * ------------------------------------------------------------------- */
+html[lang="en"] .ss-go-top::after {
+  content: "Top";
+}
