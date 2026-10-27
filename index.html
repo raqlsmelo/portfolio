@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="pt-BR">
 <head>
 
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Raquel Melo</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Raquel Melo — Design, Motion & Desenvolvimento</title>
+    <meta name="description" content="Portfólio de Raquel Melo: mais de 10 anos de videografismo ao vivo na TV Globo, motion design, UX/UI e desenvolvimento web.">
+    <meta name="author" content="Raquel Melo">
+
+    <!-- social preview
+    ================================================== -->
+    <meta property="og:title" content="Raquel Melo — Design, Motion & Desenvolvimento">
+    <meta property="og:description" content="Videografismo ao vivo, motion design, UX/UI e desenvolvimento web. | Live broadcast graphics, motion design, UX/UI and web development.">
+    <meta property="og:image" content="images/projects/apuracao/01_hero_4-de-outubro.jpg">
+    <meta property="og:type" content="website">
 
     <!-- mobile specific metas
     ================================================== -->
@@ -18,6 +25,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- script
     ================================================== -->
@@ -26,10 +34,8 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/png" href="images/icons/logoRaquel.png">
+    <link rel="apple-touch-icon" href="images/icons/logoRaquel.png">
 
 </head>
 
@@ -44,24 +50,29 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <img src="images/icons/logoRaquel.png">
+            <a class="smoothscroll" href="#top" title="Raquel Melo">
+                <img src="images/icons/logoRaquel.png" alt="Raquel Melo">
             </a>
         </div>
 
         <nav class="header-nav-wrap">
             <ul class="header-main-nav">
-                <li class="current"><a class="smoothscroll" href="#intro" title="intro">Olá!</a></li>
-                <li><a class="smoothscroll" href="#about" title="about">Sobre mim</a></li>
-                <li><a class="smoothscroll" href="#services" title="services">Habilidades</a></li>
-                <li><a class="smoothscroll" href="#works" title="works">Trabalhos</a></li>
-                <li><a class="smoothscroll" href="#contact" title="contact us">Contato</a></li>	
+                <li class="current"><a class="smoothscroll" href="#intro" data-i18n="nav.intro">Olá!</a></li>
+                <li><a class="smoothscroll" href="#about" data-i18n="nav.about">Sobre mim</a></li>
+                <li><a class="smoothscroll" href="#services" data-i18n="nav.skills">Habilidades</a></li>
+                <li><a class="smoothscroll" href="#projects" data-i18n="nav.projects">Projetos</a></li>
+                <li><a class="smoothscroll" href="#works" data-i18n="nav.works">Trabalhos</a></li>
+                <li><a class="smoothscroll" href="#contact" data-i18n="nav.contact">Contato</a></li>
             </ul>
 
             <ul class="header-social">
-                <li><a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                <li><a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
-                <li><a href="#0"><i class="fab fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/raqlsmelo" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                <li><a href="mailto:raqlsmelo@gmail.com" title="E-mail"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+                <li class="lang-switch" role="group" aria-label="Idioma / Language">
+                    <button type="button" class="lang-switch__btn" data-lang="pt" aria-pressed="true">PT</button>
+                    <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+                </li>
             </ul>
         </nav>
 
@@ -77,18 +88,26 @@
         <div class="row intro-content">
 
             <div class="column large-9 mob-full intro-text">
-                <h3>Olá!</h3>
-                <h1>
+                <h3 data-i18n="intro.hello">Olá! Eu sou a Raquel Melo.</h3>
+                <h1 data-i18n="intro.title">
                     Designer, <br>
                     Videografista <br>
                     e Desenvolvedora <br>
-                    entusiasta.
+                    <span class="intro-text__accent">entusiasta.</span>
                 </h1>
+                <p class="intro-text__lead" data-i18n="intro.lead">
+                    Transformo informação em imagem — de gráficos ao vivo na TV Globo
+                    a interfaces e sites que unem design e código.
+                </p>
+                <div class="intro-text__cta">
+                    <a href="#projects" class="btn btn--primary smoothscroll" data-i18n="intro.ctaWorks">Ver projetos</a>
+                    <a href="#contact" class="btn btn--stroke smoothscroll" data-i18n="intro.ctaContact">Fale comigo</a>
+                </div>
             </div>
 
             <div class="intro-scroll">
-                <a href="#about" class="intro-scroll-link smoothscroll">
-                    Leia mais abaixo
+                <a href="#about" class="intro-scroll-link smoothscroll" data-i18n="intro.scroll">
+                    Role para ver mais
                 </a>
             </div>
 
@@ -100,6 +119,35 @@
     </section> <!-- end intro -->
 
 
+    <!-- highlights
+    ================================================== -->
+    <section class="s-highlights ss-dark">
+        <div class="row highlights block-large-1-4 block-tab-1-2 block-mob-full">
+
+            <div class="column highlight" data-aos="fade-up">
+                <span class="highlight__number">10+</span>
+                <p class="highlight__label" data-i18n="hl.years">anos de videografismo ao vivo na TV Globo</p>
+            </div>
+
+            <div class="column highlight" data-aos="fade-up">
+                <span class="highlight__number" data-i18n="hl.eventsNumber">Copas</span>
+                <p class="highlight__label" data-i18n="hl.events">do Mundo masculina e feminina, Eleições e Rock in Rio</p>
+            </div>
+
+            <div class="column highlight" data-aos="fade-up">
+                <span class="highlight__number">3</span>
+                <p class="highlight__label" data-i18n="hl.degrees">formações: Desenho (UFRJ), Audiovisual e pós em Full Stack</p>
+            </div>
+
+            <div class="column highlight" data-aos="fade-up">
+                <span class="highlight__number">∞</span>
+                <p class="highlight__label" data-i18n="hl.learning">curiosidade — agora cursando Engenharia de Software</p>
+            </div>
+
+        </div>
+    </section> <!-- end s-highlights -->
+
+
     <!-- about
     ================================================== -->
     <section id="about" class="s-about target-section">
@@ -108,43 +156,37 @@
 
             <div class="row heading-block" data-aos="fade-up">
                 <div class="column large-full">
-                    <h2 class="section-heading">Sobre mim</h2>
+                    <h2 class="section-heading" data-i18n="about.heading">Sobre mim</h2>
                 </div>
             </div>
 
             <div class="row about-me__content" data-aos="fade-up">
                 <div class="column large-full about-me__text">
-                    <p class="lead">
-                    Profissional altamente qualificada com uma ampla experiência no mercado audiovisual, 
-                    com mais de 10 anos de atuação. Formada em Produção Audiovisual e uma pós-graduação 
-                    em Desenvolvimento Web Full Stack, e atualmente estou cursando Engenharia de Software para expandir ainda mais 
-                    minha base de conhecimento.
+                    <p class="lead" data-i18n="about.lead">
+                    Sou profissional do audiovisual há mais de 10 anos e vivo no encontro entre
+                    design, movimento e tecnologia. Sou formada em Produção Audiovisual, pós-graduada
+                    em Desenvolvimento Web Full Stack e atualmente curso Engenharia de Software.
                     </p>
 
-                    <p>
-                    Minha carreira no mercado audiovisual foi marcada por contribuições significativas, incluindo trabalhos 
-                    notáveis na TV Globo, onde participei de importantes eventos como Eleições, Copas do Mundo Masculina e 
-                    Feminina, Rock in Rio e muitos outros. Além disso, estive envolvida em produções variadas, desde telejornais 
-                    até programas de variedades e o Big Brother Brasil (BBB).
+                    <p data-i18n="about.p1">
+                    Na TV Globo, crio e opero gráficos em tempo real para transmissões ao vivo —
+                    Eleições, Copas do Mundo masculina e feminina, Rock in Rio, telejornais,
+                    programas de variedades e o Big Brother Brasil (BBB).
                     </p>
 
-                    <p>
-                    Possuo conhecimentos avançados em diversas ferramentas, incluindo o pacote Adobe (After Effects, Premiere, 
-                    Photoshop, Illustrator e Adobe XD), o software Chyron Lyric, Figma, WordPress, Elementor e Da Vinci. Nos 
-                    últimos anos, dediquei-me ao desenvolvimento, adquirindo habilidades em linguagens como JavaScript, Python, 
-                    Java e VBScript, que são fundamentais para os softwares de produção que utilizo. Também adquiri conhecimentos 
-                    em UX/UI e gestão de otimização de tempo.
+                    <p data-i18n="about.p2">
+                    No dia a dia uso o pacote Adobe (After Effects, Premiere, Photoshop, Illustrator),
+                    DaVinci Resolve, Chyron Lyric e Viz, além de Figma, WordPress e Elementor.
+                    Programo em JavaScript, Python, Java e VBScript — linguagens que uso para
+                    automatizar e criar interfaces para os sistemas de produção com que trabalho.
                     </p>
 
-                    <p>
-                    Sou uma entusiasta de novas tecnologias e estou sempre disposta a aprender mais, o que me permite permanecer 
-                    atualizada em um ambiente profissional em constante evolução. Combinando minha experiência sólida em produção 
-                    audiovisual com minhas habilidades em desenvolvimento e design, estou preparada para enfrentar desafios e 
-                    contribuir de forma significativa em qualquer projeto ou equipe em que me envolva.
+                    <p data-i18n="about.p3">
+                    Gosto de projetos em que preciso pensar como designer e resolver como
+                    desenvolvedora. Se você tem um desafio assim, vamos conversar.
                     </p>
                 </div>
             </div>
-    
 
         </div> <!-- end about-me -->
 
@@ -152,7 +194,7 @@
 
             <div class="row heading-block" data-aos="fade-up">
                 <div class="column large-full">
-                    <h2 class="section-heading">Trabalho e Educação</h2>
+                    <h2 class="section-heading" data-i18n="exp.heading">Trabalho e Educação</h2>
                 </div>
             </div>
 
@@ -168,38 +210,31 @@
                         <div class="timeline__block">
                             <div class="timeline__bullet"></div>
                             <div class="timeline__header">
-                                <p class="timeline__timeframe">Abril 2022 - Present</p>
-                                <h3 class="item-title">Tv Globo</h3>
-                                <h5>Editora de Videografismo</h5>
+                                <p class="timeline__timeframe" data-i18n="exp.job1.time">Abril 2022 - Atual</p>
+                                <h3 class="item-title">TV Globo</h3>
+                                <h5 data-i18n="exp.job1.role">Editora de Videografismo</h5>
                             </div>
                             <div class="timeline__desc">
-                                <p>Uso avançado de ferramentas como Adobe After Effects, 
-                                Premiere, Photoshop e Illustrator, criar animações e
-                                efeitos visuais de alta qualidade. Uso de softwares 
-                                especializados, como Chyron Lyric, Viz Artist e Viz Trio, 
-                                que desempenham um papel crucial na produção de gráficos 
-                                em tempo real para ransmissões ao vivo.</p>
+                                <p data-i18n="exp.job1.desc">Criação de animações e efeitos visuais com After Effects,
+                                Premiere, Photoshop e Illustrator. Produção de gráficos em tempo real para
+                                transmissões ao vivo com Chyron Lyric, Viz Artist e Viz Trio.</p>
                             </div>
                         </div>
 
                         <div class="timeline__block">
                             <div class="timeline__bullet"></div>
                             <div class="timeline__header">
-                                <p class="timeline__timeframe">Maio 2012 - Março 2022</p>
-                                <h3 class="item-title">Tv Globo</h3>
-                                <h5>Operadora de Videografismo</h5>
+                                <p class="timeline__timeframe" data-i18n="exp.job2.time">Maio 2012 - Março 2022</p>
+                                <h3 class="item-title">TV Globo</h3>
+                                <h5 data-i18n="exp.job2.role">Operadora de Videografismo</h5>
                             </div>
                             <div class="timeline__desc">
-                                <p>responsável por criar gráficos, animações, 
-                                efeitos visuais e outros elementos que serão 
-                                integrados ao conteúdo audiovisual. Incluindo 
-                                gráficos informativos, logotipos, títulos, 
-                                animações de transição e mais. Garantindo 
-                                que o conteúdo seja informativo, atraente e 
-                                profissionalmente apresentado. </p>
+                                <p data-i18n="exp.job2.desc">Criação e operação de gráficos, animações e
+                                elementos visuais integrados ao conteúdo: infográficos, logotipos, títulos
+                                e transições — garantindo um conteúdo informativo, atraente e
+                                profissionalmente apresentado.</p>
                             </div>
                         </div>
-
 
                     </div>
                 </div>
@@ -214,50 +249,53 @@
                         <div class="timeline__block">
                             <div class="timeline__bullet"></div>
                             <div class="timeline__header">
-                                <p class="timeline__timeframe">Setembro 2022- Março 2023</p>
-                                <h3 class="item-title">Universidade Anhanguera</h3>
-                                <h5>Pós-Graduação em Desenvolvimento Web Full Stack</h5>
+                                <p class="timeline__timeframe" data-i18n="edu.se.time">Em andamento</p>
+                                <h3 class="item-title" data-i18n="edu.se.title">Engenharia de Software</h3>
+                                <h5 data-i18n="edu.se.degree">Graduação</h5>
                             </div>
                             <div class="timeline__desc">
-                                <p>Compreender os padrões e tecnologias essenciais 
-                                para o desenvolvimento de soluções Web para 
-                                diferentes ramos de negócio. Compreender, 
-                                planejar e construir arquiteturas web com 
-                                metodologias e tecnologias atuais e potentes.
-                                Planejar, organizar e gerir equipes de projetos 
-                                de desenvolvimento Web com qualidade, em conformidade 
-                                com a cultura DevOps. Compreender e aplicar os conceitos 
-                                e modos de integração com soluções de big data e cloud computing.
-                                Desenvolver soluções de software por meio de frameworks front end 
-                                e back end, com a adoção de boas práticas amplamente utilizadas na 
-                                indústria de desenvolvimento de software.</p>
+                                <p data-i18n="edu.se.desc">Aprofundando fundamentos de engenharia, arquitetura
+                                e qualidade de software para construir produtos digitais mais robustos.</p>
                             </div>
                         </div>
 
                         <div class="timeline__block">
                             <div class="timeline__bullet"></div>
                             <div class="timeline__header">
-                                <p class="timeline__timeframe">Agosto 2016 - Junho 2020</p>
-                                <h3 class="item-title">Universidade Estácio</h3>
-                                <h5>Graduação em Produção Audiovisual</h5>
+                                <p class="timeline__timeframe" data-i18n="edu.pos.time">Setembro 2022 - Março 2023</p>
+                                <h3 class="item-title" data-i18n="edu.pos.school">Universidade Anhanguera</h3>
+                                <h5 data-i18n="edu.pos.degree">Pós-Graduação em Desenvolvimento Web Full Stack</h5>
                             </div>
                             <div class="timeline__desc">
-                                <p>Capaciitação para produzir programas audiovisuais.
-                                Incluindo toda a produção, concepção do roteiro, como escolher 
-                                as melhores locações dos espaços e também produção executiva.</p>
+                                <p data-i18n="edu.pos.desc">Arquitetura web, frameworks front-end e back-end,
+                                cultura DevOps, integração com big data e cloud computing, e gestão de
+                                equipes de desenvolvimento com boas práticas de mercado.</p>
                             </div>
                         </div>
 
                         <div class="timeline__block">
                             <div class="timeline__bullet"></div>
                             <div class="timeline__header">
-                                <p class="timeline__timeframe">Agosto 2004 - Agosto 2009</p>
-                                <h3 class="item-title">Universidade Federal do Rio de Janeiro</h3>
-                                <h5>Licenciatura em Educação Artistica | Desenho</h5>
+                                <p class="timeline__timeframe" data-i18n="edu.av.time">Agosto 2016 - Junho 2020</p>
+                                <h3 class="item-title" data-i18n="edu.av.school">Universidade Estácio</h3>
+                                <h5 data-i18n="edu.av.degree">Graduação em Produção Audiovisual</h5>
                             </div>
                             <div class="timeline__desc">
-                                <p>Formação em Desenho visando o conhecimento da geometria (plana e projetiva) 
-                                e a sua aplicação às diferentes técnicas de representação gráfica.</p>
+                                <p data-i18n="edu.av.desc">Produção de programas audiovisuais de ponta a ponta:
+                                roteiro, escolha de locações e produção executiva.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe" data-i18n="edu.ufrj.time">Agosto 2004 - Agosto 2009</p>
+                                <h3 class="item-title" data-i18n="edu.ufrj.school">Universidade Federal do Rio de Janeiro</h3>
+                                <h5 data-i18n="edu.ufrj.degree">Licenciatura em Educação Artística | Desenho</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p data-i18n="edu.ufrj.desc">Geometria plana e projetiva e sua aplicação às
+                                diferentes técnicas de representação gráfica.</p>
                             </div>
                         </div>
 
@@ -278,9 +316,9 @@
 
         <div class="row heading-block heading-block--center" data-aos="fade-up">
             <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom">Habilidades</h2>
+                <h2 class="section-heading section-heading--centerbottom" data-i18n="skills.heading">Habilidades</h2>
 
-                <p class="section-desc">
+                <p class="section-desc" data-i18n="skills.desc">
                     Sempre há algo novo a aprender.
                 </p>
             </div>
@@ -290,66 +328,72 @@
 
             <div class="column item-service" data-aos="fade-up">
                 <div class="item-service__content">
-                    <h4 class="item-title">Videografismo | Motion Design</h4>
-                    <p>
-                    Especialização em motion design e videografismo.
-                    Alta proficiência no software Chyron Lyric, 
-                    para produção de gráficos em tempo real.
-                    Participação em eventos de grande porte, como Eleições e Copas do Mundo.
-                    Trabalho em telejornais, programas de variedades e eventos ao vivo.
+                    <h4 class="item-title" data-i18n="skills.motion.title">Videografismo | Motion Design</h4>
+                    <p data-i18n="skills.motion.desc">
+                    Gráficos em tempo real com Chyron Lyric e Viz para eventos de grande porte,
+                    telejornais e programas ao vivo.
+                    </p>
+                    <ul class="tool-tags">
+                        <li>Chyron Lyric</li><li>Viz Artist</li><li>Viz Trio</li><li>ExtendScript</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title" data-i18n="skills.adobe.title">Edição e Pós-produção</h4>
+                    <p data-i18n="skills.adobe.desc">
+                    Animação, composição, edição e tratamento de imagem com domínio avançado
+                    do pacote Adobe.
+                    </p>
+                    <ul class="tool-tags">
+                        <li>After Effects</li><li>Premiere</li><li>Photoshop</li><li>Illustrator</li><li>DaVinci</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title" data-i18n="skills.dev.title">Desenvolvimento Web Full Stack</h4>
+                    <p data-i18n="skills.dev.desc">
+                    Front-end com HTML, CSS, JavaScript e React, e desenvolvimento de aplicações
+                    e automações para fluxos de produção.
+                    </p>
+                    <ul class="tool-tags">
+                        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Python</li><li>Java</li><li>VBScript</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title" data-i18n="skills.ux.title">UX/UI e Prototipagem</h4>
+                    <p data-i18n="skills.ux.desc">
+                    Interfaces pensadas para quem opera sob pressão: protótipos no Figma e sites
+                    em WordPress e Elementor.
+                    </p>
+                    <ul class="tool-tags">
+                        <li>Figma</li><li>Adobe XD</li><li>WordPress</li><li>Elementor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title" data-i18n="skills.time.title">Gestão de Tempo e Otimização</h4>
+                    <p data-i18n="skills.time.desc">
+                    Organização e otimização de processos de trabalho — essencial em ambientes
+                    de transmissão ao vivo, onde cada segundo conta.
                     </p>
                 </div>
             </div>
 
             <div class="column item-service" data-aos="fade-up">
                 <div class="item-service__content">
-                    <h4 class="item-title">Ferramentas Adobe</h4>
-                    <p>
-                        Proficiência avançada no pacote Adobe, 
-                        incluindo After Effects, Premiere, Photoshop 
-                        e Illustrator.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Desenvolvimento Web Full Stack</h4>
-                    <p>
-                    Habilidades em front-end, incluindo HTML, CSS, JavaScript e frameworks como React;
-                    Experiência em desenvolvimento de aplicações
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Ferramentas de Design de Prototipagem | Desenvolvimento</h4>
-                    <p>
-                    Proficiência em ferramentas de design, como Figma.
-                    Experiência em criação e personalização de sites usando WordPress e Elementor.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Gestão de Tempo e Otimização</h4>
-                    <p>
-                    Estudos em gestão de otimização de tempo.
-                    Habilidades para organizar e otimizar processos de trabalho.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Aprendizado Contínuo e Entusiasmo por Tecnologia</h4>
-                    <p>
-                    Dedicação à aprendizagem contínua, incluindo cursos em JavaScript, 
-                    Python, Java e VBScript.
-                    Interesse e entusiasmo por novas tecnologias e tendências em design, 
-                    desenvolvimento e produção audiovisual.
+                    <h4 class="item-title" data-i18n="skills.learn.title">Aprendizado Contínuo</h4>
+                    <p data-i18n="skills.learn.desc">
+                    Entusiasta de novas tecnologias e tendências em design, desenvolvimento
+                    e produção audiovisual.
                     </p>
                 </div>
             </div>
@@ -359,6 +403,191 @@
     </section> <!-- end s-services -->
 
 
+    <!-- projects
+    ================================================== -->
+    <section id="projects" class="s-projects target-section">
+
+        <div class="row heading-block heading-block--center" data-aos="fade-up">
+            <div class="column large-full">
+                <h2 class="section-heading section-heading--centerbottom" data-i18n="projects.heading">Projetos em destaque</h2>
+                <p class="section-desc" data-i18n="projects.desc">Sistemas de grafismo ao vivo que desenhei, animei e programei — do After Effects ao ar.</p>
+            </div>
+        </div> <!-- end heading-block -->
+
+        <div class="row featured featured--apuracao" id="apuracao-2026" data-aos="fade-up">
+
+            <div class="column large-5 tab-full featured__text">
+                <p class="featured__kicker" data-i18n="apu.kicker">Eleições 2026 · Broadcast</p>
+                <h3 class="featured__title">Apuração 2026</h3>
+                <p class="featured__lead" data-i18n="apu.lead">
+                    Sistema que liga o banco de dados da apuração direto às artes que vão ao ar. O operador
+                    escolhe cargo e localidade num painel, e tarjas, telas e mapas saem preenchidos com o
+                    dado oficial — sem digitação manual.
+                </p>
+                <ul class="featured__list">
+                    <li data-i18n="apu.f1">Painel de operação no Viz Trio com 10 linhas: vermelho no ar, verde no preview</li>
+                    <li data-i18n="apu.f2">4 modelos de arte: tarja, tela de eleitorado, mapa dos 27 estados e mapa de partidos</li>
+                    <li data-i18n="apu.f3">Templates de Viz Pilot com as mesmas regras, para o sistema de rundown</li>
+                    <li data-i18n="apu.f4">Regras do mundo real: Senador com 2 eleitos vira duas tarjas, segundo turno, desempate por voto absoluto e dado de ensaio que nunca vaza para o ar</li>
+                    <li data-i18n="apu.f5">Camada única em PostgreSQL com auditoria de consultas, além de manuais e guia rápido para a operação</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong>27</strong><span data-i18n="apu.s1">estados</span></li>
+                    <li><strong data-i18n="apu.n2">~4.800</strong><span data-i18n="apu.s2">linhas de VBScript</span></li>
+                    <li><strong>1</strong><span data-i18n="apu.s3">operador</span></li>
+                </ul>
+                <ul class="tool-tags tool-tags--dark">
+                    <li>Viz Trio</li><li>Viz Pilot</li><li>VBScript</li><li>PostgreSQL</li>
+                </ul>
+            </div>
+
+            <div class="column large-7 tab-full featured__demo">
+                <div class="case-video">
+                    <video class="js-autoplay" muted loop playsinline controls preload="none" poster="images/projects/apuracao/video-capa.jpg" aria-label="Vídeo de apresentação do projeto Apuração 2026">
+                        <source src="videos/projects/apuracao-2026.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="case-gallery">
+                    <a href="images/projects/apuracao/05_senador-elege-2-duas-tarjas.jpg" class="js-pswp" data-size="1600x900" title="Senador elege 2: uma tarja por eleito">
+                        <img src="images/projects/apuracao/05_senador-elege-2-duas-tarjas-thumb.jpg" alt="Senador elege 2: uma tarja por eleito" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/07_mapa-dos-estados-27-ufs.jpg" class="js-pswp" data-size="1600x900" title="Mapa dos estados com 27 UFs e 5 status">
+                        <img src="images/projects/apuracao/07_mapa-dos-estados-27-ufs-thumb.jpg" alt="Mapa dos estados com 27 UFs e 5 status" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/04_tela-eleitorado-senador.jpg" class="js-pswp" data-size="1197x669" title="Tela de eleitorado de Senador com 4 candidatos">
+                        <img src="images/projects/apuracao/04_tela-eleitorado-senador-thumb.jpg" alt="Tela de eleitorado de Senador com 4 candidatos" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde.jpg" class="js-pswp" data-size="1600x900" title="Painel: vermelho no ar, verde no preview">
+                        <img src="images/projects/apuracao/06_painel-no-ar-vermelho-preview-verde-thumb.jpg" alt="Painel: vermelho no ar, verde no preview" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/02_painel-do-operador.jpg" class="js-pswp" data-size="1600x900" title="Painel do operador no Viz Trio">
+                        <img src="images/projects/apuracao/02_painel-do-operador-thumb.jpg" alt="Painel do operador no Viz Trio" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/08_guia-rapido-operacao.jpg" class="js-pswp" data-size="1413x2000" title="Guia rápido de uma página para a operação">
+                        <img src="images/projects/apuracao/08_guia-rapido-operacao-thumb.jpg" alt="Guia rápido de uma página para a operação" loading="lazy">
+                    </a>
+                    <a href="images/projects/apuracao/09_manual-visual-operacao.jpg" class="js-pswp" data-size="1200x1500" title="Manual visual com a tela anotada">
+                        <img src="images/projects/apuracao/09_manual-visual-operacao-thumb.jpg" alt="Manual visual com a tela anotada" loading="lazy">
+                    </a>
+                </div>
+                <p class="featured__caption" data-i18n="apu.caption">Os resultados nas imagens são dados de ensaio, fictícios — não são resultados oficiais.</p>
+            </div>
+
+        </div> <!-- end apuracao-2026 -->
+
+        <div class="row featured featured--reverse" id="operacao-volei" data-aos="fade-up">
+
+            <div class="column large-5 tab-full featured__text">
+                <p class="featured__kicker" data-i18n="volei.kicker">Projeto autoral · 2026 · v4.1</p>
+                <h3 class="featured__title">Operação Vôlei</h3>
+                <p class="featured__lead" data-i18n="volei.lead">
+                    Sistema completo de grafismo ao vivo para vôlei — artes, lógica de jogo e mesa de
+                    operação — escrito do zero em HTML, CSS e JavaScript e entregue como um único
+                    executável. As artes são páginas web com fundo transparente, então o sistema é
+                    agnóstico de plataforma: entra no ar por qualquer switcher ou playout que aceite
+                    uma página web como fonte.
+                </p>
+                <div class="case-platforms">
+                    <span class="case-platforms__label" data-i18n="volei.platforms">Roda em</span>
+                    <ul>
+                        <li>vMix</li><li>OBS</li><li>SPX</li><li>Viz</li><li data-i18n="volei.platformsAny">+ qualquer fonte de página web</li>
+                    </ul>
+                </div>
+                <ul class="featured__list">
+                    <li data-i18n="volei.f1">Placar com sets, parciais, troca de lados e desfazer, e 11 módulos que entram colados a ele</li>
+                    <li data-i18n="volei.f2">6 tarjas de crédito, tabelas de tela cheia e 3 selos animados com som</li>
+                    <li data-i18n="volei.f3">Mesa de operação no navegador, com atalhos para as duas mãos — e, no vMix, controle direto pela API</li>
+                    <li data-i18n="volei.f4">Tipografia medida no navegador e testes de regressão por pixel com Playwright</li>
+                    <li data-i18n="volei.f5">Servidor Node sem dependências, sincronizado por Server-Sent Events e empacotado num .exe que roda sem instalação</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong data-i18n="volei.n1">~3.700</strong><span data-i18n="volei.s1">linhas de código</span></li>
+                    <li><strong>0</strong><span data-i18n="volei.s2">dependências em produção</span></li>
+                    <li><strong>11</strong><span data-i18n="volei.s3">módulos sobre o placar</span></li>
+                </ul>
+                <ul class="tool-tags tool-tags--dark">
+                    <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>SSE</li><li>Browser source</li><li>Playwright</li>
+                </ul>
+            </div>
+
+            <div class="column large-7 tab-full featured__demo">
+                <div class="vb-stage" aria-hidden="true">
+                    <span class="lt-stage__onair">● ON AIR</span>
+                    <span class="vb-stage__source">browser source · 1920×1080 · alpha</span>
+                    <div class="vb-bug"><span data-i18n="volei.demoBug">SUPER RALI</span></div>
+                    <div class="vb">
+                        <div class="vb__module" data-i18n="volei.demoModule">PONTO DO SET</div>
+                        <div class="vb__bar">
+                            <span class="vb__team vb__team--home" data-i18n="volei.demoHome">CASA</span>
+                            <span class="vb__sets js-vb-sets-home">1</span>
+                            <span class="vb__pts js-vb-home">22</span>
+                            <span class="vb__pts vb__pts--away js-vb-away">21</span>
+                            <span class="vb__sets js-vb-sets-away">1</span>
+                            <span class="vb__team vb__team--away" data-i18n="volei.demoAway">VISITANTE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vb-keys" aria-hidden="true">
+                    <span class="vb-key js-vb-key-q"><kbd>Q</kbd><span data-i18n="volei.keyHome">ponto casa</span></span>
+                    <span class="vb-key js-vb-key-e"><kbd>E</kbd><span data-i18n="volei.keyAway">ponto visitante</span></span>
+                    <span class="vb-key js-vb-key-o"><kbd>O</kbd><span data-i18n="volei.keySet">fecha set</span></span>
+                    <span class="vb-key"><kbd>Esc</kbd><span data-i18n="volei.keyOut">tira a peça</span></span>
+                </div>
+                <p class="featured__caption" data-i18n="volei.caption">Simulação em HTML/CSS com times fictícios: o placar recebe pontos pelos atalhos da mesa, mostra o módulo de ponto do set e o selo animado.</p>
+            </div>
+
+        </div> <!-- end operacao-volei -->
+
+        <div class="row featured" id="tarja-studio" data-aos="fade-up">
+
+            <div class="column large-5 tab-full featured__text">
+                <p class="featured__kicker" data-i18n="feat.kicker">Software autoral · 2026</p>
+                <h3 class="featured__title">Tarja Studio</h3>
+                <p class="featured__lead" data-i18n="feat.lead">
+                    Software que criei para levar grafismos do After Effects direto para o ar.
+                    O designer anima no After; o Tarja transforma a peça em HTML e a opera ao vivo.
+                </p>
+                <ul class="featured__list">
+                    <li data-i18n="feat.f1">Script para After Effects que lê rigs de Essential Graphics e exporta animações, textos e alinhamentos</li>
+                    <li data-i18n="feat.f2">Editor no navegador com linha do tempo, propriedades e avisos de área segura e textos que não cabem</li>
+                    <li data-i18n="feat.f3">Painel de operação ao vivo e saída para vMix e OBS</li>
+                    <li data-i18n="feat.f4">Exporta para HTML, SPX Graphics, CasparCG e NewBlue Captivate</li>
+                    <li data-i18n="feat.f5">App desktop com conversão de vídeo via ffmpeg, licenças com assinatura digital e testes automatizados</li>
+                </ul>
+                <ul class="case-stats">
+                    <li><strong>4</strong><span data-i18n="feat.s1">formatos de exportação</span></li>
+                    <li><strong>v2.0</strong><span data-i18n="feat.s2">código fechado e licenciado</span></li>
+                    <li><strong>.exe</strong><span data-i18n="feat.s3">roda sem instalação</span></li>
+                </ul>
+                <ul class="tool-tags tool-tags--dark">
+                    <li>Node.js</li><li>JavaScript</li><li>HTML/CSS</li><li>ExtendScript</li><li>After Effects</li><li>ffmpeg</li>
+                </ul>
+            </div>
+
+            <div class="column large-7 tab-full featured__demo">
+                <div class="lt-stage" aria-hidden="true">
+                    <span class="lt-stage__onair">● ON AIR</span>
+                    <span class="lt-stage__safe"></span>
+                    <div class="lt">
+                        <span class="lt__bar"></span>
+                        <div class="lt__box">
+                            <span class="lt__name">RAQUEL MELO</span>
+                            <span class="lt__role" data-i18n="feat.demoRole">Designer &amp; Desenvolvedora</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lt-timeline" aria-hidden="true">
+                    <div class="lt-timeline__track"><span class="lt-timeline__label">BAR</span><span class="lt-timeline__clip lt-timeline__clip--a"></span></div>
+                    <div class="lt-timeline__track"><span class="lt-timeline__label">BOX</span><span class="lt-timeline__clip lt-timeline__clip--b"></span></div>
+                    <div class="lt-timeline__track"><span class="lt-timeline__label">TXT</span><span class="lt-timeline__clip lt-timeline__clip--c"></span></div>
+                    <span class="lt-timeline__playhead"></span>
+                </div>
+                <p class="featured__caption" data-i18n="feat.caption">Uma tarja animada só com HTML e CSS — o tipo de peça que o Tarja Studio gera.</p>
+            </div>
+
+        </div> <!-- end featured -->
+
+    </section> <!-- end s-projects -->
 
 
     <!-- works
@@ -367,124 +596,91 @@
 
         <div class="row heading-block heading-block--center" data-aos="fade-up">
             <div class="column large-full">
-                <h2 class="section-heading section-heading--centerbottom">Trabalhos</h2>
+                <h2 class="section-heading section-heading--centerbottom" data-i18n="works.heading">Trabalhos</h2>
+                <p class="section-desc" data-i18n="works.desc">Outros trabalhos de motion, design e web.</p>
             </div>
         </div> <!-- end heading-block -->
+
+        <div class="row works-filter" data-aos="fade-up">
+            <div class="column large-full">
+                <ul class="works-filter__list">
+                    <li><button type="button" class="works-filter__btn is-active" data-filter="*" data-i18n="works.filter.all">Todos</button></li>
+                    <li><button type="button" class="works-filter__btn" data-filter="motion" data-i18n="works.filter.motion">Motion & Vídeo</button></li>
+                    <li><button type="button" class="works-filter__btn" data-filter="brand" data-i18n="works.filter.brand">Identidade visual</button></li>
+                    <li><button type="button" class="works-filter__btn" data-filter="web" data-i18n="works.filter.web">Web</button></li>
+                </ul>
+            </div>
+        </div>
 
         <div class="masonry-wrap">
 
             <div class="masonry">
                 <div class="grid-sizer"></div>
-    
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
 
-                        <div>
-                            <video width="640" height="480" controls="controls">
-                                <source src="videos/EDIT_MINHA PRECE.mp4" type="video/mp4">
-                                <object data="" width="640" height="480">
-                                <embed width="640" height="480" src="videos/EDIT_MINHA PRECE.mp4">
-                                </object>
-                                </video>
-                        </div>
+                <!-- Para adicionar um projeto novo, copie um bloco "masonry__brick",
+                     ajuste data-category (motion, ui, brand, web — separados por espaço),
+                     as imagens, data-size (largura x altura da imagem grande) e os textos.
+                     Depois adicione as traduções em inglês em js/i18n.js. -->
 
-                        <div class="item-folio__thumb">
-                            <a href="" class="thumb-link" title="Shutterbug" data-size="1x1">
+                <div class="masonry__brick" data-category="motion" data-aos="fade-up">
+                    <div class="item-folio item-folio--video">
+                        <div class="item-folio__video">
+                            <video controls preload="none" playsinline poster="images/portfolio/minha-prece-poster.jpg">
                                 <source src="videos/EDIT_MINHA PRECE.mp4" type="video/mp4">
-                            </a>    
-                            
+                            </video>
                         </div>
-    
                         <div class="item-folio__text">
                             <h4 class="item-folio__title">
                                 Lyric Video
                             </h4>
                             <p class="item-folio__cat">
-                                Minha Prece - Dandara Manoela - After Effects | Premiere
+                                Minha Prece — Dandara Manoela — After Effects | Premiere
                             </p>
-                        </div>
-    
-                        <div class="item-folio__caption">
-                            <p>After Effects | Premiere</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-    
-               
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        
-                        <div class="item-folio__thumb">
-                            
-                            <a href="images/portfolio/estudioEscolaLogo2.png" class="thumb-link" title="" data-size="800x700">
-                                <img src="images/portfolio/estudioEscolaLogo2.png"
-                                     srcset="images/portfolio/estudioEscolaLogo.png" alt="">
-                            </a>
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Board Logo 
-                            </h4>
-                            <p class="item-folio__cat">
-                                Estúdio escola de TV - Illustrator | Photoshop
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>Logomarca, Projeto Gráfico e digital</p>
                         </div>
                     </div>
                 </div> <!-- end masonry__brick -->
 
-                <div class="masonry__brick" data-aos="fade-up">
+                <div class="masonry__brick" data-category="brand web" data-aos="fade-up">
                     <div class="item-folio">
                         <div class="item-folio__thumb">
-                            <a href="images/portfolio/interfaceCopaFeminina.png" class="thumb-link" title="" data-size="1920x1080">
-                                <img src="images/portfolio/interfaceCopaFeminina.png" 
-                                     srcset="images/portfolio/interfaceConvocacaoFeminina.png" alt="">
+                            <a href="images/portfolio/insideSiteGabi.png" class="thumb-link" data-size="1339x767">
+                                <img src="images/portfolio/siteGabi.png" alt="Site e logo para set designer">
                             </a>
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
                         </div>
                         <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Interfaces operacionais
+                            <h4 class="item-folio__title" data-i18n="works.gabi.title">
+                                Set Designer — Logo & Site
                             </h4>
                             <p class="item-folio__cat">
-                                Copa do Mundo - Figma | HTML | CSS | VBScript
+                                Web Design — Figma | Illustrator | WordPress | Elementor
                             </p>
                         </div>
                         <div class="item-folio__caption">
-                            <p> Interfaces interativas de videografismo</p>
+                            <p data-i18n="works.gabi.caption">Criação de logo e site com portfólio.</p>
                         </div>
                     </div>
                 </div> <!-- end masonry__brick -->
 
-                <div class="masonry__brick" data-aos="fade-up">
+                <div class="masonry__brick" data-category="brand" data-aos="fade-up">
                     <div class="item-folio">
-                            
                         <div class="item-folio__thumb">
-                            <a href="images/portfolio/insideSiteGabi.png" class="thumb-link" title="Guitarist" data-size="1050x700">
-                                <img src="images/portfolio/insideSiteGabi.png" 
-                                     srcset="images/portfolio/siteGabi.png" alt="">
+                            <a href="images/portfolio/estudioEscolaLogo2.png" class="thumb-link" data-size="537x532">
+                                <img src="images/portfolio/estudioEscolaLogo.png" alt="Board de logo do Estúdio Escola de TV">
                             </a>
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
                         </div>
                         <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Set Designer Logo & Site
+                            <h4 class="item-folio__title" data-i18n="works.estudio.title">
+                                Board de Logo
                             </h4>
-                            <p class="item-folio__cat">
-                                Web Design - Figma | Illustrator | Wordpress | Elementor
+                            <p class="item-folio__cat" data-i18n="works.estudio.cat">
+                                Estúdio Escola de TV — Illustrator | Photoshop
                             </p>
                         </div>
                         <div class="item-folio__caption">
-                            <p>Concepção de Logo e Site com portfolio</p>
+                            <p data-i18n="works.estudio.caption">Logomarca e projeto gráfico impresso e digital.</p>
                         </div>
                     </div>
                 </div> <!-- end masonry__brick -->
-        
-                
 
             </div> <!-- end masonry -->
 
@@ -498,20 +694,19 @@
 
         <div class="row heading-block" data-aos="fade-up">
             <div class="column large-full">
-                <h2 class="section-heading">Entre em contato</h2>
+                <h2 class="section-heading" data-i18n="contact.heading">Vamos criar algo juntos?</h2>
             </div>
         </div>
 
         <div class="row contact-main" data-aos="fade-up">
             <div class="column large-full">
                 <p class="contact-email">
-                    <a href="mailto:#0">raqlsmelo@gmail.com</a>
+                    <a href="mailto:raqlsmelo@gmail.com">raqlsmelo@gmail.com</a>
                 </p>
 
-                <p class="section-desc">
-                Aberta a novas possibilidades, novos apendizados e
-                novas experiências.
-                <a href="mailto:#0">Envie um email</a>.
+                <p class="section-desc" data-i18n="contact.desc">
+                Aberta a novos projetos, parcerias e oportunidades — no Brasil ou fora dele.
+                <a href="mailto:raqlsmelo@gmail.com">Envie um e-mail</a>.
                 </p>
             </div>
         </div>
@@ -519,10 +714,17 @@
         <div class="row contact-infos" data-aos="fade-up" data-aos-anchor=".contact-main">
 
             <div class="column large-5 medium-full contact-phone">
-                <h4>Telefone</h4>
-                <a href="tel:197-543-2345">+ 55 21 9766 02418</a>
+                <h4 data-i18n="contact.phone">Telefone / WhatsApp</h4>
+                <a href="tel:+5521976602418">+55 21 97660-2418</a>
             </div>
 
+            <div class="column large-5 medium-full contact-social">
+                <h4 data-i18n="contact.online">Online</h4>
+                <ul class="contact-social__list">
+                    <li><a href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+                    <li><a href="https://github.com/raqlsmelo" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+                </ul>
+            </div>
 
         </div> <!-- end contact-infos -->
 
@@ -534,9 +736,8 @@
     <footer>
         <div class="row">
             <div class="column large-full ss-copyright">
-                <span>© Raquel Melo - 2023</span> 
-                
-            </div>            
+                <span>© Raquel Melo — <span class="js-year">2026</span></span>
+            </div>
 
             <div class="ss-go-top">
                 <a class="smoothscroll" title="Back to Top" href="#top"></a>
@@ -589,6 +790,8 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>
+</html>
