@@ -1576,6 +1576,217 @@ dialog {
 }
 
 /* ===================================================================
+ * card actions (two buttons side by side)
+ * ------------------------------------------------------------------- */
+.card__actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+}
+
+.card__actions .card__open {
+  margin-top: 0;
+}
+
+.card__try {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--accent);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform .3s var(--ease), filter .3s;
+}
+
+.card__try:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.card__try span[aria-hidden] {
+  font-size: 11px;
+}
+
+/* ===================================================================
+ * interactive volleyball desk
+ * ------------------------------------------------------------------- */
+.desk {
+  width: min(1180px, calc(100vw - 32px));
+}
+
+.desk__stage {
+  position: relative;
+  height: min(56.25vw, 46svh);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(75, 107, 255, 0.35), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(207, 143, 23, 0.25), transparent 55%),
+    #0d1117;
+}
+
+.vb--desk {
+  font-size: clamp(11px, 1.7vw, 22px);
+  transition: opacity .35s var(--ease), transform .45s var(--ease);
+}
+
+.vb--desk.is-off {
+  opacity: 0;
+  transform: translate(-50%, 30%);
+}
+
+.desk__stage.has-bug .vb-bug {
+  transform: scale(1) rotate(-8deg);
+}
+
+/* keep ON AIR clear of the close button */
+.desk__stage .onair {
+  right: auto;
+  left: 4%;
+}
+
+.desk__stage .vb-bug {
+  font-size: clamp(11px, 1.5vw, 20px);
+}
+
+.desk__panel {
+  padding: clamp(20px, 3vw, 36px);
+}
+
+.desk__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 20px;
+}
+
+.desk__title {
+  font-size: clamp(24px, 2.4vw, 32px);
+}
+
+.desk__hint {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.desk__teams {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.desk__teams label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.desk__teams span {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.desk__teams input {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--bg-3);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.desk__teams input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.desk__keys {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.desk__key {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--bg-3);
+  font-size: 13px;
+  text-align: left;
+  color: var(--muted);
+  transition: border-color .2s, color .2s, background-color .2s, transform .15s;
+}
+
+.desk__key:hover {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  color: var(--text);
+}
+
+.desk__key kbd {
+  min-width: 30px;
+  padding: 4px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  background-color: #1b1d22;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-align: center;
+  color: var(--text);
+}
+
+.desk__key.is-pressed {
+  background-color: color-mix(in srgb, var(--accent) 22%, var(--bg-3));
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(2px);
+}
+
+.desk__key--danger kbd {
+  border-color: rgba(255, 59, 48, 0.6);
+}
+
+.desk__log {
+  min-height: 1.6em;
+  margin: 16px 0 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .desk__keys {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .desk__teams {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================================
  * reduced motion
  * ------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {

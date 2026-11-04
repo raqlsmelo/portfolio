@@ -167,7 +167,7 @@
         });
     });
 
-    $$('.card__open').forEach(function (b) {
+    $$('.card__open, .card__try').forEach(function (b) {
         b.addEventListener('click', function () { openDialog(document.getElementById(b.dataset.case)); });
     });
 
@@ -253,6 +253,195 @@
 
         var i = 0;
         setInterval(function () { show(steps[i]); i = (i + 1) % steps.length; }, 1600);
+    })();
+
+
+    /* Interactive volleyball desk (fictional teams)
+     * Same shortcuts as the real Operação Vôlei desk.
+     * ---------------------------------------------------- */
+    (function volleyDesk() {
+        var dialog = $('#volei-desk');
+        if (!dialog) return;
+
+        var TEXT = {
+            pt: { setPoint: 'PONTO DO SET', matchPoint: 'PONTO DO JOGO', set: 'FIM DO {n}º SET', match: 'FIM DE JOGO',
+                  rali: 'SUPER RALI', bloqueio: 'SUPER BLOQUEIO', ataque: 'SUPER ATAQUE',
+                  logPoint: 'Ponto {t}: {h} × {a}', logSet: '{t} vence o {n}º set', logMatch: '{t} vence o jogo por {h} sets a {a}',
+                  logUndo: 'Desfeito', logBoard: 'Placar {s}', on: 'no ar', off: 'fora do ar', logClear: 'Tudo fora do ar',
+                  home: 'CASA', away: 'VISITANTE', logReset: 'Novo jogo', logNoSet: 'Para fechar o set, um time precisa estar na frente' },
+            en: { setPoint: 'SET POINT', matchPoint: 'MATCH POINT', set: 'END OF SET {n}', match: 'FULL TIME',
+                  rali: 'SUPER RALLY', bloqueio: 'SUPER BLOCK', ataque: 'SUPER ATTACK',
+                  logPoint: 'Point {t}: {h} × {a}', logSet: '{t} wins set {n}', logMatch: '{t} wins the match {h} sets to {a}',
+                  logUndo: 'Undone', logBoard: 'Scoreboard {s}', on: 'on air', off: 'off air', logClear: 'Everything off air',
+                  home: 'HOME', away: 'AWAY', logReset: 'New match', logNoSet: 'To close the set, one team has to be ahead' }
+        };
+
+        function t(key, vars) {
+            var lang = doc.getAttribute('lang') === 'en' ? 'en' : 'pt',
+                str = TEXT[lang][key];
+            Object.keys(vars || {}).forEach(function (k) { str = str.replace('{' + k + '}', vars[k]); });
+            return str;
+        }
+
+        var el = {
+            board: $('.js-desk-board', dialog), module: $('.js-desk-module', dialog),
+            stage: $('.desk__stage', dialog), bug: $('.js-desk-bug-text', dialog),
+            ph: $('.js-desk-pts-h', dialog), pa: $('.js-desk-pts-a', dialog),
+            sh: $('.js-desk-sets-h', dialog), sa: $('.js-desk-sets-a', dialog),
+            nh: $('.js-desk-name-h', dialog), na: $('.js-desk-name-a', dialog),
+            ih: $('.js-desk-input-h', dialog), ia: $('.js-desk-input-a', dialog),
+            log: $('.js-desk-log', dialog)
+        };
+
+        var state, history, bugTimer, flashTimer;
+
+        function fresh() {
+            return { h: 0, a: 0, setsH: 0, setsA: 0, board: true, over: false, flash: null };
+        }
+
+        function name(side) {
+            var v = (side === 'h' ? el.ih : el.ia).value.trim().toUpperCase();
+            return v || t(side === 'h' ? 'home' : 'away');
+        }
+
+        // volleyball: sets to 25 (the 5th to 15), best of 5
+        function target() { return state.setsH + state.setsA === 4 ? 15 : 25; }
+
+        function leader() { return state.h > state.a ? 'h' : state.a > state.h ? 'a' : null; }
+
+        function moduleText() {
+            if (state.flash) return state.flash;
+            var lead = leader();
+            if (!lead || state.over) return '';
+            var pts = lead === 'h' ? state.h : state.a;
+            if (pts < target() - 1) return '';
+            var leadSets = lead === 'h' ? state.setsH : state.setsA;
+            return leadSets === 2 ? t('matchPoint') : t('setPoint');
+        }
+
+        function render() {
+            el.ph.textContent = state.h;
+            el.pa.textContent = state.a;
+            el.sh.textContent = state.setsH;
+            el.sa.textContent = state.setsA;
+            el.nh.textContent = name('h');
+            el.na.textContent = name('a');
+            el.ih.placeholder = t('home');
+            el.ia.placeholder = t('away');
+            var mod = moduleText();
+            if (mod) el.module.textContent = mod;
+            el.board.classList.toggle('has-module', !!mod && state.board);
+            el.board.classList.toggle('is-off', !state.board);
+        }
+
+        function log(msg) { el.log.textContent = msg; }
+
+        function save() {
+            history.push(JSON.stringify(state));
+            if (history.length > 50) history.shift();
+        }
+
+        function flash(text, ms) {
+            state.flash = text;
+            clearTimeout(flashTimer);
+            flashTimer = setTimeout(function () { state.flash = null; render(); }, ms || 2600);
+        }
+
+        function point(side) {
+            if (state.over) return;
+            save();
+            state[side]++;
+            state.board = true;
+            log(t('logPoint', { t: name(side), h: state.h, a: state.a }));
+        }
+
+        function bug(kind) {
+            el.bug.textContent = t(kind);
+            el.stage.classList.remove('has-bug');
+            void el.stage.offsetWidth;   // restart the pop-in
+            el.stage.classList.add('has-bug');
+            clearTimeout(bugTimer);
+            bugTimer = setTimeout(function () { el.stage.classList.remove('has-bug'); }, 2400);
+        }
+
+        var actions = {
+            h: function () { point('h'); },
+            a: function () { point('a'); },
+            set: function () {
+                var lead = leader();
+                if (!lead || state.over) { log(t('logNoSet')); return; }
+                save();
+                var n = state.setsH + state.setsA + 1;
+                if (lead === 'h') state.setsH++; else state.setsA++;
+                state.h = 0;
+                state.a = 0;
+                if (state.setsH === 3 || state.setsA === 3) {
+                    state.over = true;
+                    flash(t('match'), 4000);
+                    log(t('logMatch', { t: name(lead), h: Math.max(state.setsH, state.setsA), a: Math.min(state.setsH, state.setsA) }));
+                } else {
+                    flash(t('set', { n: n }));
+                    log(t('logSet', { t: name(lead), n: n }));
+                }
+            },
+            undo: function () {
+                if (!history.length) return;
+                state = JSON.parse(history.pop());
+                state.flash = null;
+                log(t('logUndo'));
+            },
+            board: function () {
+                state.board = !state.board;
+                log(t('logBoard', { s: state.board ? t('on') : t('off') }));
+            },
+            rali: function () { bug('rali'); },
+            bloqueio: function () { bug('bloqueio'); },
+            ataque: function () { bug('ataque'); },
+            clear: function () {
+                state.board = false;
+                state.flash = null;
+                el.stage.classList.remove('has-bug');
+                log(t('logClear'));
+            },
+            reset: function () {
+                state = fresh();
+                history = [];
+                log(t('logReset'));
+            }
+        };
+
+        function run(act) {
+            if (!actions[act]) return;
+            actions[act]();
+            render();
+            var key = $('.desk__key[data-act="' + act + '"]', dialog);
+            if (key) {
+                key.classList.add('is-pressed');
+                setTimeout(function () { key.classList.remove('is-pressed'); }, 160);
+            }
+        }
+
+        var KEYS = { q: 'h', e: 'a', o: 'set', x: 'undo', '1': 'board', r: 'rali', b: 'bloqueio', a: 'ataque', ' ': 'clear', n: 'reset' };
+
+        document.addEventListener('keydown', function (e) {
+            if (!dialog.open || e.ctrlKey || e.metaKey || e.altKey) return;
+            if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+            var act = KEYS[e.key.toLowerCase()];
+            if (!act) return;
+            e.preventDefault();
+            run(act);
+        });
+
+        $$('.desk__key', dialog).forEach(function (b) {
+            b.addEventListener('click', function () { run(b.dataset.act); });
+        });
+
+        [el.ih, el.ia].forEach(function (input) { input.addEventListener('input', render); });
+        $$('.lang__btn').forEach(function (btn) { btn.addEventListener('click', render); });
+
+        state = fresh();
+        history = [];
+        render();
     })();
 
 
