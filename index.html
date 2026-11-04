@@ -222,7 +222,10 @@
                         <h3 class="card__title">Operação Vôlei</h3>
                         <p class="card__value" data-i18n="volei.value">Grafismo de emissora numa pasta. No ar em 30 segundos.</p>
                         <ul class="chips"><li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>Playwright</li></ul>
-                        <button type="button" class="card__open" data-case="case-volei"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                        <div class="card__actions">
+                            <button type="button" class="card__try" data-case="volei-desk"><span data-i18n="volei.try">Operar o placar</span> <span aria-hidden="true">▶</span></button>
+                            <button type="button" class="card__open" data-case="case-volei"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                        </div>
                     </div>
                 </article>
 
@@ -523,6 +526,49 @@
                     <div><dt data-i18n="meta.tools">Ferramentas</dt><dd>After Effects · Premiere</dd></div>
                 </dl>
             </div>
+        </div>
+    </dialog>
+
+    <!-- interactive volleyball desk (fictional teams) -->
+    <dialog class="case desk" id="volei-desk" style="--accent:#4b6bff" aria-labelledby="volei-desk-title">
+        <button type="button" class="case__close" aria-label="Fechar">×</button>
+        <div class="desk__stage">
+            <span class="onair js-desk-onair">● ON AIR</span>
+            <div class="vb-bug js-desk-bug"><span class="js-desk-bug-text">SUPER RALI</span></div>
+            <div class="vb vb--desk js-desk-board">
+                <div class="vb__module js-desk-module"></div>
+                <div class="vb__bar">
+                    <span class="vb__team vb__team--home js-desk-name-h">CASA</span>
+                    <span class="vb__sets js-desk-sets-h">0</span>
+                    <span class="vb__pts js-desk-pts-h">0</span>
+                    <span class="vb__pts js-desk-pts-a">0</span>
+                    <span class="vb__sets js-desk-sets-a">0</span>
+                    <span class="vb__team vb__team--away js-desk-name-a">VISITANTE</span>
+                </div>
+            </div>
+        </div>
+        <div class="desk__panel">
+            <div class="desk__head">
+                <h3 class="desk__title" id="volei-desk-title" data-i18n="desk.title">Mesa de operação</h3>
+                <p class="desk__hint" data-i18n="desk.hint">Use o teclado como na operação real — ou clique nos botões.</p>
+            </div>
+            <div class="desk__teams">
+                <label><span data-i18n="desk.home">Mandante</span><input type="text" class="js-desk-input-h" maxlength="12" autocomplete="off" spellcheck="false"></label>
+                <label><span data-i18n="desk.away">Visitante</span><input type="text" class="js-desk-input-a" maxlength="12" autocomplete="off" spellcheck="false"></label>
+            </div>
+            <div class="desk__keys">
+                <button type="button" class="desk__key" data-act="h"><kbd>Q</kbd><span data-i18n="desk.k.h">ponto mandante</span></button>
+                <button type="button" class="desk__key" data-act="a"><kbd>E</kbd><span data-i18n="desk.k.a">ponto visitante</span></button>
+                <button type="button" class="desk__key" data-act="set"><kbd>O</kbd><span data-i18n="desk.k.set">fecha o set</span></button>
+                <button type="button" class="desk__key" data-act="undo"><kbd>X</kbd><span data-i18n="desk.k.undo">desfaz</span></button>
+                <button type="button" class="desk__key" data-act="board"><kbd>1</kbd><span data-i18n="desk.k.board">placar no ar</span></button>
+                <button type="button" class="desk__key" data-act="rali"><kbd>R</kbd><span data-i18n="desk.k.rali">super rali</span></button>
+                <button type="button" class="desk__key" data-act="bloqueio"><kbd>B</kbd><span data-i18n="desk.k.bloqueio">super bloqueio</span></button>
+                <button type="button" class="desk__key" data-act="ataque"><kbd>A</kbd><span data-i18n="desk.k.ataque">super ataque</span></button>
+                <button type="button" class="desk__key desk__key--danger" data-act="clear"><kbd data-i18n="desk.space">Espaço</kbd><span data-i18n="desk.k.clear">tira tudo do ar</span></button>
+                <button type="button" class="desk__key" data-act="reset"><kbd>N</kbd><span data-i18n="desk.k.reset">novo jogo</span></button>
+            </div>
+            <p class="desk__log js-desk-log" aria-live="polite"></p>
         </div>
     </dialog>
 

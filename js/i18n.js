@@ -147,6 +147,22 @@ window.I18N = {
 
         'tarja.badge': 'Licensable product · v2.0',
         'edu': 'Software Engineering (in progress) · Postgraduate in Full Stack Development · Audiovisual Production · Drawing, UFRJ',
+        'volei.try': 'Run the scoreboard',
+        'desk.title': 'Operator desk',
+        'desk.hint': 'Use the keyboard like in a real broadcast — or click the buttons.',
+        'desk.home': 'Home team',
+        'desk.away': 'Away team',
+        'desk.k.h': 'home point',
+        'desk.k.a': 'away point',
+        'desk.k.set': 'close the set',
+        'desk.k.undo': 'undo',
+        'desk.k.board': 'scoreboard on air',
+        'desk.k.rali': 'super rally',
+        'desk.k.bloqueio': 'super block',
+        'desk.k.ataque': 'super attack',
+        'desk.space': 'Space',
+        'desk.k.clear': 'take everything off',
+        'desk.k.reset': 'new match',
         'footer.top': 'Back to top ↑'
     }
 };
