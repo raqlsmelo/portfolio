@@ -14,7 +14,7 @@
     doc.classList.add('js');
 
 
-    /* Intro: name reveal once per session
+    /* Intro: the RM/ mark cuts in, once per session
      * ---------------------------------------------------- */
     (function intro() {
         var seen = false;
@@ -23,7 +23,7 @@
 
         doc.classList.add('js-intro');
         try { sessionStorage.setItem('intro-seen', '1'); } catch (e) {}
-        setTimeout(function () { doc.classList.remove('js-intro'); }, 3300);
+        setTimeout(function () { doc.classList.remove('js-intro'); }, 3100);
     })();
 
 
@@ -74,13 +74,71 @@
     })();
 
 
-    /* Header background after scrolling
+    /* Live timecode (HH:MM:SS:FF at 25 fps) in every .js-tc
      * ---------------------------------------------------- */
-    (function header() {
-        var h = $('.header');
-        function update() { h.classList.toggle('is-scrolled', window.scrollY > 40); }
-        window.addEventListener('scroll', update, { passive: true });
+    (function timecode() {
+        var slots = $$('.js-tc');
+        if (!slots.length) return;
+        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+        function tick() {
+            var d = new Date(),
+                tc = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds()) + ':' + pad(Math.floor(d.getMilliseconds() / 40));
+            slots.forEach(function (el) { el.textContent = tc; });
+        }
+
+        tick();
+        // with reduced motion the clock only moves once a second
+        setInterval(tick, reduceMotion ? 1000 : 80);
+    })();
+
+
+    /* Ruler playhead = scroll progress
+     * ---------------------------------------------------- */
+    (function playhead() {
+        var head = $('.js-playhead');
+        if (!head) return;
+        var queued = false;
+
+        function update() {
+            queued = false;
+            var max = document.documentElement.scrollHeight - window.innerHeight,
+                p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+            head.style.left = (p * 100) + '%';
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!queued) { queued = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        window.addEventListener('resize', update);
         update();
+    })();
+
+
+    /* Work filter chips, with live counts
+     * ---------------------------------------------------- */
+    (function filters() {
+        var chips = $$('.chip'), cards = $$('.card[data-cats]');
+        if (!chips.length) return;
+
+        function matches(card, f) {
+            return f === 'all' || card.dataset.cats.split(' ').indexOf(f) !== -1;
+        }
+
+        chips.forEach(function (chip) {
+            var n = cards.filter(function (c) { return matches(c, chip.dataset.filter); }).length;
+            $('.js-count', chip).textContent = (n < 10 ? '0' : '') + n;
+
+            chip.addEventListener('click', function () {
+                var f = chip.dataset.filter;
+                chips.forEach(function (c) {
+                    var on = c === chip;
+                    c.classList.toggle('is-on', on);
+                    c.setAttribute('aria-pressed', on);
+                });
+                cards.forEach(function (c) { c.classList.toggle('is-hidden', !matches(c, f)); });
+            });
+        });
     })();
 
 
@@ -97,7 +155,7 @@
         }
 
         // the hero title rises after the intro (or right away)
-        setTimeout(function () { hero.classList.add('is-in'); }, doc.classList.contains('js-intro') ? 2700 : 150);
+        setTimeout(function () { hero.classList.add('is-in'); }, doc.classList.contains('js-intro') ? 2600 : 120);
 
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
@@ -135,10 +193,10 @@
         videos.forEach(function (v) { io.observe(v); });
     })();
 
-    // the hero showreel is decorative: respect reduced motion
+    // the program-monitor showreel is decorative: respect reduced motion
     if (reduceMotion) {
-        var heroVideo = $('.hero__video');
-        if (heroVideo) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
+        var pgmVideo = $('.pgm__video');
+        if (pgmVideo) { pgmVideo.removeAttribute('autoplay'); pgmVideo.pause(); }
     }
 
 
@@ -167,7 +225,7 @@
         });
     });
 
-    $$('.card__open, .card__try').forEach(function (b) {
+    $$('button[data-case]').forEach(function (b) {
         b.addEventListener('click', function () { openDialog(document.getElementById(b.dataset.case)); });
     });
 

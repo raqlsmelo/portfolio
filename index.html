@@ -3,51 +3,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Raquel Melo — Motion, Broadcast Design & Código</title>
-    <meta name="description" content="Raquel Melo: mais de 10 anos de grafismo ao vivo na TV Globo. Motion design, sistemas de grafismo para transmissão e desenvolvimento web.">
+    <title>Raquel Melo — Creative Technologist</title>
+    <meta name="description" content="Raquel Melo: mais de 10 anos de grafismo ao vivo na TV Globo. Broadcast graphics, motion design e os sistemas em tempo real por trás deles.">
     <meta name="author" content="Raquel Melo">
-    <meta name="theme-color" content="#07080a">
+    <meta name="theme-color" content="#111315">
 
-    <meta property="og:title" content="Raquel Melo — Motion, Broadcast Design & Código">
-    <meta property="og:description" content="Grafismo ao vivo, motion design e sistemas para transmissão. | Live broadcast graphics, motion design and the systems behind them.">
+    <meta property="og:title" content="Raquel Melo — Creative Technologist">
+    <meta property="og:description" content="Designing the visuals. Engineering the experience. Broadcast graphics, motion design and real-time systems.">
     <meta property="og:image" content="images/showreel-poster.jpg">
     <meta property="og:type" content="website">
 
-    <link rel="icon" type="image/png" href="images/logo-raquel.png">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
 
-    <!-- intro: 3-second name reveal (first visit of the session only) -->
+    <!-- intro: the RM/ mark cuts in (first visit of the session only) -->
     <div class="intro" aria-hidden="true">
-        <div class="intro__name">
-            <span class="intro__line"><span>RAQUEL</span></span>
-            <span class="intro__line"><span>MELO</span></span>
-        </div>
-        <span class="intro__bar"></span>
+        <span class="intro__mark disp"><span class="intro__rm">RM</span><span class="intro__slash">/</span></span>
+        <span class="intro__tc mono">00:00:00:00 · RM—PORTFOLIO</span>
     </div>
 
-    <!-- header
+    <!-- system bar
     ================================================== -->
-    <header class="header">
-        <a class="header__logo" href="#top" aria-label="Raquel Melo">
-            <img src="images/logo-raquel.png" alt="Raquel Melo">
-        </a>
+    <header class="bar">
+        <div class="wrap bar__in">
+            <a class="brand" href="#top" aria-label="Raquel Melo — início">
+                <span class="disp brand__mark">RM<span class="slash">/</span></span>
+                <span class="mono brand__tag">Raquel Melo — Creative Technologist</span>
+            </a>
 
-        <nav class="nav" aria-label="Principal">
-            <a href="#work" data-i18n="nav.work">Projetos</a>
-            <a href="#process" data-i18n="nav.process">Processo</a>
-            <a href="#about" data-i18n="nav.about">Sobre</a>
-            <a href="#contact" class="nav__cta" data-i18n="nav.contact">Contato</a>
-        </nav>
+            <nav class="nav mono" aria-label="Principal">
+                <a href="#work" data-i18n="nav.work">01 Projetos</a>
+                <a href="#stack" data-i18n="nav.stack">02 Sistemas</a>
+                <a href="#about" data-i18n="nav.about">03 Sobre</a>
+                <a href="#contact" data-i18n="nav.contact">04 Contato</a>
+            </nav>
 
-        <div class="lang" role="group" aria-label="Idioma / Language">
-            <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">PT</button>
-            <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+            <div class="bar__status mono">
+                <span class="rec"><i aria-hidden="true"></i>REC</span>
+                <span class="bar__tc">TC <span class="js-tc">00:00:00:00</span></span>
+                <span class="lang" role="group" aria-label="Idioma / Language">
+                    <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">PT</button>
+                    <span aria-hidden="true">/</span>
+                    <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+                </span>
+            </div>
         </div>
     </header>
 
@@ -57,303 +62,428 @@
         <!-- hero
         ================================================== -->
         <section class="hero">
-            <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="images/showreel-poster.jpg" aria-hidden="true">
-                <source src="videos/showreel.mp4" type="video/mp4">
-            </video>
-            <div class="hero__shade"></div>
+            <span class="crop crop--tl" aria-hidden="true"></span>
+            <span class="crop crop--tr" aria-hidden="true"></span>
 
-            <div class="hero__content">
-                <p class="eyebrow" data-i18n="hero.eyebrow">Motion · Broadcast Design · Código</p>
-                <h1 class="hero__title">
-                    <span class="reveal-line"><span data-i18n="hero.l1">Grafismo que vai ao ar</span></span>
-                    <span class="reveal-line"><span data-i18n="hero.l2">e não pode errar.</span></span>
+            <div class="wrap hero__in">
+                <div class="hero__meta mono">
+                    <span data-i18n="hero.edition">RM—PORTFÓLIO / ED. 2026</span>
+                    <span>LAT −22.9068 · LON −43.1729</span>
+                    <span>RIO DE JANEIRO · UTC−3</span>
+                    <span class="hero__avail" data-i18n="hero.available">● DISPONÍVEL — FREELANCE · REMOTO · PT / EN</span>
+                </div>
+
+                <h1 class="disp hero__title">
+                    <span class="ln"><span data-i18n="hero.l1">Desenhar</span></span>
+                    <span class="ln ln--in1"><span data-i18n="hero.l2">o visual.</span></span>
+                    <span class="hero__signal" aria-hidden="true">
+                        <span class="mono hero__signal-in" data-i18n="hero.signal">→ SINAL</span>
+                        <span class="wire"><span class="pulse"></span></span>
+                        <span class="mono hero__signal-tc">00:00:04:12</span>
+                    </span>
+                    <span class="ln"><span data-i18n="hero.l3">Construir</span></span>
+                    <span class="ln ln--in2"><span data-i18n="hero.l4">a <em>experiência.</em></span></span>
                 </h1>
-                <p class="hero__lead" data-i18n="hero.lead">Mais de 10 anos de grafismo ao vivo na TV Globo. Hoje também construo os sistemas por trás dele.</p>
-                <div class="hero__cta">
-                    <a href="#work" class="btn btn--primary" data-i18n="hero.ctaWork">Ver projetos</a>
-                    <button type="button" class="btn btn--ghost js-reel">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                        <span data-i18n="hero.ctaReel">Assistir showreel</span>
-                    </button>
-                </div>
-            </div>
 
-            <a href="#trust" class="hero__scroll" aria-label="Rolar"><span></span></a>
-        </section>
-
-
-        <!-- trust bar
-        ================================================== -->
-        <section class="trust" id="trust">
-            <p class="trust__label" data-i18n="trust.label">Meu trabalho já foi ao ar em</p>
-            <div class="trust__marquee">
-                <ul class="trust__list">
-                    <li>TV Globo</li><li data-i18n="trust.wc">Copa do Mundo FIFA</li><li data-i18n="trust.wwc">Copa do Mundo Feminina</li>
-                    <li data-i18n="trust.elections">Eleições</li><li>Rock in Rio</li><li>Big Brother Brasil</li>
-                </ul>
-                <ul class="trust__list" aria-hidden="true">
-                    <li>TV Globo</li><li data-i18n="trust.wc">Copa do Mundo FIFA</li><li data-i18n="trust.wwc">Copa do Mundo Feminina</li>
-                    <li data-i18n="trust.elections">Eleições</li><li>Rock in Rio</li><li>Big Brother Brasil</li>
-                </ul>
-            </div>
-        </section>
-
-
-        <!-- proof in numbers
-        ================================================== -->
-        <section class="numbers">
-            <div class="numbers__grid">
-                <div class="number reveal">
-                    <strong>10+</strong>
-                    <span data-i18n="num.years">anos ao vivo na TV</span>
-                </div>
-                <div class="number reveal">
-                    <strong>27</strong>
-                    <span data-i18n="num.states">estados, 1 operador, 1 noite de eleição</span>
-                </div>
-                <div class="number reveal">
-                    <strong>4</strong>
-                    <span data-i18n="num.systems">sistemas de grafismo autorais</span>
-                </div>
-                <div class="number reveal">
-                    <strong>0</strong>
-                    <span data-i18n="num.install">instalação: abre com dois cliques</span>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- work
-        ================================================== -->
-        <section class="work" id="work">
-            <div class="section-head reveal">
-                <p class="eyebrow" data-i18n="work.eyebrow">Projetos selecionados</p>
-                <h2 class="section-title" data-i18n="work.title">Do briefing ao ar.</h2>
-            </div>
-
-            <div class="grid">
-
-                <!-- Operação Futebol -->
-                <article class="card card--wide reveal" style="--accent:#2fbf71">
-                    <div class="card__media">
-                        <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/futebol/video-capa.jpg">
-                            <source src="videos/projects/futebol-2026.mp4" type="video/mp4">
-                        </video>
-                        <span class="card__badge" data-i18n="card.new">Novo · em desenvolvimento</span>
+                <div class="hero__row">
+                    <div class="hero__copy fade">
+                        <div class="hero__text">
+                            <p class="mono accent-text" data-i18n="hero.role">Creative Technologist | Grafismo ao vivo | Motion Design | Interfaces em tempo real</p>
+                            <p class="hero__lead" data-i18n="hero.lead">Mais de dez anos de grafismo ao vivo na TV Globo. Hoje também construo os sistemas por trás dele — do primeiro quadro no After Effects ao teclado de quem opera no ar.</p>
+                        </div>
+                        <div class="btns">
+                            <a class="btn btn--p" href="#work"><span data-i18n="hero.ctaWork">Ver projetos</span> <span aria-hidden="true">→</span></a>
+                            <button type="button" class="btn btn--o js-reel"><span aria-hidden="true">▶</span> <span data-i18n="hero.ctaReel">Assistir showreel</span></button>
+                        </div>
                     </div>
-                    <div class="card__body">
-                        <p class="card__kicker" data-i18n="fut.kicker">Projeto autoral · 2026</p>
-                        <h3 class="card__title">Operação Futebol</h3>
-                        <p class="card__value" data-i18n="fut.value">Um jogo inteiro no ar com dois cliques.</p>
-                        <ul class="chips"><li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li></ul>
-                        <button type="button" class="card__open" data-case="case-futebol"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
-                    </div>
-                </article>
 
-                <!-- Tarja Studio -->
-                <article class="card card--wide card--reverse reveal" style="--accent:#cf8f17">
-                    <div class="card__media card__media--demo">
-                        <div class="lt-stage" aria-hidden="true">
-                            <span class="onair">● ON AIR</span>
-                            <div class="lt">
-                                <span class="lt__bar"></span>
-                                <div class="lt__box">
-                                    <span class="lt__name">RAQUEL MELO</span>
-                                    <span class="lt__role" data-i18n="tarja.demoRole">Motion &amp; Broadcast Design</span>
+                    <!-- signal chain + program monitor -->
+                    <div class="sig fade">
+                        <div class="sig__head mono">
+                            <span>SIG.FLOW — RM/00</span>
+                            <span>1920×1080 · 25 FPS</span>
+                        </div>
+                        <div class="sig__chain">
+                            <div class="sig__node"><span class="mono">IN.01</span><span class="disp">Design</span></div>
+                            <div class="sig__node"><span class="mono">FX.02</span><span class="disp">Motion</span></div>
+                            <div class="sig__node"><span class="mono">SYS.03</span><span class="disp" data-i18n="sig.code">Código</span></div>
+                            <div class="sig__node sig__node--pgm"><span class="mono">PGM.04</span><span class="disp" data-i18n="sig.air">No ar</span></div>
+                        </div>
+                        <div class="sig__wire" aria-hidden="true"><span class="pulse"></span></div>
+                        <div class="pgm">
+                            <video class="pgm__video" autoplay muted loop playsinline preload="metadata" poster="images/showreel-poster.jpg" aria-hidden="true">
+                                <source src="videos/showreel.mp4" type="video/mp4">
+                            </video>
+                            <span class="pgm__safe" aria-hidden="true"></span>
+                            <span class="mono pgm__label" data-i18n="pgm.label">PGM — Saída de programa</span>
+                            <span class="mono pgm__onair"><i aria-hidden="true"></i>ON AIR</span>
+                            <span class="mono pgm__tc js-tc">00:00:00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- timeline ruler: the playhead follows the scroll -->
+            <div class="ruler" aria-hidden="true">
+                <div class="ruler__labels mono"><span>00:00</span><span>00:10</span><span>00:20</span><span>00:30</span><span>00:40</span><span>00:50</span></div>
+                <div class="ruler__head js-playhead"></div>
+            </div>
+        </section>
+
+
+        <!-- on air strip
+        ================================================== -->
+        <section class="strip" aria-label="Créditos de transmissão">
+            <div class="strip__label mono" data-i18n="strip.label">No ar em</div>
+            <div class="strip__track">
+                <div class="strip__marq disp">
+                    <span>TV Globo</span><i>/</i><span data-i18n="strip.wc">Copa do Mundo FIFA</span><i>/</i><span data-i18n="strip.wwc">Copa do Mundo Feminina</span><i>/</i><span data-i18n="strip.el">Eleições</span><i>/</i><span>Rock in Rio</span><i>/</i><span>Big Brother Brasil</span><i>/</i>
+                    <span aria-hidden="true">TV Globo</span><i>/</i><span aria-hidden="true" data-i18n="strip.wc">Copa do Mundo FIFA</span><i>/</i><span aria-hidden="true" data-i18n="strip.wwc">Copa do Mundo Feminina</span><i>/</i><span aria-hidden="true" data-i18n="strip.el">Eleições</span><i>/</i><span aria-hidden="true">Rock in Rio</span><i>/</i><span aria-hidden="true">Big Brother Brasil</span><i>/</i>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- selected work
+        ================================================== -->
+        <section class="work light" id="work">
+            <div class="wrap section">
+
+                <div class="head reveal">
+                    <div class="head__title">
+                        <span class="mono muted" data-i18n="work.eyebrow">01 / Projetos selecionados — 05 entradas</span>
+                        <h2 class="disp h2" data-i18n="work.title">Do briefing<br>ao ar.</h2>
+                    </div>
+                    <p class="head__text" data-i18n="work.text">Esporte ao vivo, noites de eleição e software autoral. Cada projeto é um sistema: uma linguagem visual, o movimento que a carrega e a interface que a coloca no ar.</p>
+                </div>
+
+                <div class="chips reveal" role="group" aria-label="Filtrar projetos por disciplina">
+                    <button type="button" class="chip is-on" data-filter="all" aria-pressed="true"><span data-i18n="chip.all">Todos</span> <b class="js-count"></b></button>
+                    <button type="button" class="chip" data-filter="bg" aria-pressed="false"><span data-i18n="chip.bg">Grafismo ao vivo</span> <b class="js-count"></b></button>
+                    <button type="button" class="chip" data-filter="md" aria-pressed="false"><span>Motion Design</span> <b class="js-count"></b></button>
+                    <button type="button" class="chip" data-filter="rt" aria-pressed="false"><span data-i18n="chip.rt">Tempo real</span> <b class="js-count"></b></button>
+                    <button type="button" class="chip" data-filter="ii" aria-pressed="false"><span data-i18n="chip.ii">Interfaces interativas</span> <b class="js-count"></b></button>
+                    <button type="button" class="chip" data-filter="cd" aria-pressed="false"><span data-i18n="chip.cd">Desenvolvimento criativo</span> <b class="js-count"></b></button>
+                </div>
+
+                <div class="cards">
+
+                    <!-- RM—01 Operação Futebol -->
+                    <article class="card card--full reveal" data-cats="bg rt cd">
+                        <div class="plate plate--video">
+                            <div class="plate__in">
+                                <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/futebol/video-capa.jpg">
+                                    <source src="videos/projects/futebol-2026.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <span class="mono plate__tl" data-i18n="fut.tag">Artes reais · times fictícios</span>
+                            <span class="mono plate__tr onair"><i aria-hidden="true"></i>ON AIR</span>
+                            <span class="mono plate__bl plate__badge" data-i18n="fut.badge">Novo · v0.2 em desenvolvimento</span>
+                        </div>
+                        <div class="card__body">
+                            <div class="card__title">
+                                <div class="card__ids"><span class="cid mono">RM—01</span><span class="mono muted" data-i18n="fut.cat">Grafismo ao vivo · Tempo real · 2026</span></div>
+                                <h3 class="disp h3 h3--xl">Operação Futebol</h3>
+                            </div>
+                            <p class="card__text" data-i18n="fut.text">Um jogo inteiro no ar com dois cliques. O placar é contado a partir da súmula, o relógio cuida do acréscimo, e VAR, pênaltis, escalações e tabelas entram por atalhos de teclado em qualquer browser source.</p>
+                            <div class="card__side">
+                                <dl class="spec mono">
+                                    <dt data-i18n="spec.role">Função</dt><dd data-i18n="spec.roleDAD">Design · animação · desenvolvimento</dd>
+                                    <dt>Stack</dt><dd>HTML/CSS · JS · Node.js · SSE</dd>
+                                    <dt data-i18n="spec.runs">Roda em</dt><dd data-i18n="fut.runs">OBS · vMix · SPX · qualquer browser source</dd>
+                                </dl>
+                                <button type="button" class="case-link mono" data-case="case-futebol"><span data-i18n="card.open">Ver case</span> <span class="arrow" aria-hidden="true">→</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- RM—02 Tarja Studio -->
+                    <article class="card card--7 reveal" data-cats="cd ii">
+                        <div class="plate plate--tarja">
+                            <div class="plate__in" aria-hidden="true">
+                                <div class="tarja-lt">
+                                    <span class="tarja-lt__bar lt-bar"></span>
+                                    <span class="tarja-lt__box lt-bar"><span class="disp lt-txt">Raquel Melo</span><span class="mono lt-txt">AE → HTML · SPX · CasparCG · NewBlue</span></span>
+                                </div>
+                                <div class="tracks mono">
+                                    <div class="track"><span>TXT_NAME</span><b><i style="left: 18%; width: 54%"></i></b></div>
+                                    <div class="track"><span>TXT_ROLE</span><b><i class="t2" style="left: 26%; width: 46%"></i></b></div>
+                                    <div class="track"><span>BG_BAR</span><b><i class="t3" style="left: 8%; width: 74%"></i></b></div>
+                                    <div class="track"><span>MASK_IN</span><b><i class="t4" style="left: 8%; width: 18%"></i></b></div>
+                                    <span class="tracks__head playhead"></span>
                                 </div>
                             </div>
-                            <div class="lt-timeline">
-                                <span class="lt-timeline__track"><span class="lt-timeline__clip lt-timeline__clip--a"></span></span>
-                                <span class="lt-timeline__track"><span class="lt-timeline__clip lt-timeline__clip--b"></span></span>
-                                <span class="lt-timeline__track"><span class="lt-timeline__clip lt-timeline__clip--c"></span></span>
-                                <span class="lt-timeline__playhead"></span>
+                            <span class="mono plate__tl muted-on-dark" data-i18n="tarja.tag">Software · v2.0 · Licenciável</span>
+                        </div>
+                        <div class="card__body card__body--stack">
+                            <div class="card__ids"><span class="cid mono">RM—02</span><span class="mono muted" data-i18n="tarja.cat">Desenvolvimento criativo · Produto</span></div>
+                            <h3 class="disp h3">Tarja Studio</h3>
+                            <p class="card__text" data-i18n="tarja.text">Anime no After Effects e vá ao ar sem refazer nada. Ele lê rigs de Essential Graphics e leva a mesma peça para HTML, SPX, CasparCG e NewBlue — com editor no navegador, checagem de área segura e painel de operação ao vivo.</p>
+                            <div class="card__foot">
+                                <span class="mono muted">After Effects · ExtendScript · Node.js · ffmpeg</span>
+                                <button type="button" class="case-link mono" data-case="case-tarja"><span data-i18n="card.open">Ver case</span> <span class="arrow" aria-hidden="true">→</span></button>
                             </div>
                         </div>
-                        <span class="card__badge" data-i18n="tarja.badge">Produto licenciável · v2.0</span>
-                    </div>
-                    <div class="card__body">
-                        <p class="card__kicker" data-i18n="tarja.kicker">Software autoral</p>
-                        <h3 class="card__title">Tarja Studio</h3>
-                        <p class="card__value" data-i18n="tarja.value">Anima no After. Vai ao ar ao vivo. Sem refazer nada.</p>
-                        <ul class="formats"><li>HTML</li><li>SPX</li><li>CasparCG</li><li>NewBlue</li></ul>
-                        <ul class="chips"><li>After Effects</li><li>ExtendScript</li><li>Node.js</li><li>ffmpeg</li></ul>
-                        <button type="button" class="card__open" data-case="case-tarja"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Apuração 2026 -->
-                <article class="card reveal" style="--accent:#22b0ac">
-                    <div class="card__media">
-                        <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/apuracao/video-capa.jpg">
-                            <source src="videos/projects/apuracao-2026.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card__body">
-                        <p class="card__kicker" data-i18n="apu.kicker">Eleições 2026 · TV</p>
-                        <h3 class="card__title">Apuração 2026</h3>
-                        <p class="card__value" data-i18n="apu.value">27 estados. 1 operador. Zero digitação.</p>
-                        <ul class="chips"><li>Viz Trio</li><li>Viz Pilot</li><li>VBScript</li><li>PostgreSQL</li></ul>
-                        <button type="button" class="card__open" data-case="case-apuracao"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
-                    </div>
-                </article>
+                    <!-- RM—03 Apuração 2026 -->
+                    <article class="card card--5 reveal" data-cats="rt bg">
+                        <div class="plate plate--cobalt">
+                            <div class="plate__in" aria-hidden="true">
+                                <div class="ufs mono">
+                                    <span style="--o:.18">AC</span><span style="--o:.42">AL</span><span style="--o:.12">AP</span><span style="--o:.3">AM</span><span class="is-white">BA</span><span style="--o:.55">CE</span><span style="--o:.22">DF</span><span style="--o:.36">ES</span><span style="--o:.14">GO</span>
+                                    <span style="--o:.48">MA</span><span style="--o:.2">MT</span><span style="--o:.16">MS</span><span class="is-live">MG</span><span style="--o:.34">PA</span><span style="--o:.5">PB</span><span style="--o:.24">PR</span><span style="--o:.6">PE</span><span style="--o:.44">PI</span>
+                                    <span style="--o:.28">RJ</span><span style="--o:.4">RN</span><span style="--o:.12">RS</span><span style="--o:.2">RO</span><span style="--o:.1">RR</span><span style="--o:.15">SC</span><span style="--o:.26">SP</span><span style="--o:.38">SE</span><span style="--o:.3">TO</span>
+                                </div>
+                            </div>
+                            <span class="disp plate__big" data-i18n="apu.big">27 estados.<br>1 operador.<br>Zero digitação.</span>
+                            <span class="mono plate__tr plate__tr--text" data-i18n="apu.tag">Dados de ensaio<br>Resultados fictícios</span>
+                        </div>
+                        <div class="card__body card__body--stack">
+                            <div class="card__ids"><span class="cid mono">RM—03</span><span class="mono muted" data-i18n="apu.cat">Grafismo · Dados · Eleições 2026</span></div>
+                            <h3 class="disp h3">Apuração 2026</h3>
+                            <p class="card__text" data-i18n="apu.text">Sistema de apuração para o Viz Trio. O operador escolhe cargo e localidade; tarjas, telas e um mapa de 27 estados se preenchem com o dado oficial — com segundo turno, Senado de duas vagas e desempate já nas regras.</p>
+                            <div class="card__foot">
+                                <span class="mono muted">Viz Trio · Viz Pilot · VBScript · PostgreSQL</span>
+                                <button type="button" class="case-link mono" data-case="case-apuracao"><span data-i18n="card.open">Ver case</span> <span class="arrow" aria-hidden="true">→</span></button>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- Operação Vôlei -->
-                <article class="card reveal" style="--accent:#4b6bff">
-                    <div class="card__media card__media--demo">
-                        <div class="vb-stage" aria-hidden="true">
-                            <span class="onair">● ON AIR</span>
-                            <div class="vb-bug"><span data-i18n="volei.demoBug">SUPER RALI</span></div>
-                            <div class="vb">
-                                <div class="vb__module" data-i18n="volei.demoModule">PONTO DO SET</div>
-                                <div class="vb__bar">
-                                    <span class="vb__team vb__team--home" data-i18n="volei.demoHome">CASA</span>
-                                    <span class="vb__sets js-vb-sets-home">1</span>
-                                    <span class="vb__pts js-vb-home">22</span>
-                                    <span class="vb__pts js-vb-away">21</span>
-                                    <span class="vb__sets js-vb-sets-away">1</span>
-                                    <span class="vb__team vb__team--away" data-i18n="volei.demoAway">VISITANTE</span>
+                    <!-- RM—04 Operação Vôlei: live demo -->
+                    <article class="card card--full reveal" data-cats="rt bg ii">
+                        <div class="plate plate--volei vb-stage">
+                            <div class="plate__in" aria-hidden="true">
+                                <span class="court court--mid"></span>
+                                <span class="court court--box"></span>
+                                <span class="court court--l"></span>
+                                <span class="court court--r"></span>
+                            </div>
+                            <span class="mono plate__tl muted-on-dark" data-i18n="volei.tag">Demo ao vivo · times fictícios</span>
+                            <span class="mono plate__tr onair"><i aria-hidden="true"></i>ON AIR</span>
+
+                            <div class="vb-bug" aria-hidden="true"><span class="disp" data-i18n="volei.bug">Super rali</span></div>
+
+                            <div class="sb vb" aria-hidden="true">
+                                <span class="sb__module vb__module mono" data-i18n="volei.module">Ponto do set</span>
+                                <div class="sb__grid">
+                                    <span class="sb__team" data-i18n="volei.home">CASA</span><span class="sb__sets js-vb-sets-home">1</span><span class="sb__pts sb__pts--lead js-vb-home">22</span>
+                                    <span class="sb__team" data-i18n="volei.away">VISITANTE</span><span class="sb__sets js-vb-sets-away">1</span><span class="sb__pts js-vb-away">21</span>
+                                </div>
+                                <span class="mono sb__meta">SET 3 · <span class="js-tc">00:00:00:00</span></span>
+                            </div>
+
+                            <div class="keymap mono" aria-hidden="true">
+                                <span>Q</span><span>E</span><span>O</span><span>X</span><span class="is-on">1</span><span>R</span><span>B</span><span>A</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <div class="card__title">
+                                <div class="card__ids"><span class="cid mono">RM—04</span><span class="mono muted" data-i18n="volei.cat">Tempo real · v4</span></div>
+                                <h3 class="disp h3 h3--xl">Operação Vôlei</h3>
+                            </div>
+                            <p class="card__text" data-i18n="volei.text">Grafismo de nível de emissora numa pasta só, no ar em 30 segundos. Placar com sets, parciais e desfazer, 11 módulos, 6 tarjas de crédito e 3 selos animados — tudo pilotado por uma mesa de teclado para as duas mãos.</p>
+                            <div class="card__side">
+                                <dl class="spec mono">
+                                    <dt data-i18n="spec.role">Função</dt><dd data-i18n="spec.roleDAD">Design · animação · desenvolvimento</dd>
+                                    <dt>Stack</dt><dd>HTML/CSS · JS · Node.js · SSE · Playwright</dd>
+                                    <dt data-i18n="spec.scale">Escala</dt><dd data-i18n="volei.scale">~3.700 linhas · 0 dependências</dd>
+                                    <dt data-i18n="spec.runs">Roda em</dt><dd>vMix · OBS · SPX · Viz</dd>
+                                </dl>
+                                <div class="btns">
+                                    <button type="button" class="btn btn--dark card__try" data-case="volei-desk"><span data-i18n="volei.try">Operar o placar</span> <span aria-hidden="true">▶</span></button>
+                                    <button type="button" class="case-link mono" data-case="case-volei"><span data-i18n="card.open">Ver case</span> <span class="arrow" aria-hidden="true">→</span></button>
                                 </div>
                             </div>
                         </div>
-                        <span class="card__badge card__badge--live" data-i18n="card.liveDemo">Demo ao vivo em HTML</span>
-                    </div>
-                    <div class="card__body">
-                        <p class="card__kicker" data-i18n="volei.kicker">Projeto autoral · v4</p>
-                        <h3 class="card__title">Operação Vôlei</h3>
-                        <p class="card__value" data-i18n="volei.value">Grafismo de emissora numa pasta. No ar em 30 segundos.</p>
-                        <ul class="chips"><li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>Playwright</li></ul>
-                        <div class="card__actions">
-                            <button type="button" class="card__try" data-case="volei-desk"><span data-i18n="volei.try">Operar o placar</span> <span aria-hidden="true">▶</span></button>
-                            <button type="button" class="card__open" data-case="case-volei"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
+                    </article>
+
+                    <!-- RM—05 Minha Prece -->
+                    <article class="card card--full reveal" data-cats="md">
+                        <div class="plate plate--prece">
+                            <div class="prece__type" aria-hidden="true">
+                                <span class="disp" data-i18n="prece.t1">A letra</span>
+                                <span class="disp prece__wide" data-i18n="prece.t2">vira</span>
+                                <span class="disp prece__in" data-i18n="prece.t3">imagem.</span>
+                            </div>
+                            <div class="prece__video">
+                                <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/minha-prece-poster.jpg">
+                                    <source src="videos/projects/minha-prece-clip.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <span class="mono plate__tr plate__tr--text" data-i18n="prece.tag">Lyric video · Tipografia cinética</span>
                         </div>
-                    </div>
-                </article>
+                        <div class="card__body">
+                            <div class="card__title">
+                                <div class="card__ids"><span class="cid mono">RM—05</span><span class="mono muted" data-i18n="prece.cat">Motion Design · Narrativa visual</span></div>
+                                <h3 class="disp h3 h3--xl">Minha Prece</h3>
+                            </div>
+                            <p class="card__text" data-i18n="prece.text">No lançamento de uma música, a letra precisava contar a história — não ficar embaixo dela. Tipografia cinética sincronizada com a voz, palavras-chave em cor, texturas e partículas segurando um tom íntimo.</p>
+                            <div class="card__side">
+                                <dl class="spec mono">
+                                    <dt data-i18n="spec.role">Função</dt><dd data-i18n="prece.role">Motion design e edição</dd>
+                                    <dt>Stack</dt><dd>After Effects · Premiere Pro</dd>
+                                </dl>
+                                <button type="button" class="case-link mono" data-case="case-prece"><span data-i18n="card.open">Ver case</span> <span class="arrow" aria-hidden="true">→</span></button>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- Minha Prece: full-bleed kinetic type -->
-                <article class="card card--cinema reveal" style="--accent:#e08a1e">
-                    <div class="card__media">
-                        <video class="js-inview" muted loop playsinline preload="none" poster="images/projects/minha-prece-poster.jpg">
-                            <source src="videos/projects/minha-prece-clip.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card__body">
-                        <p class="card__kicker" data-i18n="prece.kicker">Lyric video · Motion</p>
-                        <h3 class="card__title">Minha Prece</h3>
-                        <p class="card__value" data-i18n="prece.value">A letra vira imagem.</p>
-                        <ul class="chips"><li>After Effects</li><li>Premiere</li></ul>
-                        <button type="button" class="card__open" data-case="case-prece"><span data-i18n="card.open">Ver case</span> <span aria-hidden="true">→</span></button>
-                    </div>
-                </article>
-
+                </div>
             </div>
         </section>
 
 
-        <!-- process
+        <!-- systems / signal chain
         ================================================== -->
-        <section class="process" id="process">
-            <div class="section-head reveal">
-                <p class="eyebrow" data-i18n="process.eyebrow">Como eu trabalho</p>
-                <h2 class="section-title" data-i18n="process.title">Quatro passos, nenhum improviso no ar.</h2>
+        <section class="stack" id="stack">
+            <div class="wrap section">
+
+                <div class="head reveal">
+                    <div class="head__title">
+                        <span class="mono muted-on-dark" data-i18n="stack.eyebrow">02 / Sistemas — Repertório técnico</span>
+                        <h2 class="disp h2" data-i18n="stack.title">A cadeia<br>de sinal.</h2>
+                    </div>
+                    <p class="head__text head__text--dark" data-i18n="stack.text">Quatro etapas, nenhum improviso no ar. Cada ferramenta fica onde faz o seu trabalho — do primeiro rascunho ao motor de playout.</p>
+                </div>
+
+                <div class="io reveal">
+                    <span class="mono accent-text" data-i18n="stack.in">IN ▸ Briefing</span>
+                    <span data-i18n="stack.inText">Entender a operação primeiro: quem opera, em quanto tempo e o que não pode falhar.</span>
+                </div>
+
+                <div class="stages">
+                    <div class="stage reveal">
+                        <span class="stage__tick" aria-hidden="true"></span>
+                        <div class="stage__head"><span class="disp">Design</span><span class="mono muted-on-dark">01</span></div>
+                        <p data-i18n="stage1">Tipografia medida para qualquer nome, de qualquer tamanho.</p>
+                        <div class="tools">
+                            <div class="tool"><span>Figma</span><span class="mono">Sistemas · UI</span></div>
+                            <div class="tool"><span>Photoshop</span><span class="mono" data-i18n="tool.plates">Placas</span></div>
+                            <div class="tool"><span>Illustrator</span><span class="mono" data-i18n="tool.vector">Vetor · Marcas</span></div>
+                        </div>
+                    </div>
+                    <div class="stage reveal">
+                        <div class="stage__head"><span class="disp" data-i18n="stage2.t">Animar</span><span class="mono muted-on-dark">02</span></div>
+                        <p data-i18n="stage2">Movimento que carrega informação, feito para ser re-temporizado.</p>
+                        <div class="tools">
+                            <div class="tool"><span>After Effects</span><span class="mono">Rigs · MOGRT</span></div>
+                            <div class="tool"><span>Premiere Pro</span><span class="mono" data-i18n="tool.edit">Edição</span></div>
+                            <div class="tool"><span>DaVinci Resolve</span><span class="mono" data-i18n="tool.finish">Finalização</span></div>
+                        </div>
+                    </div>
+                    <div class="stage reveal">
+                        <div class="stage__head"><span class="disp" data-i18n="stage3.t">Construir</span><span class="mono muted-on-dark">03</span></div>
+                        <p data-i18n="stage3">Interfaces ligadas direto ao dado.</p>
+                        <div class="tools">
+                            <div class="tool"><span>HTML5 · CSS</span><span class="mono" data-i18n="tool.graphics">Grafismo</span></div>
+                            <div class="tool"><span>JavaScript</span><span class="mono" data-i18n="tool.control">Controle</span></div>
+                            <div class="tool"><span>Node.js · SSE</span><span class="mono" data-i18n="tool.realtime">Tempo real</span></div>
+                            <div class="tool"><span>React</span><span class="mono">UI</span></div>
+                            <div class="tool"><span>Python · VBScript</span><span class="mono" data-i18n="tool.auto">Automação</span></div>
+                            <div class="tool"><span>PostgreSQL</span><span class="mono" data-i18n="tool.data">Dados</span></div>
+                        </div>
+                    </div>
+                    <div class="stage stage--air reveal">
+                        <div class="stage__head"><span class="disp accent-text" data-i18n="stage4.t">No ar</span><span class="mono muted-on-dark">04</span></div>
+                        <p data-i18n="stage4">Motores de playout e switchers, ao vivo.</p>
+                        <div class="tools">
+                            <div class="tool"><span>Viz Artist · Trio · Pilot</span><span class="mono">Vizrt</span></div>
+                            <div class="tool"><span>Chyron Lyric</span><span class="mono">Chyron</span></div>
+                            <div class="tool"><span>vMix · OBS</span><span class="mono">Switching</span></div>
+                            <div class="tool"><span>CasparCG · NewBlue</span><span class="mono">HTML playout</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="io io--out reveal">
+                    <span class="mono" data-i18n="stack.out">OUT ▸ Testar e entregar</span>
+                    <span data-i18n="stack.outText">Testes automáticos por pixel, ensaio, manual de operação e treinamento.</span>
+                </div>
             </div>
-            <ol class="steps">
-                <li class="step reveal">
-                    <span class="step__n">01</span>
-                    <h3 data-i18n="step1.t">Entender a operação</h3>
-                    <p data-i18n="step1.d">Quem opera, em quanto tempo e o que não pode falhar.</p>
-                </li>
-                <li class="step reveal">
-                    <span class="step__n">02</span>
-                    <h3 data-i18n="step2.t">Desenhar e animar</h3>
-                    <p data-i18n="step2.d">Figma e After Effects, com tipografia medida para qualquer nome.</p>
-                </li>
-                <li class="step reveal">
-                    <span class="step__n">03</span>
-                    <h3 data-i18n="step3.t">Construir</h3>
-                    <p data-i18n="step3.d">HTML/CSS, Viz, JavaScript, Node e VBScript, ligados direto ao dado.</p>
-                </li>
-                <li class="step reveal">
-                    <span class="step__n">04</span>
-                    <h3 data-i18n="step4.t">Testar e entregar</h3>
-                    <p data-i18n="step4.d">Testes automáticos, ensaio, manual e treinamento.</p>
-                </li>
-            </ol>
         </section>
 
 
         <!-- about
         ================================================== -->
-        <section class="about" id="about">
-            <div class="about__grid">
-                <figure class="about__photo reveal">
-                    <img src="images/raquel.png" alt="Raquel Melo" loading="lazy">
-                </figure>
-                <div class="about__text reveal">
-                    <p class="eyebrow" data-i18n="about.eyebrow">Sobre</p>
-                    <h2 class="section-title" data-i18n="about.title">Designer que programa. Desenvolvedora que anima.</h2>
-                    <p data-i18n="about.p1">Do desenho na UFRJ ao audiovisual: mais de 10 anos no grafismo ao vivo da TV Globo. Com a pós em Full Stack e Engenharia de Software em curso, construo as ferramentas que a operação precisa.</p>
+        <section class="about light" id="about">
+            <div class="wrap section">
+                <span class="mono muted" data-i18n="about.eyebrow">03 / Sobre</span>
 
-                    <ul class="timeline">
-                        <li>
-                            <span class="timeline__when" data-i18n="tl.1.when">Mai 2026 — atual</span>
-                            <span class="timeline__what" data-i18n="tl.1.what">Produtora de Design e Efeitos Visuais I</span>
-                            <span class="timeline__where">TV Globo</span>
-                        </li>
-                        <li>
-                            <span class="timeline__when" data-i18n="tl.2.when">Abr 2022 — Abr 2026</span>
-                            <span class="timeline__what" data-i18n="tl.2.what">Editora de Videografismo</span>
-                            <span class="timeline__where">TV Globo</span>
-                        </li>
-                        <li>
-                            <span class="timeline__when" data-i18n="tl.3.when">Mai 2012 — Mar 2022</span>
-                            <span class="timeline__what" data-i18n="tl.3.what">Operadora de Videografismo</span>
-                            <span class="timeline__where">TV Globo</span>
-                        </li>
-                    </ul>
+                <div class="about__grid">
+                    <figure class="portrait reveal">
+                        <div class="portrait__frame">
+                            <img src="images/raquel.png" alt="Raquel Melo" loading="lazy">
+                            <span class="crop crop--tl" aria-hidden="true"></span>
+                            <span class="crop crop--tr" aria-hidden="true"></span>
+                            <span class="crop crop--bl" aria-hidden="true"></span>
+                            <span class="crop crop--br" aria-hidden="true"></span>
+                        </div>
+                        <figcaption class="mono muted"><span>FIG. 01</span><span>Rio de Janeiro</span></figcaption>
+                    </figure>
 
-                    <p class="education" data-i18n="edu">Engenharia de Software (em curso) · Pós em Desenvolvimento Full Stack · Produção Audiovisual · Desenho, UFRJ</p>
+                    <div class="about__main">
+                        <h2 class="disp h2 h2--about reveal"><span data-i18n="about.t1">Designer que programa.</span><br><span class="cobalt" data-i18n="about.t2">Desenvolvedora que anima.</span></h2>
+                        <div class="about__text reveal">
+                            <p data-i18n="about.p1">Do desenho na UFRJ ao audiovisual: mais de dez anos no grafismo ao vivo da TV Globo — eleições, Copas do Mundo, festivais e entretenimento do horário nobre.</p>
+                            <p class="soft" data-i18n="about.p2">Com a pós em Desenvolvimento Full Stack e Engenharia de Software em curso, transformo conceitos criativos em sistemas prontos para produção: o visual, o movimento, a interface — e a confiança de que tudo segura ao vivo.</p>
+                        </div>
+                        <div class="stats reveal">
+                            <div><span class="disp">10+</span><span class="mono" data-i18n="stat1">Anos ao vivo na TV</span></div>
+                            <div><span class="disp">04</span><span class="mono" data-i18n="stat2">Sistemas de grafismo autorais</span></div>
+                            <div><span class="disp">27</span><span class="mono" data-i18n="stat3">Estados · 1 operador · 1 noite</span></div>
+                            <div><span class="disp cobalt">00</span><span class="mono" data-i18n="stat4">Instalações — abre com dois cliques</span></div>
+                        </div>
+                    </div>
+                </div>
 
-                    <ul class="tags">
-                        <li>After Effects</li><li>Premiere</li><li>Photoshop</li><li>Illustrator</li><li>DaVinci</li>
-                        <li>Chyron Lyric</li><li>Viz Artist · Trio · Pilot</li><li>Figma</li>
-                        <li>HTML/CSS</li><li>JavaScript</li><li>Node.js</li><li>Python</li><li>VBScript</li><li>OBS · vMix</li>
-                    </ul>
+                <div class="logs reveal">
+                    <div class="log">
+                        <span class="mono muted log__title" data-i18n="log.exp">Log — Experiência</span>
+                        <div class="log__row"><span class="mono cobalt" data-i18n="log.e1.when">05.2026 — Atual</span><span data-i18n="log.e1.what">Produtora de Design e Efeitos Visuais I · TV Globo</span></div>
+                        <div class="log__row"><span class="mono muted">04.2022 — 04.2026</span><span data-i18n="log.e2.what">Editora de Videografismo · TV Globo</span></div>
+                        <div class="log__row"><span class="mono muted">05.2012 — 03.2022</span><span data-i18n="log.e3.what">Operadora de Videografismo · TV Globo</span></div>
+                    </div>
+                    <div class="log">
+                        <span class="mono muted log__title" data-i18n="log.edu">Log — Formação</span>
+                        <div class="log__row"><span class="mono cobalt" data-i18n="log.d1.when">Em curso</span><span data-i18n="log.d1.what">Engenharia de Software</span></div>
+                        <div class="log__row"><span class="mono muted" data-i18n="log.d2.when">Pós-graduação</span><span data-i18n="log.d2.what">Desenvolvimento Web Full Stack · Anhanguera</span></div>
+                        <div class="log__row"><span class="mono muted" data-i18n="log.d3.when">Graduação</span><span data-i18n="log.d3.what">Produção Audiovisual · Estácio — Desenho · UFRJ</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- contact / CTA
+        <!-- contact
         ================================================== -->
-        <section class="cta" id="contact">
-            <div class="cta__inner reveal">
-                <p class="eyebrow" data-i18n="cta.eyebrow">Freelance · remoto · PT / EN</p>
-                <h2 class="cta__title" data-i18n="cta.title">Vamos colocar seu projeto no ar?</h2>
-                <p class="cta__lead" data-i18n="cta.lead">Grafismo para live e transmissão, motion e overlays para OBS e vMix. Conte o que precisa e quando vai ao ar.</p>
-                <div class="cta__actions">
-                    <a class="btn btn--primary btn--lg" href="mailto:raqlsmelo@gmail.com?subject=Projeto%20freelance" data-i18n="cta.email">Mandar um e-mail</a>
-                    <a class="btn btn--ghost btn--lg" href="https://wa.me/5521976602418" target="_blank" rel="noopener">WhatsApp</a>
+        <section class="contact" id="contact">
+            <div class="wrap section section--contact">
+                <div class="mono contact__meta"><span data-i18n="contact.eyebrow">04 / Contato</span><span data-i18n="contact.terms">Freelance · Remoto · PT / EN</span></div>
+                <h2 class="disp contact__title reveal" data-i18n="contact.title">Vamos colocar<br>no ar.</h2>
+                <div class="crows">
+                    <a class="crow" href="mailto:raqlsmelo@gmail.com?subject=Projeto"><span class="mono">E-mail</span><span class="disp crow__val crow__val--mail">raqlsmelo@gmail.com</span><span class="arrow mono" aria-hidden="true">→</span></a>
+                    <a class="crow" href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener"><span class="mono">LinkedIn</span><span class="disp crow__val">in/raquel-melo</span><span class="arrow mono" aria-hidden="true">↗</span></a>
+                    <a class="crow" href="https://github.com/raqlsmelo" target="_blank" rel="noopener"><span class="mono">GitHub</span><span class="disp crow__val">@raqlsmelo</span><span class="arrow mono" aria-hidden="true">↗</span></a>
+                    <a class="crow" href="https://wa.me/5521976602418" target="_blank" rel="noopener"><span class="mono">WhatsApp</span><span class="disp crow__val">+55 21 97660-2418</span><span class="arrow mono" aria-hidden="true">↗</span></a>
                 </div>
-                <ul class="cta__links">
-                    <li><a href="mailto:raqlsmelo@gmail.com">raqlsmelo@gmail.com</a></li>
-                    <li><a href="https://www.linkedin.com/in/raquel-melo-62040ba0" target="_blank" rel="noopener">LinkedIn</a></li>
-                    <li><a href="https://github.com/raqlsmelo" target="_blank" rel="noopener">GitHub</a></li>
-                    <li data-i18n="cta.tz">Rio de Janeiro · UTC−3</li>
-                </ul>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <span>© <span class="js-year">2026</span> Raquel Melo</span>
-        <a href="#top" data-i18n="footer.top">Voltar ao topo ↑</a>
+    <footer class="foot">
+        <div class="wrap foot__in mono">
+            <span>© <span class="js-year">2026</span> Raquel Melo</span>
+            <span>Rio de Janeiro · UTC−3 · <span class="js-tc">00:00:00:00</span></span>
+            <a href="#top" data-i18n="footer.top">Voltar ao topo ↑</a>
+        </div>
     </footer>
 
 
     <!-- case studies (open from the cards)
     ================================================== -->
-    <dialog class="case" id="case-futebol" style="--accent:#2fbf71" aria-labelledby="case-futebol-title">
+    <dialog class="case" id="case-futebol" aria-labelledby="case-futebol-title">
         <button type="button" class="case__close" aria-label="Fechar">×</button>
         <div class="case__media">
             <video controls playsinline preload="none" poster="images/projects/futebol/video-capa.jpg">
@@ -361,7 +491,7 @@
             </video>
         </div>
         <div class="case__body">
-            <p class="card__kicker" data-i18n="fut.kicker">Projeto autoral · 2026</p>
+            <p class="case__kicker mono" data-i18n="fut.kicker">Projeto autoral · 2026</p>
             <h3 class="case__title" id="case-futebol-title">Operação Futebol</h3>
             <div class="case__cols">
                 <div>
@@ -399,7 +529,7 @@
         </div>
     </dialog>
 
-    <dialog class="case" id="case-apuracao" style="--accent:#22b0ac" aria-labelledby="case-apuracao-title">
+    <dialog class="case" id="case-apuracao" aria-labelledby="case-apuracao-title">
         <button type="button" class="case__close" aria-label="Fechar">×</button>
         <div class="case__media">
             <video controls playsinline preload="none" poster="images/projects/apuracao/video-capa.jpg">
@@ -407,7 +537,7 @@
             </video>
         </div>
         <div class="case__body">
-            <p class="card__kicker" data-i18n="apu.kicker">Eleições 2026 · TV</p>
+            <p class="case__kicker mono" data-i18n="apu.kicker">Eleições 2026 · TV</p>
             <h3 class="case__title" id="case-apuracao-title">Apuração 2026</h3>
             <div class="case__cols">
                 <div>
@@ -442,10 +572,10 @@
         </div>
     </dialog>
 
-    <dialog class="case" id="case-volei" style="--accent:#4b6bff" aria-labelledby="case-volei-title">
+    <dialog class="case" id="case-volei" aria-labelledby="case-volei-title">
         <button type="button" class="case__close" aria-label="Fechar">×</button>
         <div class="case__body">
-            <p class="card__kicker" data-i18n="volei.kicker">Projeto autoral · v4</p>
+            <p class="case__kicker mono" data-i18n="volei.kicker">Projeto autoral · v4</p>
             <h3 class="case__title" id="case-volei-title">Operação Vôlei</h3>
             <div class="case__cols">
                 <div>
@@ -472,10 +602,10 @@
         </div>
     </dialog>
 
-    <dialog class="case" id="case-tarja" style="--accent:#cf8f17" aria-labelledby="case-tarja-title">
+    <dialog class="case" id="case-tarja" aria-labelledby="case-tarja-title">
         <button type="button" class="case__close" aria-label="Fechar">×</button>
         <div class="case__body">
-            <p class="card__kicker" data-i18n="tarja.kicker">Software autoral · v2.0</p>
+            <p class="case__kicker mono" data-i18n="tarja.kicker">Software autoral · v2.0</p>
             <h3 class="case__title" id="case-tarja-title">Tarja Studio</h3>
             <div class="case__cols">
                 <div>
@@ -500,7 +630,7 @@
         </div>
     </dialog>
 
-    <dialog class="case" id="case-prece" style="--accent:#e08a1e" aria-labelledby="case-prece-title">
+    <dialog class="case" id="case-prece" aria-labelledby="case-prece-title">
         <button type="button" class="case__close" aria-label="Fechar">×</button>
         <div class="case__media">
             <video controls playsinline preload="none" poster="images/projects/minha-prece-poster.jpg">
@@ -508,7 +638,7 @@
             </video>
         </div>
         <div class="case__body">
-            <p class="card__kicker" data-i18n="prece.kicker">Lyric video · Motion</p>
+            <p class="case__kicker mono" data-i18n="prece.kicker">Lyric video · Motion</p>
             <h3 class="case__title" id="case-prece-title">Minha Prece</h3>
             <div class="case__cols">
                 <div>
@@ -530,26 +660,23 @@
     </dialog>
 
     <!-- interactive volleyball desk (fictional teams) -->
-    <dialog class="case desk" id="volei-desk" style="--accent:#4b6bff" aria-labelledby="volei-desk-title">
+    <dialog class="case desk" id="volei-desk" aria-labelledby="volei-desk-title">
         <button type="button" class="case__close" aria-label="Fechar">×</button>
         <div class="desk__stage">
-            <span class="onair js-desk-onair">● ON AIR</span>
-            <div class="vb-bug js-desk-bug"><span class="js-desk-bug-text">SUPER RALI</span></div>
-            <div class="vb vb--desk js-desk-board">
-                <div class="vb__module js-desk-module"></div>
-                <div class="vb__bar">
-                    <span class="vb__team vb__team--home js-desk-name-h">CASA</span>
-                    <span class="vb__sets js-desk-sets-h">0</span>
-                    <span class="vb__pts js-desk-pts-h">0</span>
-                    <span class="vb__pts js-desk-pts-a">0</span>
-                    <span class="vb__sets js-desk-sets-a">0</span>
-                    <span class="vb__team vb__team--away js-desk-name-a">VISITANTE</span>
+            <span class="mono desk__label" data-i18n="desk.pgm">PGM — Mesa de operação</span>
+            <span class="mono onair desk__onair js-desk-onair"><i aria-hidden="true"></i>ON AIR</span>
+            <div class="vb-bug js-desk-bug"><span class="disp js-desk-bug-text">SUPER RALI</span></div>
+            <div class="sb sb--desk js-desk-board">
+                <span class="sb__module mono js-desk-module"></span>
+                <div class="sb__grid">
+                    <span class="sb__team js-desk-name-h">CASA</span><span class="sb__sets js-desk-sets-h">0</span><span class="sb__pts js-desk-pts-h">0</span>
+                    <span class="sb__team js-desk-name-a">VISITANTE</span><span class="sb__sets js-desk-sets-a">0</span><span class="sb__pts js-desk-pts-a">0</span>
                 </div>
             </div>
         </div>
         <div class="desk__panel">
             <div class="desk__head">
-                <h3 class="desk__title" id="volei-desk-title" data-i18n="desk.title">Mesa de operação</h3>
+                <h3 class="desk__title disp" id="volei-desk-title" data-i18n="desk.title">Mesa de operação</h3>
                 <p class="desk__hint" data-i18n="desk.hint">Use o teclado como na operação real — ou clique nos botões.</p>
             </div>
             <div class="desk__teams">
